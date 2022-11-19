@@ -1,0 +1,33 @@
+general features
+-create a command line tool(CLT) that allows us to pass in a APK
+-modify the CLT to be able to decompile the APK
+-save the hash of already analysed APKs(by saving the hash of already saved files and the results of analysis into a database)
+
+permissions
+-parse the manifest (through the use of android-apktool)
+-modify the CLT to extract the permissions requested in the android manifest(we are able to extract the manifest by using aapt)
+-CLT identify the permissions used in the code(through the use of grep statements to search for any usage of permissions)
+-CLT extract the permissions used in the cde(by passing the permissions used in the code into something like an array that keeps track of which permissions have been used at least once)
+-compare the requested permissions to the permissions used and reports what is not required(compare the extracted manifest data to the array of permisisons used)
+
+system calls
+-identify if the aplication is able to make system calls(grep to search for any system calls)
+-attempt to see if the system call is used in a potentially malicous manner(?)
+-report what the system call is and what potential damage it may cause(have a list/dictionary which stores the specific system call and what consiquences it may have if abused)
+
+vulnerability
+-scan for insecure connections(http/ftp/smtp)
+-scan for data transfer over insecure prtocols(http/ftp/smtp)
+-scan for authentication using insecure protocols(http/ftp/smtp)
+(grep for http/ftp/smtp protocols and see if anything important is being done over them)
+-colate a list critical IPs and scan for them(making use of popular IP blacklists)
+-scan for embedded cryptography secrets(grep for javax.crypto/embeded cryptography libraries)
+
+
+maybe
+-reading code signing certificate
+-detecting trackers
+-scan for embed third-party secrets such as Twitter API keys or AWS authentication tokens can have their secrets extracted and abused by attackers
+-check for implicit bradcasts
+-check for if app has webview and is vulnerable to xss
+-check for incorrect sandboxing of scripting language
