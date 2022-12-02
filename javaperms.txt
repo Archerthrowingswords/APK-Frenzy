@@ -1,0 +1,1273 @@
+out\sources\android\support\annotation\AnimatorRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\AnimRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\AnyRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\ArrayRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\AttrRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\BoolRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\ColorRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\DimenRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\DrawableRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\FractionRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\IdRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\IntDef.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\IntegerRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\InterpolatorRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\LayoutRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\MenuRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\NonNull.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\Nullable.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\PluralsRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\RawRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\StringDef.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\StringRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\StyleableRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\StyleRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\annotation\XmlRes.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\BuildConfig.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompatJellyBeanMr2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ActionBarDrawerToggle.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ActionBarDrawerToggleHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ActionBarDrawerToggleJellybeanMR2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ActivityCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ActivityCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ActivityCompatJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ActivityOptionsCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ActivityOptionsCompatJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\BackStackRecord.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\BackStackState.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\BundleUtil.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\DialogFragment.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\Fragment.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentActivity.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentContainer.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentManager.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentManagerImpl.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentManagerState.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentPagerAdapter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentState.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentStatePagerAdapter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentTabHost.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\FragmentTransaction.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\INotificationSideChannel.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ListFragment.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\LoaderManager.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\LoaderManagerImpl.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NavUtils.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NavUtilsJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NoSaveStateFrameLayout.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationBuilderWithActions.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationBuilderWithBuilderAccessor.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatApi20.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatBase.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatExtras.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatGingerbread.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatIceCreamSandwich.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatJellybean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationCompatSideChannelService.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationManagerCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationManagerCompatEclair.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\NotificationManagerCompatIceCreamSandwich.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\RemoteInput.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\RemoteInputCompatApi20.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\RemoteInputCompatBase.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\RemoteInputCompatJellybean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ServiceCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ShareCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ShareCompatICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\ShareCompatJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\SuperNotCalledException.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\TaskStackBuilder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\TaskStackBuilderHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\app\TaskStackBuilderJellybean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\AsyncTaskLoader.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\ContextCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\ContextCompatFroyo.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\ContextCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\ContextCompatJellybean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\ContextCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\CursorLoader.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\FileProvider.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\IntentCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\IntentCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\IntentCompatIcsMr1.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\Loader.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\LocalBroadcastManager.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\ModernAsyncTask.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\WakefulBroadcastReceiver.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\content\pm\ActivityInfoCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\database\DatabaseUtilsCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\graphics\drawable\DrawableCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\graphics\drawable\DrawableCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\graphics\drawable\DrawableCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\hardware\display\DisplayManagerCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\hardware\display\DisplayManagerJellybeanMr1.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\internal\view\SupportMenu.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\internal\view\SupportMenuItem.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\internal\view\SupportSubMenu.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\media\TransportController.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\media\TransportMediator.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\media\TransportMediatorCallback.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\media\TransportMediatorJellybeanMR2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\media\TransportPerformer.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\media\TransportStateListener.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\net\ConnectivityManagerCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\net\ConnectivityManagerCompatGingerbread.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\net\ConnectivityManagerCompatHoneycombMR2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\net\ConnectivityManagerCompatJellyBean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\net\TrafficStatsCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\net\TrafficStatsCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\os\EnvironmentCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\os\EnvironmentCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\os\ParcelableCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\os\ParcelableCompatCreatorCallbacks.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\os\ParcelableCompatCreatorHoneycombMR2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\os\ParcelableCompatCreatorHoneycombMR2Stub.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\print\PrintHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\print\PrintHelperKitkat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\text\BidiFormatter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\text\ICUCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\text\ICUCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\text\TextDirectionHeuristicCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\text\TextDirectionHeuristicsCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\text\TextUtilsCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\ArrayMap.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\AtomicFile.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\CircularArray.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\ContainerHelpers.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\DebugUtils.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\LogWriter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\LongSparseArray.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\LruCache.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\MapCollections.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\Pools.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\SimpleArrayMap.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\SparseArrayCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\util\TimeUtils.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\AccessibilityDelegateCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\AccessibilityDelegateCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\AccessibilityDelegateCompatJellyBean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ActionProvider.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\GestureDetectorCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\GravityCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\GravityCompatJellybeanMr1.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\KeyEventCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\KeyEventCompatEclair.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\KeyEventCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\MarginLayoutParamsCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\MarginLayoutParamsCompatJellybeanMr1.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\MenuCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\MenuItemCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\MenuItemCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\MenuItemCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\MotionEventCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\MotionEventCompatEclair.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\PagerAdapter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\PagerTabStrip.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\PagerTitleStrip.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\PagerTitleStripIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ScaleGestureDetectorCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ScaleGestureDetectorCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\VelocityTrackerCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\VelocityTrackerCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewCompatEclairMr1.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewCompatGingerbread.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewCompatHC.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewCompatICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewCompatJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewCompatJellybeanMr1.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewConfigurationCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewConfigurationCompatFroyo.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewGroupCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewGroupCompatHC.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewGroupCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewGroupCompatJellybeanMR2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewPager.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewParentCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewParentCompatICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewPropertyAnimatorCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewPropertyAnimatorCompatICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewPropertyAnimatorCompatJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewPropertyAnimatorCompatJellybeanMr2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\ViewPropertyAnimatorListener.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\WindowCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityEventCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityEventCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityManagerCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityManagerCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityNodeInfoCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatJellyBean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatJellybeanMr2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityNodeProviderCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityNodeProviderCompatJellyBean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityNodeProviderCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityRecordCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityRecordCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityRecordCompatIcsMr1.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\view\accessibility\AccessibilityRecordCompatJellyBean.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\AutoScrollHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\BakedBezierInterpolator.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ContentLoadingProgressBar.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\CursorAdapter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\CursorFilter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\DrawerLayout.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\EdgeEffectCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\EdgeEffectCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ExploreByTouchHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ListPopupWindowCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ListPopupWindowCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ListViewAutoScrollHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\PopupMenuCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\PopupMenuCompatKitKat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ResourceCursorAdapter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ScrollerCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ScrollerCompatGingerbread.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ScrollerCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\SearchViewCompat.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\SearchViewCompatHoneycomb.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\SearchViewCompatIcs.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\SimpleCursorAdapter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\SlidingPaneLayout.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\SwipeProgressBar.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\SwipeRefreshLayout.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v4\widget\ViewDragHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBar.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarActivity.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarActivityDelegate.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarActivityDelegateApi20.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarActivityDelegateBase.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarActivityDelegateHC.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarActivityDelegateICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarActivityDelegateJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarActivityDelegateJBMR2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarImplBase.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarImplHC.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarImplICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarImplJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\app\ActionBarImplJBMR2.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\appcompat\BuildConfig.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\appcompat\R.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\ActionBarPolicy.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\ActionModeWrapper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\ActionModeWrapperJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\SupportMenuInflater.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\ActionMenuItem.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\ActionMenuItemView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\ActionMenuPresenter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\ActionMenuView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\BaseMenuPresenter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\BaseMenuWrapper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\BaseWrapper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\ExpandedMenuView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\ListMenuItemView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\ListMenuPresenter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuBuilder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuDialogHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuItemImpl.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuItemWrapperICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuItemWrapperJB.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuPopupHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuPresenter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuWrapperFactory.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\MenuWrapperICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\SubMenuBuilder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\view\menu\SubMenuWrapperICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\AbsActionBarView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\AbsSpinnerICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ActionBarContainer.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ActionBarContextView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ActionBarOverlayLayout.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ActionBarView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ActivityChooserModel.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ActivityChooserView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\AdapterViewICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\CompatTextView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\LinearLayoutICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ListPopupWindow.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\NativeActionModeAwareLayout.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ProgressBarICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\ScrollingTabContainerView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\internal\widget\SpinnerICS.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\view\ActionMode.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\view\CollapsibleActionView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\widget\PopupMenu.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\widget\SearchView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\widget\ShareActionProvider.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\android\support\v7\widget\SuggestionsAdapter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\BackgroundSocket.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\BeNews.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\BeNewsArrayAdapter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\BeNewsFragList.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\BitmapHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\BootManager.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\BsonBridge.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\BuildConfig.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\DetailFragView.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\DetailFragViewImage.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\org\benews\PullIntentService.java
+Line 34 - int perm = getApplicationContext().checkCallingPermission("android.permission.INTERNET");
+
+Line 38 - int perm2 = getApplicationContext().checkCallingPermission("android.permission.READ_PHONE_STATE\"");
+
+Line 42 - int perm3 = getApplicationContext().checkCallingPermission("android.permission.WRITE_EXTERNAL_STORAGE");
+
+-----------------------------------------------------------
+
+out\sources\org\benews\R.java
+No keywords found
+-----------------------------------------------------------
+
