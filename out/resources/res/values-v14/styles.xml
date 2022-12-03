@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.AppCompat.Base.SearchResult.Subtitle" parent="@android:style/TextAppearance.Holo.SearchResult.Subtitle">
+    </style>
+    <style name="TextAppearance.AppCompat.Base.SearchResult.Title" parent="@android:style/TextAppearance.Holo.SearchResult.Title">
+    </style>
+    <style name="TextAppearance.AppCompat.Base.Widget.PopupMenu.Large" parent="@android:style/TextAppearance.Holo.Widget.PopupMenu.Large">
+    </style>
+    <style name="TextAppearance.AppCompat.Base.Widget.PopupMenu.Small" parent="@android:style/TextAppearance.Holo.Widget.PopupMenu.Small">
+    </style>
+    <style name="TextAppearance.AppCompat.Light.Base.SearchResult.Subtitle" parent="@android:style/TextAppearance.Holo.SearchResult.Subtitle">
+    </style>
+    <style name="TextAppearance.AppCompat.Light.Base.SearchResult.Title" parent="@android:style/TextAppearance.Holo.SearchResult.Title">
+    </style>
+    <style name="TextAppearance.AppCompat.Light.Base.Widget.PopupMenu.Large" parent="@android:style/TextAppearance.Holo.Widget.PopupMenu.Large">
+    </style>
+    <style name="TextAppearance.AppCompat.Light.Base.Widget.PopupMenu.Small" parent="@android:style/TextAppearance.Holo.Widget.PopupMenu.Small">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionBar.Menu" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Menu">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionBar.Subtitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionBar.Subtitle.Inverse" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionBar.Title" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionBar.Title.Inverse" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionMode.Subtitle" parent="@android:style/TextAppearance.Holo.Widget.ActionMode.Subtitle">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionMode.Subtitle.Inverse" parent="@android:style/TextAppearance.Holo.Widget.ActionMode.Subtitle.Inverse">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionMode.Title" parent="@android:style/TextAppearance.Holo.Widget.ActionMode.Title">
+    </style>
+    <style name="TextAppearance.AppCompat.Widget.Base.ActionMode.Title.Inverse" parent="@android:style/TextAppearance.Holo.Widget.ActionMode.Title.Inverse">
+    </style>
+    <style name="Theme.Base.AppCompat" parent="@android:style/Theme.Holo">
+        <item name="android:actionBarWidgetTheme">?attr/actionBarWidgetTheme</item>
+        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+        <item name="actionBarSize">?android:attr/actionBarSize</item>
+        <item name="actionBarWidgetTheme">@null</item>
+        <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
+        <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
+        <item name="dividerVertical">?android:attr/dividerVertical</item>
+        <item name="listPreferredItemHeight">?android:attr/listPreferredItemHeight</item>
+        <item name="listPreferredItemHeightLarge">?android:attr/listPreferredItemHeightLarge</item>
+        <item name="listPreferredItemHeightSmall">?android:attr/listPreferredItemHeightSmall</item>
+        <item name="listPreferredItemPaddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="listPreferredItemPaddingRight">?android:attr/listPreferredItemPaddingRight</item>
+        <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
+        <item name="windowActionBar">?android:attr/windowActionBar</item>
+    </style>
+    <style name="Theme.Base.AppCompat.DialogWhenLarge" parent="@style/Theme.Base.AppCompat.DialogWhenLarge.Base">
+    </style>
+    <style name="Theme.Base.AppCompat.Light" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarWidgetTheme">?attr/actionBarWidgetTheme</item>
+        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+        <item name="actionBarSize">?android:attr/actionBarSize</item>
+        <item name="actionBarWidgetTheme">@null</item>
+        <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
+        <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
+        <item name="dividerVertical">?android:attr/dividerVertical</item>
+        <item name="listPreferredItemHeight">?android:attr/listPreferredItemHeight</item>
+        <item name="listPreferredItemHeightLarge">?android:attr/listPreferredItemHeightLarge</item>
+        <item name="listPreferredItemHeightSmall">?android:attr/listPreferredItemHeightSmall</item>
+        <item name="listPreferredItemPaddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="listPreferredItemPaddingRight">?android:attr/listPreferredItemPaddingRight</item>
+        <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
+        <item name="windowActionBar">?android:attr/windowActionBar</item>
+    </style>
+    <style name="Theme.Base.AppCompat.Light.DarkActionBar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarWidgetTheme">?attr/actionBarWidgetTheme</item>
+        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+        <item name="actionBarSize">?android:attr/actionBarSize</item>
+        <item name="actionBarWidgetTheme">@style/Theme.AppCompat</item>
+        <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
+        <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
+        <item name="dividerVertical">?android:attr/dividerVertical</item>
+        <item name="listPreferredItemHeight">?android:attr/listPreferredItemHeight</item>
+        <item name="listPreferredItemHeightLarge">?android:attr/listPreferredItemHeightLarge</item>
+        <item name="listPreferredItemHeightSmall">?android:attr/listPreferredItemHeightSmall</item>
+        <item name="listPreferredItemPaddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="listPreferredItemPaddingRight">?android:attr/listPreferredItemPaddingRight</item>
+        <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
+        <item name="windowActionBar">?android:attr/windowActionBar</item>
+    </style>
+    <style name="Theme.Base.AppCompat.Light.DialogWhenLarge" parent="@style/Theme.Base.AppCompat.Light.DialogWhenLarge.Base">
+    </style>
+    <style name="Widget.AppCompat.Base.ActionBar" parent="@android:style/Widget.Holo.ActionBar">
+    </style>
+    <style name="Widget.AppCompat.Base.ActionBar.Solid" parent="@android:style/Widget.Holo.ActionBar.Solid">
+    </style>
+    <style name="Widget.AppCompat.Base.ActionBar.TabBar" parent="@android:style/Widget.Holo.ActionBar.TabBar">
+    </style>
+    <style name="Widget.AppCompat.Base.ActionBar.TabText" parent="@android:style/Widget.Holo.ActionBar.TabText">
+    </style>
+    <style name="Widget.AppCompat.Base.ActionBar.TabView" parent="@android:style/Widget.Holo.ActionBar.TabView">
+    </style>
+    <style name="Widget.AppCompat.Base.ActionButton" parent="@android:style/Widget.Holo.ActionButton">
+    </style>
+    <style name="Widget.AppCompat.Base.ActionButton.CloseMode" parent="@android:style/Widget.Holo.ActionButton.CloseMode">
+    </style>
+    <style name="Widget.AppCompat.Base.ActionButton.Overflow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+    </style>
+    <style name="Widget.AppCompat.Base.ActivityChooserView">
+        <item name="android:gravity">0x11</item>
+        <item name="android:background">@drawable/abc_ab_share_pack_holo_dark</item>
+        <item name="android:divider">?attr/dividerVertical</item>
+        <item name="android:showDividers">0x2</item>
+        <item name="android:dividerPadding">6dp</item>
+    </style>
+    <style name="Widget.AppCompat.Base.DropDownItem.Spinner" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+    </style>
+    <style name="Widget.AppCompat.Base.ListPopupWindow" parent="@android:style/Widget.Holo.ListPopupWindow">
+    </style>
+    <style name="Widget.AppCompat.Base.ListView.DropDown" parent="@android:style/Widget.Holo.ListView.DropDown">
+    </style>
+    <style name="Widget.AppCompat.Base.ListView.Menu" parent="@android:style/Widget.ListView.Menu">
+    </style>
+    <style name="Widget.AppCompat.Base.PopupMenu" parent="@android:style/Widget.Holo.PopupMenu">
+    </style>
+    <style name="Widget.AppCompat.Base.Spinner" parent="@android:style/Widget.Holo.Spinner">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar.Solid" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar.Solid.Inverse" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar.TabBar" parent="@android:style/Widget.Holo.Light.ActionBar.TabBar">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar.TabBar.Inverse" parent="@android:style/Widget.Holo.Light.ActionBar.TabBar.Inverse">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar.TabText" parent="@android:style/Widget.Holo.Light.ActionBar.TabText">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar.TabText.Inverse" parent="@android:style/Widget.Holo.Light.ActionBar.TabText.Inverse">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar.TabView" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionBar.TabView.Inverse" parent="@android:style/Widget.Holo.Light.ActionBar.TabView.Inverse">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionButton" parent="@android:style/Widget.Holo.Light.ActionButton">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionButton.CloseMode" parent="@android:style/Widget.Holo.Light.ActionButton.CloseMode">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionButton.Overflow" parent="@android:style/Widget.Holo.Light.ActionButton.Overflow">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ActionMode.Inverse" parent="@android:style/Widget.Holo.Light.ActionMode.Inverse">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.DropDownItem.Spinner" parent="@android:style/Widget.Holo.Light.DropDownItem.Spinner">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ListPopupWindow" parent="@android:style/Widget.Holo.Light.ListPopupWindow">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.ListView.DropDown" parent="@android:style/Widget.Holo.ListView.DropDown">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.PopupMenu" parent="@android:style/Widget.Holo.Light.PopupMenu">
+    </style>
+    <style name="Widget.AppCompat.Light.Base.Spinner" parent="@android:style/Widget.Holo.Light.Spinner">
+    </style>
+    <style name="Theme.Base.AppCompat.DialogWhenLarge.Base" parent="@android:style/Theme.Holo.DialogWhenLarge">
+        <item name="android:actionBarWidgetTheme">?attr/actionBarWidgetTheme</item>
+        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+        <item name="actionBarSize">?android:attr/actionBarSize</item>
+        <item name="actionBarWidgetTheme">@null</item>
+        <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
+        <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
+        <item name="dividerVertical">?android:attr/dividerVertical</item>
+        <item name="listPreferredItemHeight">?android:attr/listPreferredItemHeight</item>
+        <item name="listPreferredItemHeightLarge">?android:attr/listPreferredItemHeightLarge</item>
+        <item name="listPreferredItemHeightSmall">?android:attr/listPreferredItemHeightSmall</item>
+        <item name="listPreferredItemPaddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="listPreferredItemPaddingRight">?android:attr/listPreferredItemPaddingRight</item>
+        <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
+        <item name="windowActionBar">?android:attr/windowActionBar</item>
+    </style>
+    <style name="Theme.Base.AppCompat.Light.DialogWhenLarge.Base" parent="@android:style/Theme.Holo.Light.DialogWhenLarge">
+        <item name="android:actionBarWidgetTheme">?attr/actionBarWidgetTheme</item>
+        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+        <item name="actionBarSize">?android:attr/actionBarSize</item>
+        <item name="actionBarWidgetTheme">@null</item>
+        <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
+        <item name="buttonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+        <item name="buttonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="dividerHorizontal">?android:attr/dividerHorizontal</item>
+        <item name="dividerVertical">?android:attr/dividerVertical</item>
+        <item name="listPreferredItemHeight">?android:attr/listPreferredItemHeight</item>
+        <item name="listPreferredItemHeightLarge">?android:attr/listPreferredItemHeightLarge</item>
+        <item name="listPreferredItemHeightSmall">?android:attr/listPreferredItemHeightSmall</item>
+        <item name="listPreferredItemPaddingLeft">?android:attr/listPreferredItemPaddingLeft</item>
+        <item name="listPreferredItemPaddingRight">?android:attr/listPreferredItemPaddingRight</item>
+        <item name="selectableItemBackground">?android:attr/selectableItemBackground</item>
+        <item name="windowActionBar">?android:attr/windowActionBar</item>
+    </style>
+</resources>

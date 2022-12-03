@@ -18,8 +18,7 @@ for file in out:
             for keyword in keywords:
                 if file.read_text().find(keyword) != -1:
                     keywordFound = True
-                else:
-                    keywordFound = False
+                    break
 
             if keywordFound:
                 for keyword in keywords:
