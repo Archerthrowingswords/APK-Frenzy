@@ -21,7 +21,6 @@ for file in out:
                     break
 
             if keywordFound:
-                for keyword in keywords:
                     for line in readfile:
                         linecount += 1
                         for keyword in keywords:
