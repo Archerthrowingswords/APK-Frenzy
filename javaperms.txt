@@ -1,128 +1,8 @@
-out\sources\android\support\annotation\AnimatorRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\AnimRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\AnyRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\ArrayRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\AttrRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\BoolRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\ColorRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\DimenRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\DrawableRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\FractionRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\IdRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\IntDef.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\IntegerRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\InterpolatorRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\LayoutRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\MenuRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\NonNull.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\Nullable.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\PluralsRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\RawRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\StringDef.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\StringRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\StyleableRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\StyleRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\annotation\XmlRes.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\BuildConfig.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompat.java
 No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompatIcs.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\accessibilityservice\AccessibilityServiceInfoCompatJellyBeanMr2.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\ActionBarDrawerToggle.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\ActionBarDrawerToggleHoneycomb.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\ActionBarDrawerToggleJellybeanMR2.java
 No keywords found
 -----------------------------------------------------------
 
@@ -134,27 +14,11 @@ out\sources\android\support\v4\app\ActivityCompatHoneycomb.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\app\ActivityCompatJB.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\ActivityOptionsCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\ActivityOptionsCompatJB.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\app\BackStackRecord.java
 No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\BackStackState.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\BundleUtil.java
 No keywords found
 -----------------------------------------------------------
 
@@ -167,10 +31,6 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\FragmentActivity.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\FragmentContainer.java
 No keywords found
 -----------------------------------------------------------
 
@@ -198,15 +58,7 @@ out\sources\android\support\v4\app\FragmentStatePagerAdapter.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\app\FragmentTabHost.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\app\FragmentTransaction.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\INotificationSideChannel.java
 No keywords found
 -----------------------------------------------------------
 
@@ -234,31 +86,7 @@ out\sources\android\support\v4\app\NoSaveStateFrameLayout.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\app\NotificationBuilderWithActions.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationBuilderWithBuilderAccessor.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\app\NotificationCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationCompatApi20.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationCompatBase.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationCompatExtras.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationCompatGingerbread.java
 No keywords found
 -----------------------------------------------------------
 
@@ -271,42 +99,6 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\NotificationCompatJellybean.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationCompatSideChannelService.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationManagerCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationManagerCompatEclair.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\NotificationManagerCompatIceCreamSandwich.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\RemoteInput.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\RemoteInputCompatApi20.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\RemoteInputCompatBase.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\app\RemoteInputCompatJellybean.java
 No keywords found
 -----------------------------------------------------------
 
@@ -350,10 +142,6 @@ out\sources\android\support\v4\content\ContextCompat.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\content\ContextCompatFroyo.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\content\ContextCompatHoneycomb.java
 No keywords found
 -----------------------------------------------------------
@@ -362,27 +150,11 @@ out\sources\android\support\v4\content\ContextCompatJellybean.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\content\ContextCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\content\CursorLoader.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\content\FileProvider.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\content\IntentCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\content\IntentCompatHoneycomb.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\content\IntentCompatIcsMr1.java
 No keywords found
 -----------------------------------------------------------
 
@@ -398,71 +170,11 @@ out\sources\android\support\v4\content\ModernAsyncTask.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\content\WakefulBroadcastReceiver.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\content\pm\ActivityInfoCompat.java
 No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\database\DatabaseUtilsCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\graphics\drawable\DrawableCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\graphics\drawable\DrawableCompatHoneycomb.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\graphics\drawable\DrawableCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\hardware\display\DisplayManagerCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\hardware\display\DisplayManagerJellybeanMr1.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\internal\view\SupportMenu.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\internal\view\SupportMenuItem.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\internal\view\SupportSubMenu.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\media\TransportController.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\media\TransportMediator.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\media\TransportMediatorCallback.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\media\TransportMediatorJellybeanMR2.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\media\TransportPerformer.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\media\TransportStateListener.java
 No keywords found
 -----------------------------------------------------------
 
@@ -490,14 +202,6 @@ out\sources\android\support\v4\net\TrafficStatsCompatIcs.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\os\EnvironmentCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\os\EnvironmentCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\os\ParcelableCompat.java
 No keywords found
 -----------------------------------------------------------
@@ -514,54 +218,6 @@ out\sources\android\support\v4\os\ParcelableCompatCreatorHoneycombMR2Stub.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\print\PrintHelper.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\print\PrintHelperKitkat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\text\BidiFormatter.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\text\ICUCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\text\ICUCompatIcs.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\text\TextDirectionHeuristicCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\text\TextDirectionHeuristicsCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\text\TextUtilsCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\util\ArrayMap.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\util\AtomicFile.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\util\CircularArray.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\util\ContainerHelpers.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\util\DebugUtils.java
 No keywords found
 -----------------------------------------------------------
@@ -575,18 +231,6 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\util\LruCache.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\util\MapCollections.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\util\Pools.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\util\SimpleArrayMap.java
 No keywords found
 -----------------------------------------------------------
 
@@ -610,39 +254,11 @@ out\sources\android\support\v4\view\AccessibilityDelegateCompatJellyBean.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\view\ActionProvider.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\GestureDetectorCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\GravityCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\GravityCompatJellybeanMr1.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\view\KeyEventCompat.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\view\KeyEventCompatEclair.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\view\KeyEventCompatHoneycomb.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\MarginLayoutParamsCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\MarginLayoutParamsCompatJellybeanMr1.java
 No keywords found
 -----------------------------------------------------------
 
@@ -655,10 +271,6 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\view\MenuItemCompatHoneycomb.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\MenuItemCompatIcs.java
 No keywords found
 -----------------------------------------------------------
 
@@ -686,14 +298,6 @@ out\sources\android\support\v4\view\PagerTitleStripIcs.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\view\ScaleGestureDetectorCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ScaleGestureDetectorCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\view\VelocityTrackerCompat.java
 No keywords found
 -----------------------------------------------------------
@@ -703,10 +307,6 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\view\ViewCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewCompatEclairMr1.java
 No keywords found
 -----------------------------------------------------------
 
@@ -726,14 +326,6 @@ out\sources\android\support\v4\view\ViewCompatJB.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\view\ViewCompatJellybeanMr1.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\view\ViewConfigurationCompat.java
 No keywords found
 -----------------------------------------------------------
@@ -746,51 +338,11 @@ out\sources\android\support\v4\view\ViewGroupCompat.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\view\ViewGroupCompatHC.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\view\ViewGroupCompatIcs.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\view\ViewGroupCompatJellybeanMR2.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\view\ViewPager.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewParentCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewParentCompatICS.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewPropertyAnimatorCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewPropertyAnimatorCompatICS.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewPropertyAnimatorCompatJB.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewPropertyAnimatorCompatJellybeanMr2.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\ViewPropertyAnimatorListener.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\WindowCompat.java
 No keywords found
 -----------------------------------------------------------
 
@@ -822,23 +374,11 @@ out\sources\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatJel
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatJellybeanMr2.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\accessibility\AccessibilityNodeInfoCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\view\accessibility\AccessibilityNodeProviderCompat.java
 No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\view\accessibility\AccessibilityNodeProviderCompatJellyBean.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\view\accessibility\AccessibilityNodeProviderCompatKitKat.java
 No keywords found
 -----------------------------------------------------------
 
@@ -858,27 +398,11 @@ out\sources\android\support\v4\view\accessibility\AccessibilityRecordCompatJelly
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\widget\AutoScrollHelper.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\BakedBezierInterpolator.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\ContentLoadingProgressBar.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\widget\CursorAdapter.java
 No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\widget\CursorFilter.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\DrawerLayout.java
 No keywords found
 -----------------------------------------------------------
 
@@ -890,39 +414,11 @@ out\sources\android\support\v4\widget\EdgeEffectCompatIcs.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\widget\ExploreByTouchHelper.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\ListPopupWindowCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\ListPopupWindowCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\ListViewAutoScrollHelper.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\PopupMenuCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\PopupMenuCompatKitKat.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\widget\ResourceCursorAdapter.java
 No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\widget\ScrollerCompat.java
-No keywords found
------------------------------------------------------------
-
-out\sources\android\support\v4\widget\ScrollerCompatGingerbread.java
 No keywords found
 -----------------------------------------------------------
 
@@ -938,336 +434,807 @@ out\sources\android\support\v4\widget\SearchViewCompatHoneycomb.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\widget\SearchViewCompatIcs.java
-No keywords found
------------------------------------------------------------
-
 out\sources\android\support\v4\widget\SimpleCursorAdapter.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\widget\SlidingPaneLayout.java
+out\sources\com\android\internal\telephony\ITelephony.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\widget\SwipeProgressBar.java
+out\sources\com\example\androiddefender2\BlackList.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\widget\SwipeRefreshLayout.java
+out\sources\com\example\androiddefender2\BuildConfig.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v4\widget\ViewDragHelper.java
+out\sources\com\example\androiddefender2\BySupportActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBar.java
+out\sources\com\example\androiddefender2\ByWithScanActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarActivity.java
+out\sources\com\example\androiddefender2\CustomActGroup.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarActivityDelegate.java
+out\sources\com\example\androiddefender2\DBHelper.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarActivityDelegateApi20.java
+out\sources\com\example\androiddefender2\DefenderApplication.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarActivityDelegateBase.java
+out\sources\com\example\androiddefender2\DefenderAppWidgetProvider.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarActivityDelegateHC.java
+out\sources\com\example\androiddefender2\HomeActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarActivityDelegateICS.java
+out\sources\com\example\androiddefender2\MainActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarActivityDelegateJB.java
+out\sources\com\example\androiddefender2\NumbersList.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarActivityDelegateJBMR2.java
+out\sources\com\example\androiddefender2\PayFormActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarImplBase.java
+out\sources\com\example\androiddefender2\PrivacyActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarImplHC.java
+out\sources\com\example\androiddefender2\R.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarImplICS.java
+out\sources\com\example\androiddefender2\ScanActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarImplJB.java
+out\sources\com\example\androiddefender2\ScanningActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\app\ActionBarImplJBMR2.java
+out\sources\com\example\androiddefender2\SettingsActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\appcompat\BuildConfig.java
+out\sources\com\example\androiddefender2\SingleScanActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\appcompat\R.java
+out\sources\com\example\androiddefender2\SupportActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\ActionBarPolicy.java
+out\sources\com\example\androiddefender2\UpdateActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\ActionModeWrapper.java
+out\sources\com\example\androiddefender2\VirusInfoDialogActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\ActionModeWrapperJB.java
+out\sources\com\j256\ormlite\android\AndroidCompiledStatement.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\SupportMenuInflater.java
+out\sources\com\j256\ormlite\android\AndroidConnectionSource.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\ActionMenuItem.java
+out\sources\com\j256\ormlite\android\AndroidDatabaseConnection.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\ActionMenuItemView.java
+out\sources\com\j256\ormlite\android\AndroidDatabaseResults.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\ActionMenuPresenter.java
+out\sources\com\j256\ormlite\android\AndroidLog.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\ActionMenuView.java
+out\sources\com\j256\ormlite\android\DatabaseTableConfigUtil.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\BaseMenuPresenter.java
+out\sources\com\j256\ormlite\android\apptools\OpenHelperManager.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\BaseMenuWrapper.java
+out\sources\com\j256\ormlite\android\apptools\OrmLiteBaseActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\BaseWrapper.java
+out\sources\com\j256\ormlite\android\apptools\OrmLiteBaseActivityGroup.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\ExpandedMenuView.java
+out\sources\com\j256\ormlite\android\apptools\OrmLiteBaseListActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\ListMenuItemView.java
+out\sources\com\j256\ormlite\android\apptools\OrmLiteBaseService.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\ListMenuPresenter.java
+out\sources\com\j256\ormlite\android\apptools\OrmLiteBaseTabActivity.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuBuilder.java
+out\sources\com\j256\ormlite\android\apptools\OrmLiteConfigUtil.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuDialogHelper.java
+out\sources\com\j256\ormlite\android\apptools\OrmLiteSqliteOpenHelper.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuItemImpl.java
+out\sources\com\j256\ormlite\dao\BaseDaoImpl.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuItemWrapperICS.java
+out\sources\com\j256\ormlite\dao\BaseForeignCollection.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuItemWrapperJB.java
+out\sources\com\j256\ormlite\dao\CloseableIterable.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuPopupHelper.java
+out\sources\com\j256\ormlite\dao\CloseableIterator.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuPresenter.java
+out\sources\com\j256\ormlite\dao\CloseableWrappedIterable.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuView.java
+out\sources\com\j256\ormlite\dao\CloseableWrappedIterableImpl.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuWrapperFactory.java
+out\sources\com\j256\ormlite\dao\Dao.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\MenuWrapperICS.java
+out\sources\com\j256\ormlite\dao\DaoManager.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\SubMenuBuilder.java
+out\sources\com\j256\ormlite\dao\EagerForeignCollection.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\view\menu\SubMenuWrapperICS.java
+out\sources\com\j256\ormlite\dao\ForeignCollection.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\AbsActionBarView.java
+out\sources\com\j256\ormlite\dao\GenericRawResults.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\AbsSpinnerICS.java
+out\sources\com\j256\ormlite\dao\LazyForeignCollection.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ActionBarContainer.java
+out\sources\com\j256\ormlite\dao\LruObjectCache.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ActionBarContextView.java
+out\sources\com\j256\ormlite\dao\ObjectCache.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ActionBarOverlayLayout.java
+out\sources\com\j256\ormlite\dao\RawRowMapper.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ActionBarView.java
+out\sources\com\j256\ormlite\dao\ReferenceObjectCache.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ActivityChooserModel.java
+out\sources\com\j256\ormlite\dao\RuntimeExceptionDao.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ActivityChooserView.java
+out\sources\com\j256\ormlite\db\BaseDatabaseType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\AdapterViewICS.java
+out\sources\com\j256\ormlite\db\BaseSqliteDatabaseType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\CompatTextView.java
+out\sources\com\j256\ormlite\db\DatabaseType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\LinearLayoutICS.java
+out\sources\com\j256\ormlite\db\SqliteAndroidDatabaseType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ListPopupWindow.java
+out\sources\com\j256\ormlite\field\BaseFieldConverter.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\NativeActionModeAwareLayout.java
+out\sources\com\j256\ormlite\field\DatabaseField.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ProgressBarICS.java
+out\sources\com\j256\ormlite\field\DatabaseFieldConfig.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\ScrollingTabContainerView.java
+out\sources\com\j256\ormlite\field\DatabaseFieldConfigLoader.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\internal\widget\SpinnerICS.java
+out\sources\com\j256\ormlite\field\DataPersister.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\view\ActionMode.java
+out\sources\com\j256\ormlite\field\DataPersisterManager.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\view\CollapsibleActionView.java
+out\sources\com\j256\ormlite\field\DataType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\widget\PopupMenu.java
+out\sources\com\j256\ormlite\field\FieldConverter.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\widget\SearchView.java
+out\sources\com\j256\ormlite\field\FieldType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\widget\ShareActionProvider.java
+out\sources\com\j256\ormlite\field\ForeignCollectionField.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\android\support\v7\widget\SuggestionsAdapter.java
+out\sources\com\j256\ormlite\field\SqlType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\BackgroundSocket.java
+out\sources\com\j256\ormlite\field\types\BaseDataType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\BeNews.java
+out\sources\com\j256\ormlite\field\types\BaseDateType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\BeNewsArrayAdapter.java
+out\sources\com\j256\ormlite\field\types\BaseEnumType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\BeNewsFragList.java
+out\sources\com\j256\ormlite\field\types\BigDecimalNumericType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\BitmapHelper.java
+out\sources\com\j256\ormlite\field\types\BigDecimalStringType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\BootManager.java
+out\sources\com\j256\ormlite\field\types\BigIntegerType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\BsonBridge.java
+out\sources\com\j256\ormlite\field\types\BooleanObjectType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\BuildConfig.java
+out\sources\com\j256\ormlite\field\types\BooleanType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\DetailFragView.java
+out\sources\com\j256\ormlite\field\types\ByteArrayType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\DetailFragViewImage.java
+out\sources\com\j256\ormlite\field\types\ByteObjectType.java
 No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\PullIntentService.java
-Line 34 - int perm = getApplicationContext().checkCallingPermission("android.permission.INTERNET");
+out\sources\com\j256\ormlite\field\types\ByteType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\CharacterObjectType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\CharType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\DateLongType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\DateStringType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\DateTimeType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\DateType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\DoubleObjectType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\DoubleType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\EnumIntegerType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\EnumStringType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\FloatObjectType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\FloatType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\IntegerObjectType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\IntType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\LongObjectType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\LongStringType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\LongType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\SerializableType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\ShortObjectType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\ShortType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\SqlDateType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\StringBytesType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\StringType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\TimeStampType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\UuidType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\field\types\VoidType.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\logger\LocalLog.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\logger\Log.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\logger\Logger.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\logger\LoggerFactory.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\misc\BaseDaoEnabled.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\misc\JavaxPersistence.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\misc\SqlExceptionUtil.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\misc\TransactionManager.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\misc\VersionUtils.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\ArgumentHolder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\BaseArgumentHolder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\ColumnArg.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\DeleteBuilder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\GenericRowMapper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\NullArgHolder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\PreparedDelete.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\PreparedQuery.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\PreparedStmt.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\PreparedUpdate.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\QueryBuilder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\RawResultsImpl.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\RawRowMapperImpl.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\SelectArg.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\SelectIterator.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\StatementBuilder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\StatementExecutor.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\ThreadLocalSelectArg.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\UpdateBuilder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\Where.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\BaseMappedQuery.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\BaseMappedStatement.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\MappedCreate.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\MappedDelete.java
+No keywords found
+-----------------------------------------------------------
 
-Line 38 - int perm2 = getApplicationContext().checkCallingPermission("android.permission.READ_PHONE_STATE\"");
+out\sources\com\j256\ormlite\stmt\mapped\MappedDeleteCollection.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\MappedPreparedStmt.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\MappedQueryForId.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\MappedRefresh.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\MappedUpdate.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\mapped\MappedUpdateId.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\BaseComparison.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\Between.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\Clause.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\Comparison.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\Exists.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\In.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\InSubQuery.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\IsNotNull.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\IsNull.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\ManyClause.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\NeedsFutureClause.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\Not.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\OrderBy.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\Raw.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\SetExpression.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\SetValue.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\stmt\query\SimpleComparison.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\support\BaseConnectionSource.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\support\CompiledStatement.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\support\ConnectionSource.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\support\DatabaseConnection.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\support\DatabaseResults.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\support\GeneratedKeyHolder.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\table\DatabaseTable.java
+No keywords found
+-----------------------------------------------------------
 
-Line 42 - int perm3 = getApplicationContext().checkCallingPermission("android.permission.WRITE_EXTERNAL_STORAGE");
+out\sources\com\j256\ormlite\table\DatabaseTableConfig.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\table\DatabaseTableConfigLoader.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\table\ObjectFactory.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\table\TableInfo.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\j256\ormlite\table\TableUtils.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\AVService.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\CallReceiver.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\FilesWorker.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\MemoryFunctions.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\MessageReceiver.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\NetworkAlarm.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\PreparerWirusesSkaner.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\ServiceStarter.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\SignaturesWorker.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\SkanerSystemWorker.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\SystemFunctions.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\TimeAlarm.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\androiddefender2\VersionWorker.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\helper\HelperFactory.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\helper\ORMDatabaseHelper.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\helper\DAO\ScanHistoryDAO.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\helper\DAO\VirusesIndexDAO.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\helper\Tables\ScanHistory.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\com\worker\helper\Tables\VirusesIndex.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\designer\TabsOperation.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\system\AppSingleton.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\system\Communicator.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\system\DataClientActivity.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\system\ThreadControl.java
+No keywords found
+-----------------------------------------------------------
+
+out\sources\system\VirusObject.java
+No keywords found
+-----------------------------------------------------------
 
+out\sources\system\XMLParser.java
+No keywords found
 -----------------------------------------------------------
 
-out\sources\org\benews\R.java
+out\sources\ts\scan\service\IScanService.java
 No keywords found
 -----------------------------------------------------------
 

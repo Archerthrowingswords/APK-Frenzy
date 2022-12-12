@@ -1,6 +1,7 @@
 import typer
 import os
 from pathlib import Path
+import shutil #fairly certain this works on linux
 # importing element tree
 # under the alias of ET
 import xml.etree.ElementTree as ET
@@ -80,23 +81,26 @@ def extractJavaPerms():
 def main(f: Path = typer.Option(default=True, resolve_path=True,)):
     apkname = os.path.basename(f)
     if f is None:
-        print("No config file")
+        print("No APK file")
         raise typer.Abort()
     if f.is_file():
         if apkname.endswith(".apk"):
             print("------------------------------------------------------------------------------")
             print(f"is APK: {apkname}")
             os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+            # Remove existing out directory from previous scan
+            if(os.path.exists("out")):
+                shutil.rmtree("out")
             os.system(f"jadx -d out /{f}")
             extractManifestPerms()
             extractJavaPerms()
         else:
             text = f.read_text()
             print(f"File is not an apk: {text}")
-    elif f.is_dir():
-        print("Config is a directory, will use all its config files")
+    # elif f.is_dir():
+    #     print("Config is a directory, will use all its config files")
     elif not f.exists():
-        print("The config doesn't exist")
+        print("The APK doesn't exist")
 
     
  
