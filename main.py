@@ -35,7 +35,7 @@ def extractManifestPerms():
             for i in range(len(permissions_list)):
                 if (permissions_list[i] in critical_permissions_list):
                     found_crit_perms.append(permissions_list[i])
-            print(found_crit_perms)
+            print(found_crit_perms, " <- crit perms")
             return permissions_list
 
 def extractJavaPerms(): 
@@ -103,44 +103,175 @@ def detectAccessibilityUI():
 
             # Searching through Java files
 
-            if file.name.endswith(".java"): 
-                keywordFound = False
-                optionalKeywordFound = False
+            keywordFound = False
+            optionalKeywordFound = False
 
-                with open(file) as readfile:
-                    for javaKeyword in javaKeywords:
-                        if file.read_text().find(javaKeyword) != -1:
-                            keywordFound = True
-                            break
+            with open(file) as readfile:
+                for javaKeyword in javaKeywords:
+                    if file.read_text().find(javaKeyword) != -1:
+                        keywordFound = True
+                        break
 
-                    for javaKeyword in javaOptionalKeywords:
-                        if file.read_text().find(javaKeyword) != -1:
-                            optionalKeywordFound = True
-                            break
-                        
-                    if keywordFound:
-                            for line in readfile:
-                                for javaKeyword in javaKeywords:
-                                    if line.find(javaKeyword) != -1:
-                                        javaKeywords.remove(javaKeyword)
-                                        print(javaKeywords)
-                                        break
+                for javaKeyword in javaOptionalKeywords:
+                    if file.read_text().find(javaKeyword) != -1:
+                        optionalKeywordFound = True
+                        break
+                    
+                if keywordFound:
+                        for line in readfile:
+                            for javaKeyword in javaKeywords:
+                                if line.find(javaKeyword) != -1:
+                                    javaKeywords.remove(javaKeyword)
+                                    print(javaKeywords)
+                                    break
 
-                    if optionalKeywordFound:
-                            for line in readfile:
-                                for javaKeyword in javaOptionalKeywords:
-                                    if line.find(javaKeyword) != -1:
-                                        javaFoundOptionalKeywords.append(javaKeyword)
-                                        break
+                if optionalKeywordFound:
+                        for line in readfile:
+                            for javaKeyword in javaOptionalKeywords:
+                                if line.find(javaKeyword) != -1:
+                                    javaFoundOptionalKeywords.append(javaKeyword)
+                                    break
 
     if (manifestKeywords == [] and javaKeywords == [] and (foundOptionalKeywords != [] or javaOptionalKeywords != [])):
-        print("Malicious, found optional keywords")
+        print("Malicious - Accessibility, found optional keywords")
         if (foundOptionalKeywords != []):
             print(foundOptionalKeywords)
         if (javaOptionalKeywords != []):
             print(javaOptionalKeywords)
     elif (manifestKeywords == [] and javaKeywords == []):
-        print("Malicious")
+        print("Malicious - Accessibility")
+
+def detectCall():
+    out = Path(directory).rglob('*')
+
+    manifestKeywords = ["android.permission.CALL_PHONE"]
+    optionalManifestKeyword = []
+    foundOptionalKeywords = []
+
+    javaKeywords = ["Intent.ACTION_DIAL"]
+    javaOptionalKeywords = []
+    javaFoundOptionalKeywords = []
+
+    # Searching through Manifest XML file
+    for file in out:
+        if file.name.endswith("Manifest.xml"):
+            with open(file) as manifestFile:
+                for line in manifestFile:
+                    for manifestKeyword in manifestKeywords:
+                        if line.find(manifestKeyword) != -1:
+                            manifestKeywords.remove(manifestKeyword)
+                    for manifestKeyword in optionalManifestKeyword:
+                        if line.find(manifestKeyword) != -1:
+                            foundOptionalKeywords.append(manifestKeyword)
+                            optionalManifestKeyword.remove(manifestKeyword)
+
+        elif file.name.endswith(".java"): 
+
+            # Searching through Java files
+
+            keywordFound = False
+            optionalKeywordFound = False
+
+            with open(file) as readfile:
+                for javaKeyword in javaKeywords:
+                    if file.read_text().find(javaKeyword) != -1:
+                        keywordFound = True
+                        break
+
+                for javaKeyword in javaOptionalKeywords:
+                    if file.read_text().find(javaKeyword) != -1:
+                        optionalKeywordFound = True
+                        break
+                    
+                if keywordFound:
+                        for line in readfile:
+                            for javaKeyword in javaKeywords:
+                                if line.find(javaKeyword) != -1:
+                                    javaKeywords.remove(javaKeyword)
+                                    print(javaKeywords)
+                                    break
+
+                if optionalKeywordFound:
+                        for line in readfile:
+                            for javaKeyword in javaOptionalKeywords:
+                                if line.find(javaKeyword) != -1:
+                                    javaFoundOptionalKeywords.append(javaKeyword)
+                                    break
+
+    if (manifestKeywords == [] and javaKeywords == [] and (foundOptionalKeywords != [] or javaOptionalKeywords != [])):
+        print("Malicious - Call, found optional keywords")
+        if (foundOptionalKeywords != []):
+            print(foundOptionalKeywords)
+        if (javaOptionalKeywords != []):
+            print(javaOptionalKeywords)
+    elif (manifestKeywords == [] and javaKeywords == []):
+        print("Malicious - Call")
+
+def detectLogging():
+    out = Path(directory).rglob('*')
+
+    manifestKeywords = []
+    optionalManifestKeyword = []
+    foundOptionalKeywords = []
+
+    javaKeywords = []
+    javaOptionalKeywords = ["Logger.", "Log."]
+    javaFoundOptionalKeywords = []
+
+    # Searching through Manifest XML file
+    for file in out:
+        if file.name.endswith("Manifest.xml"):
+            with open(file) as manifestFile:
+                for line in manifestFile:
+                    for manifestKeyword in manifestKeywords:
+                        if line.find(manifestKeyword) != -1:
+                            manifestKeywords.remove(manifestKeyword)
+                    for manifestKeyword in optionalManifestKeyword:
+                        if line.find(manifestKeyword) != -1:
+                            foundOptionalKeywords.append(manifestKeyword)
+                            optionalManifestKeyword.remove(manifestKeyword)
+
+        elif file.name.endswith(".java"): 
+
+            # Searching through Java files
+
+            keywordFound = False
+            optionalKeywordFound = False
+
+            with open(file) as readfile:
+                for javaKeyword in javaKeywords:
+                    if file.read_text().find(javaKeyword) != -1:
+                        keywordFound = True
+                        break
+
+                for javaKeyword in javaOptionalKeywords:
+                    if file.read_text().find(javaKeyword) != -1:
+                        optionalKeywordFound = True
+                        break
+                    
+                if keywordFound:
+                        for line in readfile:
+                            for javaKeyword in javaKeywords:
+                                if line.find(javaKeyword) != -1:
+                                    javaKeywords.remove(javaKeyword)
+                                    print(javaKeywords)
+                                    break
+
+                if optionalKeywordFound:
+                        for line in readfile:
+                            for javaKeyword in javaOptionalKeywords:
+                                if line.find(javaKeyword) != -1:
+                                    javaFoundOptionalKeywords.append(javaKeyword)
+                                    break
+
+    if (manifestKeywords == [] and javaKeywords == [] and (foundOptionalKeywords != [] or javaOptionalKeywords != [])):
+        print("Malicious - Logging, found optional keywords")
+        if (foundOptionalKeywords != []):
+            print(foundOptionalKeywords)
+        if (javaOptionalKeywords != []):
+            print(javaOptionalKeywords)
+    elif (manifestKeywords == [] and javaKeywords == []):
+        print("Malicious - Logging")
 
 @app.command()
 def main(f: Path = typer.Option(default=True, resolve_path=True,)):
@@ -160,6 +291,8 @@ def main(f: Path = typer.Option(default=True, resolve_path=True,)):
             extractManifestPerms()
             extractJavaPerms()
             detectAccessibilityUI()
+            detectCall()
+            detectLogging()
         else:
             text = f.read_text()
             print(f"File is not an apk: {text}")

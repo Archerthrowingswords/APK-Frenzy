@@ -75,7 +75,8 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\NavUtils.java
-No keywords found
+Line 50 - upIntent.addFlags(67108864);
+
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\NavUtilsJB.java
@@ -107,7 +108,94 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\ShareCompat.java
-No keywords found
+Line 38 - item.setIntent(shareIntent.createChooserIntent());
+
+Line 81 - ShareCompatICS.configureMenuItem(item, shareIntent.getActivity(), shareIntent.getIntent());
+
+Line 83 - item.setIntent(shareIntent.createChooserIntent());
+
+Line 162 - this.mIntent.putExtra(ShareCompat.EXTRA_CALLING_PACKAGE, launchingActivity.getPackageName());
+
+Line 163 - this.mIntent.putExtra(ShareCompat.EXTRA_CALLING_ACTIVITY, launchingActivity.getComponentName());
+
+Line 164 - this.mIntent.addFlags(524288);
+
+Line 184 - boolean isSendMultiple = this.mIntent.getAction().equals("android.intent.action.SEND_MULTIPLE");
+
+Line 186 - this.mIntent.setAction("android.intent.action.SEND");
+
+Line 188 - this.mIntent.putExtra("android.intent.extra.STREAM", this.mStreams.get(0));
+
+Line 190 - this.mIntent.removeExtra("android.intent.extra.STREAM");
+
+Line 195 - this.mIntent.setAction("android.intent.action.SEND_MULTIPLE");
+
+Line 197 - this.mIntent.putParcelableArrayListExtra("android.intent.extra.STREAM", this.mStreams);
+
+Line 199 - this.mIntent.removeExtra("android.intent.extra.STREAM");
+
+Line 210 - String[] currentAddresses = this.mIntent.getStringArrayExtra(extra);
+
+Line 217 - this.mIntent.putExtra(extra, finalAddresses);
+
+Line 233 - return Intent.createChooser(getIntent(), this.mChooserTitle);
+
+Line 250 - this.mIntent.setType(mimeType);
+
+Line 255 - this.mIntent.putExtra("android.intent.extra.TEXT", text);
+
+Line 260 - this.mIntent.putExtra(IntentCompat.EXTRA_HTML_TEXT, htmlText);
+
+Line 261 - if (!this.mIntent.hasExtra("android.intent.extra.TEXT")) {
+
+Line 268 - if (!this.mIntent.getAction().equals("android.intent.action.SEND")) {
+
+Line 269 - this.mIntent.setAction("android.intent.action.SEND");
+
+Line 272 - this.mIntent.putExtra("android.intent.extra.STREAM", streamUri);
+
+Line 277 - Uri currentStream = (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
+
+Line 285 - this.mIntent.removeExtra("android.intent.extra.STREAM");
+
+Line 296 - this.mIntent.putExtra("android.intent.extra.EMAIL", addresses);
+
+Line 314 - this.mIntent.putExtra("android.intent.extra.CC", addresses);
+
+Line 332 - this.mIntent.putExtra("android.intent.extra.BCC", addresses);
+
+Line 350 - this.mIntent.putExtra("android.intent.extra.SUBJECT", subject);
+
+Line 376 - String action = this.mIntent.getAction();
+
+Line 381 - return this.mIntent.getAction().equals("android.intent.action.SEND");
+
+Line 385 - return this.mIntent.getAction().equals("android.intent.action.SEND_MULTIPLE");
+
+Line 389 - return this.mIntent.getType();
+
+Line 393 - return this.mIntent.getCharSequenceExtra("android.intent.extra.TEXT");
+
+Line 397 - String result = this.mIntent.getStringExtra(IntentCompat.EXTRA_HTML_TEXT);
+
+Line 412 - return (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
+
+Line 417 - this.mStreams = this.mIntent.getParcelableArrayListExtra("android.intent.extra.STREAM");
+
+Line 423 - return (Uri) this.mIntent.getParcelableExtra("android.intent.extra.STREAM");
+
+Line 430 - this.mStreams = this.mIntent.getParcelableArrayListExtra("android.intent.extra.STREAM");
+
+Line 435 - return this.mIntent.hasExtra("android.intent.extra.STREAM") ? 1 : 0;
+
+Line 439 - return this.mIntent.getStringArrayExtra("android.intent.extra.EMAIL");
+
+Line 443 - return this.mIntent.getStringArrayExtra("android.intent.extra.CC");
+
+Line 447 - return this.mIntent.getStringArrayExtra("android.intent.extra.BCC");
+
+Line 451 - return this.mIntent.getStringExtra("android.intent.extra.SUBJECT");
+
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\ShareCompatICS.java
@@ -123,15 +211,22 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\TaskStackBuilder.java
-No keywords found
+Line 35 - topIntent.addFlags(268435456);
+
+Line 36 - return PendingIntent.getActivity(context, requestCode, topIntent, flags);
+
+Line 148 - topIntent.addFlags(268435456);
+
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\TaskStackBuilderHoneycomb.java
-No keywords found
+Line 9 - return PendingIntent.getActivities(context, requestCode, intents, flags);
+
 -----------------------------------------------------------
 
 out\sources\android\support\v4\app\TaskStackBuilderJellybean.java
-No keywords found
+Line 13 - return PendingIntent.getActivities(context, requestCode, intents, flags, options);
+
 -----------------------------------------------------------
 
 out\sources\android\support\v4\content\AsyncTaskLoader.java
@@ -467,11 +562,19 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\com\example\androiddefender2\DefenderApplication.java
-No keywords found
+Line 81 - shortcutIntent.putExtra("android.intent.extra.shortcut.INTENT", intentL);
+
+Line 82 - shortcutIntent.putExtra("android.intent.extra.shortcut.NAME", getResources().getString(R.string.app_name));
+
+Line 83 - shortcutIntent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE", Intent.ShortcutIconResource.fromContext(getApplicationContext(), R.drawable.ic_launcher));
+
+Line 84 - shortcutIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+
 -----------------------------------------------------------
 
 out\sources\com\example\androiddefender2\DefenderAppWidgetProvider.java
-No keywords found
+Line 180 - return PendingIntent.getBroadcast(context, 0, intent, 268435456);
+
 -----------------------------------------------------------
 
 out\sources\com\example\androiddefender2\HomeActivity.java
@@ -503,7 +606,10 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\com\example\androiddefender2\ScanningActivity.java
-No keywords found
+Line 83 - this.ScanApp = callingIntent.getBooleanExtra("scanApplication", false);
+
+Line 84 - this.ScanSD = callingIntent.getBooleanExtra("scanSDCard", false);
+
 -----------------------------------------------------------
 
 out\sources\com\example\androiddefender2\SettingsActivity.java
@@ -511,7 +617,10 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\com\example\androiddefender2\SingleScanActivity.java
-No keywords found
+Line 100 - this.ScanApp = callingIntent.getBooleanExtra("scanApplication", false);
+
+Line 101 - this.ScanSD = callingIntent.getBooleanExtra("scanSDCard", false);
+
 -----------------------------------------------------------
 
 out\sources\com\example\androiddefender2\SupportActivity.java
@@ -1131,7 +1240,10 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\com\worker\androiddefender2\AVService.java
-No keywords found
+Line 48 - PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 268435456);
+
+Line 55 - PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 268435456);
+
 -----------------------------------------------------------
 
 out\sources\com\worker\androiddefender2\CallReceiver.java
@@ -1171,7 +1283,10 @@ No keywords found
 -----------------------------------------------------------
 
 out\sources\com\worker\androiddefender2\SystemFunctions.java
-No keywords found
+Line 56 - PendingIntent contentIntent = PendingIntent.getActivity(cnt, 0, new Intent(cnt, MainActivity.class), 0);
+
+Line 78 - PendingIntent contentIntent = PendingIntent.getActivity(cnt, 0, new Intent(cnt, MainActivity.class), 0);
+
 -----------------------------------------------------------
 
 out\sources\com\worker\androiddefender2\TimeAlarm.java
