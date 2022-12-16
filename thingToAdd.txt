@@ -1,11 +1,11 @@
-extract the permissions and such to a external container, to avoid repeat reading from the files 
-read elf list out all system call
+extract the permissions and such to a external container, to avoid repeat reading from the files (if possible)
+read elf list out all system call (see if will be helpful)
 
-create database 
+create database (luca will do)
 
-catagorise detecitons, into categories like very malicious or possibly malicious
-add a confidence rating
+catagorise detecitons, into categories like very malicious or possibly malicious (luca will do in database)
+add a confidence rating (luca will do)
 
 save hash of file to avoid repeat reading from the files(not nessesary)
 
-make config file if have global avriable
+make config file if have global avriable(not needed yet)
