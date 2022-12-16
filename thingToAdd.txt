@@ -1,0 +1,11 @@
+extract the permissions and such to a external container, to avoid repeat reading from the files 
+read elf list out all system call
+
+create database 
+
+catagorise detecitons, into categories like very malicious or possibly malicious
+add a confidence rating
+
+save hash of file to avoid repeat reading from the files(not nessesary)
+
+make config file if have global avriable
