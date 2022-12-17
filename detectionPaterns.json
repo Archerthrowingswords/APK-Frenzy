@@ -1,0 +1,37 @@
+{
+    
+    "Call Monitoring": {
+        "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.CALL_PHONE", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS" ],
+        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE","android.permission.PROCESS_OUTGOING_CALLS"],
+        "javaKeywords":["android.intent.action.PHONE_STATE"],
+        "javaOptionalKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+  
+    "Accessibility UI Abuse": {
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "canRetrieveWindowContent=\"true\""],
+        "optionalManifestKeywords":["accessibilityEventTypes", "setServiceInfo()"],
+        "javaKeywords":["onAccessibilityEvent"],
+        "javaOptionalKeywords":["Intent(\"android.settings.ACCESSIBILITY_SETTINGS\")"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 50
+    },
+    "Ability to Call": {
+        "manifestKeywords":["android.permission.CALL_PHONE"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["Intent.ACTION_DIAL"],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 10
+    },
+    
+    "SMS Monitoring": {
+        "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.SEND_SMS", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS"],
+        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
+        "javaKeywords":["android.intent.action.PHONE_STATE"],
+        "javaOptionalKeywords":["Logger.", "Log."],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    }
+}
