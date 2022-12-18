@@ -436,17 +436,15 @@ def main(f: Path = typer.Option(default=True, resolve_path=True,)):
         if apkname.endswith(".apk"):
             print("------------------------------------------------------------------------------")
             print(f"is APK: {apkname}")
-            # os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-            # # Remove existing out directory from previous scan
-            # if(os.path.exists("out")):
-            #     shutil.rmtree("out")
-            # os.system(f"jadx -d out /{f}")
+            os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+            # Remove existing out directory from previous scan
+            if(os.path.exists("out")):
+                shutil.rmtree("out")
+            os.system(f"jadx -d out /{f}")
             for patternName in detectionPatterns:
                 # print(patternName)
                 # print(detectionPatterns[patternName])
                 patternDetection(patternName,detectionPatterns[patternName])
-                # detectCallMonitoring()
-            # print(detectedPatterns)
             scanResult()
         else:
             text = f.read_text()
