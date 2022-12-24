@@ -382,12 +382,12 @@ def patternDetection(patternName,patternData):
 
             with open(file) as readfile:
                 for javaKeyword in javaKeywords:
-                    if file.read_text().find(javaKeyword) != -1:
+                    if file.read_text(encoding='ANSI').find(javaKeyword) != -1:
                         keywordFound = True
                         break
 
                 for javaKeyword in javaOptionalKeywords:
-                    if file.read_text().find(javaKeyword) != -1:
+                    if file.read_text(encoding='ANSI').find(javaKeyword) != -1:
                         optionalKeywordFound = True
                         break
                     
