@@ -168,7 +168,7 @@ def patternDetection(patternName,patternData):
 def scanResult():
     if (dangerRating <= 49):rating = "Low"
     elif (dangerRating <= 74):rating = "Medium"
-    elif (dangerRating <= 49):rating = "High"
+    else:rating = "High"
     print("Danger rating scale:\n0-49 Low risk\n50-74: Medium risk\n75-100: High risk")
     print("------------------------------------------------------------------------------")
     if (detectedPatterns == []):
