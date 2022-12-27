@@ -35,6 +35,15 @@
         "dangerRating": 25
     },
 
+    "SMS Send Code": {
+        "manifestKeywords":["android.permission.SEND_SMS"],
+        "optionalManifestKeywords":["android.permission.RECEIVE_SMS"],
+        "javaKeywords":["SmsManager.getDefault()"],
+        "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
     "LocationTracking": {
         "manifestKeywords":["android.permission.ACCESS_FINE_LOCATION", "android.permission. ACCESS_COARSE_LOCATION", "android.permission.INTERNET"],
         "optionalManifestKeywords":["android.permission.ACCESS_BACKGROUND_LOCATION"],
@@ -42,6 +51,43 @@
         "javaOptionalKeywords":["latitude", "longitude"],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
+    },
+
+
+    "Flashlight": {
+        "manifestKeywords":["android.permission.CAMERA"],
+        "optionalManifestKeywords":["android.permission-group.HARDWARE_CONTROLS", "android.permission.FLASHLIGHT", "android.hardware.camera.flash"],
+        "javaKeywords":["cameraManager.setTorchMode"],
+        "javaOptionalKeywords":["Parameters.FLASH_MODE_TORCH", "Camera.open()", "cam.getParameters()", "cam.setParameters", "cam.startPreview"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Camera Usage": {
+        "manifestKeywords":["android.media.action.IMAGE_CAPTURE"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["camera.startPreview()"],
+        "javaOptionalKeywords":["MediaStore.ACTION_IMAGE_CAPTURE", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture()"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Contact Exfiltration": {
+        "manifestKeywords":["android.permission.READ_CONTACTS"],
+        "optionalManifestKeywords":["android.permission.WRITE_CONTACTS"],
+        "javaKeywords":["ContactsContract.Data."],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Gallery Access": {
+        "manifestKeywords":["android.permission.READ_EXTERNAL_STORAGE"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["onActivityResult()"],
+        "javaOptionalKeywords":["Intent.ACTION_PICK", "android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI", "startActivityForResult"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 5
     },
 
     "LaunchingOfOtherApps": {
