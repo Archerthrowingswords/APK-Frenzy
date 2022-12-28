@@ -14,8 +14,21 @@ directory = 'out'
 f = open("detectionPaterns.json")
 detectionPatterns = json.load(f)
 detectedPatterns = []
-manifestFoundOptionalKeywords = []
-javaFoundOptionalKeywords = []
+
+#collection of all pattern keywords
+allManifestKeywords =[]
+allOptionalManifestKeywords = []
+allJavaKeywords = []
+allJavaOptionalKeywords = []
+
+#collection of all found pattern keywords
+allManifestFoundKeywords = []
+allJavaFoundKeywords = []
+allManifestFoundOptionalKeywords = []
+allJavaFoundOptionalKeywords = []
+
+validManifestFoundOptionalKeywords = []
+validJavaFoundOptionalKeywords = []
 
 def checkApkInput(file):
     apkname = os.path.basename(file)
@@ -31,8 +44,6 @@ def checkApkInput(file):
     elif not apkname.endswith(".apk"):
         print(f"File is not an apk")
         raise typer.Abort()
-
-    
 
 def extractManifestPerms():
     #may be updated to be more efficient
@@ -100,30 +111,39 @@ def extractJavaPerms():
     with open("javaperms.txt", "w") as javapermslog:
         javapermslog.write(log)
 
-def patternDetection(patternName,patternData):
+def collectPatterns(detectionPatterns):
+    global allManifestKeywords 
+    global allOptionalManifestKeywords 
+    global allJavaKeywords 
+    global allJavaOptionalKeywords 
+    for patternName in detectionPatterns:
+        patternData = detectionPatterns[patternName]
+        allManifestKeywords.extend(patternData["manifestKeywords"])
+        allOptionalManifestKeywords.extend(patternData["optionalManifestKeywords"])
+        allJavaKeywords.extend(patternData["javaKeywords"])
+        allJavaOptionalKeywords.extend(patternData["javaOptionalKeywords"])
+        
+    #remove duplicates
+    allManifestKeywords= list(set(allManifestKeywords)) 
+    allOptionalManifestKeywords = list(set(allOptionalManifestKeywords))
+    allJavaKeywords= list(set(allJavaKeywords))
+    allJavaOptionalKeywords=list(set(allJavaOptionalKeywords))
+
+def patternDetection():
     out = Path(directory).rglob('*')
-    global dangerRating
-    manifestKeywords = patternData["manifestKeywords"]
-    optionalManifestKeywords = patternData["optionalManifestKeywords"]
-    javaKeywords = patternData["javaKeywords"]
-    javaOptionalKeywords = patternData["javaOptionalKeywords"]
-    tempManifestFoundOptionalKeywords = []
-    tempJavaFoundOptionalKeywords = []
-    #remove already found optional keywords
-    optionalManifestKeywords = list(set(optionalManifestKeywords) - set(manifestFoundOptionalKeywords))
-    javaOptionalKeywords = list(set(javaOptionalKeywords) - set(javaFoundOptionalKeywords))
     # Searching through Manifest XML file
     for file in out:
         if file.name.endswith("Manifest.xml"):
             with open(file) as manifestFile:
                 for line in manifestFile:
-                    for manifestKeyword in manifestKeywords:
+                    for manifestKeyword in allManifestKeywords:
                         if line.find(manifestKeyword) != -1:
-                            manifestKeywords.remove(manifestKeyword)
-                    for manifestKeyword in optionalManifestKeywords:
+                            allManifestFoundKeywords.append(manifestKeyword)
+                            allManifestKeywords.remove(manifestKeyword)
+                    for manifestKeyword in allOptionalManifestKeywords:
                         if line.find(manifestKeyword) != -1:
-                            tempManifestFoundOptionalKeywords.append(manifestKeyword)
-                            optionalManifestKeywords.remove(manifestKeyword)
+                            allManifestFoundOptionalKeywords.append(manifestKeyword)
+                            allOptionalManifestKeywords.remove(manifestKeyword)
             manifestFile.close()
         elif file.name.endswith(".java"): 
 
@@ -133,42 +153,61 @@ def patternDetection(patternName,patternData):
             optionalKeywordFound = False
 
             with open(file, encoding='ansi') as readfile:
-                for javaKeyword in javaKeywords:
+                for javaKeyword in allJavaKeywords:
                     if file.read_text(encoding='ansi').find(javaKeyword) != -1:
                         keywordFound = True
                         break
 
-                for javaKeyword in javaOptionalKeywords:
+                for javaKeyword in allJavaOptionalKeywords:
                     if file.read_text(encoding='ansi').find(javaKeyword) != -1:
                         optionalKeywordFound = True
                         break
                     
                 if keywordFound:
                         for line in readfile:
-                            for javaKeyword in javaKeywords:
+                            for javaKeyword in allJavaKeywords:
                                 if line.find(javaKeyword) != -1:
-                                    javaKeywords.remove(javaKeyword)
+                                    allJavaFoundKeywords.append(javaKeyword)
+                                    allJavaKeywords.remove(javaKeyword)
                                     break
 
                 if optionalKeywordFound:
                         for line in readfile:
-                            for javaKeyword in javaOptionalKeywords:
+                            for javaKeyword in allJavaOptionalKeywords:
                                 if line.find(javaKeyword) != -1:
-                                    tempJavaFoundOptionalKeywords.append(javaKeyword)
-                                    javaOptionalKeywords.remove(javaKeyword)
+                                    allJavaFoundOptionalKeywords.append(javaKeyword)
+                                    allJavaOptionalKeywords.remove(javaKeyword)
                                     break
             readfile.close()
-    if (manifestKeywords == [] and javaKeywords == []):
-        detectedPatterns.append(patternName)
-        dangerRating = dangerRating + patternData["dangerRating"]
+    
 
-        manifestFoundOptionalKeywords.extend(tempManifestFoundOptionalKeywords)
-        javaFoundOptionalKeywords.extend(tempJavaFoundOptionalKeywords)
+def checkDetected():
+    global dangerRating
+    for patternName in detectionPatterns:
+        patternData = detectionPatterns[patternName]
+        manifestKeywords = (patternData["manifestKeywords"])
+        optionalManifestKeywords = (patternData["optionalManifestKeywords"])
+        javaKeywords = (patternData["javaKeywords"])
+        javaOptionalKeywords = (patternData["javaOptionalKeywords"])
+
+        manifestKeywords = list(set(manifestKeywords)-set(allManifestFoundKeywords))
+        javaKeywords = list(set(javaKeywords)-set(allJavaFoundKeywords))
+
+        if (manifestKeywords == [] and javaKeywords == []):
+            detectedPatterns.append(patternName)
+            dangerRating = dangerRating + patternData["dangerRating"]
+            validManifestFoundOptionalKeywords.extend(list(set(optionalManifestKeywords).intersection(allManifestFoundOptionalKeywords)))
+            validJavaFoundOptionalKeywords.extend(list(set(javaOptionalKeywords).intersection(allJavaFoundOptionalKeywords)))
+
+    list(set(validManifestFoundOptionalKeywords))
+    list(set(validJavaFoundOptionalKeywords))
+
+        
 
 def scanResult():
     if (dangerRating <= 49):rating = "Low"
     elif (dangerRating <= 74):rating = "Medium"
-    else:rating = "High"
+    else :rating = "High"
     print("Danger rating scale:\n0-49 Low risk\n50-74: Medium risk\n75-100: High risk")
     print("------------------------------------------------------------------------------")
     if (detectedPatterns == []):
@@ -178,12 +217,12 @@ def scanResult():
     print(f"App danger rating: {rating} risk({dangerRating})")
     print(f"\nPaterns detected:")
     for i in detectedPatterns: print(f"-{i}")
-    if (manifestFoundOptionalKeywords != []):
+    if (validManifestFoundOptionalKeywords != []):
         print(f"\nOptional manifest keywords found:")
-        for i in manifestFoundOptionalKeywords: print(f"-{i}")
-    if (javaFoundOptionalKeywords != []):
+        for i in validManifestFoundOptionalKeywords: print(f"-{i}")
+    if (validJavaFoundOptionalKeywords != []):
         print(f"\nOptional java keywords found:")
-        for i in javaFoundOptionalKeywords: print(f"-{i}")
+        for i in validJavaFoundOptionalKeywords: print(f"-{i}")
         
 
 @app.command()
@@ -195,8 +234,9 @@ def main(f: Path = typer.Option(default=True, resolve_path=True,)):
     if(os.path.exists("out")):
         shutil.rmtree("out")            
     os.system(f'jadx -d out /"{f}"')
-    for patternName in detectionPatterns:
-        patternDetection(patternName,detectionPatterns[patternName])
+    collectPatterns(detectionPatterns)
+    patternDetection()
+    checkDetected()
     scanResult()
     
  
