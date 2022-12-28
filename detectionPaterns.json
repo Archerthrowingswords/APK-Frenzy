@@ -45,11 +45,20 @@
         "dangerRating": 10
     },
 
-    "Steal SMS": {
+    "Steal SMS": { 
         "manifestKeywords":["android.permission.RECEIVE_SMS"],
         "optionalManifestKeywords":["android.permission.READ_SMS"],
         "javaKeywords":["SmsMessage.createFromPdu"],
         "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 10
+    },
+
+    "LocationTracking": {
+        "manifestKeywords":["android.permission.ACCESS_FINE_LOCATION", "android.permission. ACCESS_COARSE_LOCATION", "android.permission.INTERNET"],
+        "optionalManifestKeywords":["android.permission.ACCESS_BACKGROUND_LOCATION"],
+        "javaKeywords":["Location", "LocationManager", "LocationListener", "Context.LOCATION_SERVICE"],
+        "javaOptionalKeywords":["latitude", "longitude"],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
@@ -61,5 +70,32 @@
         "javaOptionalKeywords":["startService"],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 30
+    },
+
+    "LaunchingOfOtherApps": {
+        "manifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage", "startActivity"],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 50
+    },
+
+    "Accessibility Exploit: Keylogger": {
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "optionalManifestKeywords":["accessibilityEventTypes"],
+        "javaKeywords":["getText()"],
+        "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 100
+    },
+
+    "Accessibility Exploit: Installing Apps Silently": {
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["com.google.android.packageinstaller", "performAction"],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 100
     }
 }
