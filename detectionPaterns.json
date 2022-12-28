@@ -17,6 +17,7 @@
         "javaFoundOptionalKeywords":[],
         "dangerRating": 50
     },
+
     "Ability to Call": {
         "manifestKeywords":["android.permission.CALL_PHONE"],
         "optionalManifestKeywords":[],
@@ -33,5 +34,32 @@
         "javaOptionalKeywords":["Logger.", "Log."],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
+    },
+
+    "Wake Lock": {
+        "manifestKeywords":["android.permission.WAKE_LOCK"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["newWakeLock"],
+        "javaOptionalKeywords":["wakeLock.acquire()"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 10
+    },
+
+    "Steal SMS": {
+        "manifestKeywords":["android.permission.RECEIVE_SMS"],
+        "optionalManifestKeywords":["android.permission.READ_SMS"],
+        "javaKeywords":["SmsMessage.createFromPdu"],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Start on Boot": { 
+        "manifestKeywords":["android.permission.RECEIVE_BOOT_COMPLETED"],
+        "optionalManifestKeywords":["BootReceiver", "android.permission.QUICKBOOT_POWERON"],
+        "javaKeywords":["android.intent.action.BOOT_COMPLETED"],
+        "javaOptionalKeywords":["startService"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 30
     }
 }
