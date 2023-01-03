@@ -2,100 +2,111 @@
     
     "Call Monitoring": {
         "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.CALL_PHONE", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS" ],
+        "alternateManifestKeywords":[["android.permission.WRITE_EXTERNAL_STORAGE","cummingbabyboy"]],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE","android.permission.PROCESS_OUTGOING_CALLS"],
         "javaKeywords":["android.intent.action.PHONE_STATE"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
   
     "Accessibility UI Abuse": {
         "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "canRetrieveWindowContent=\"true\""],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":["accessibilityEventTypes", "setServiceInfo()"],
         "javaKeywords":["onAccessibilityEvent"],
         "javaOptionalKeywords":["Intent(\"android.settings.ACCESSIBILITY_SETTINGS\")"],
-        "javaFoundOptionalKeywords":[],
+        "alternateJavaKeywords":[],
         "dangerRating": 50
     },
 
     "Ability to Call": {
         "manifestKeywords":["android.permission.CALL_PHONE"],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["Intent.ACTION_DIAL"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 10
     },
     
     "SMS Monitoring": {
         "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.SEND_SMS", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS"],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
         "javaKeywords":["android.intent.action.PHONE_STATE"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log."],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
 
     "Wake Lock": {
         "manifestKeywords":["android.permission.WAKE_LOCK"],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["newWakeLock"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":["wakeLock.acquire()"],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 10
     },
 
     "Steal SMS": { 
         "manifestKeywords":["android.permission.RECEIVE_SMS"],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.READ_SMS"],
         "javaKeywords":["SmsMessage.createFromPdu"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 10
     },
 
     "Location Tracking": {
         "manifestKeywords":["android.permission.ACCESS_FINE_LOCATION", "android.permission. ACCESS_COARSE_LOCATION", "android.permission.INTERNET"],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.ACCESS_BACKGROUND_LOCATION"],
         "javaKeywords":["Location", "LocationManager", "LocationListener", "Context.LOCATION_SERVICE"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":["latitude", "longitude"],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
 
     "Start on Boot": { 
         "manifestKeywords":["android.permission.RECEIVE_BOOT_COMPLETED"],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":["BootReceiver", "android.permission.QUICKBOOT_POWERON"],
         "javaKeywords":["android.intent.action.BOOT_COMPLETED"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 30
     },
 
     "Launching Of Other Apps": {
         "manifestKeywords":[],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage", "startActivity"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 50
     },
 
     "Accessibility Exploit: Keylogger": {
         "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":["accessibilityEventTypes"],
         "javaKeywords":["getText()"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 100
     },
 
     "Accessibility Exploit: Installing Apps Silently": {
         "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["com.google.android.packageinstaller", "performAction"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "javaFoundOptionalKeywords":[],
         "dangerRating": 100
     }
 }

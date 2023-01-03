@@ -20,12 +20,16 @@ allManifestKeywords =[]
 allOptionalManifestKeywords = []
 allJavaKeywords = []
 allJavaOptionalKeywords = []
+allManifestAlternateKeywords = [] 
+allJavaAlternateKeyswords = []
 
 #collection of all found pattern keywords
 allManifestFoundKeywords = []
 allJavaFoundKeywords = []
 allManifestFoundOptionalKeywords = []
 allJavaFoundOptionalKeywords = []
+allManifestFoundAlternateKeywords = [] 
+allJavaFoundAlternateKeywords = []
 
 validManifestFoundOptionalKeywords = []
 validJavaFoundOptionalKeywords = []
@@ -122,7 +126,8 @@ def collectPatterns(detectionPatterns):
         allOptionalManifestKeywords.extend(patternData["optionalManifestKeywords"])
         allJavaKeywords.extend(patternData["javaKeywords"])
         allJavaOptionalKeywords.extend(patternData["javaOptionalKeywords"])
-        
+        allManifestAlternateKeywords.extend(patternData["alternateManifestKeywords"])
+        allJavaAlternateKeyswords.extend(patternData["alternateJavaKeywords"])
     #remove duplicates
     allManifestKeywords= list(set(allManifestKeywords)) 
     allOptionalManifestKeywords = list(set(allOptionalManifestKeywords))
@@ -136,10 +141,19 @@ def patternDetection():
         if file.name.endswith("Manifest.xml"):
             with open(file) as manifestFile:
                 for line in manifestFile:
+                    #looking through the line for manifest keywords
                     for manifestKeyword in allManifestKeywords:
                         if line.find(manifestKeyword) != -1:
                             allManifestFoundKeywords.append(manifestKeyword)
                             allManifestKeywords.remove(manifestKeyword)
+                    #looking through the line for alternate manifest keywords
+                    for manifestKeywordList in allManifestAlternateKeywords: 
+                        if type(manifestKeywordList) is not list: continue
+                        for alternateKeyword in manifestKeywordList:
+                            if line.find(alternateKeyword) != -1:
+                                allManifestFoundAlternateKeywords.append(manifestKeywordList)
+                                allManifestAlternateKeywords.remove(manifestKeywordList)
+                    #looking through the line for optional manifest keywords
                     for manifestKeyword in allOptionalManifestKeywords:
                         if line.find(manifestKeyword) != -1:
                             allManifestFoundOptionalKeywords.append(manifestKeyword)
@@ -148,36 +162,25 @@ def patternDetection():
         elif file.name.endswith(".java"): 
 
             # Searching through Java files
-
-            keywordFound = False
-            optionalKeywordFound = False
-
             with open(file, encoding='ansi') as readfile:
+                #looking through the file for java keywords
                 for javaKeyword in allJavaKeywords:
                     if file.read_text(encoding='ansi').find(javaKeyword) != -1:
-                        keywordFound = True
-                        break
-
+                        allJavaFoundKeywords.append(javaKeyword)
+                        allJavaKeywords.remove(javaKeyword)
+                #looking through the file for alternate java keywords
+                for javaKeywordList in allJavaAlternateKeyswords:
+                    if javaKeywordList is not list: continue
+                    for javaKeyword in javaKeywordList:
+                        if file.read_text(encoding='ansi').find(javaKeyword) != -1:
+                            allJavaFoundAlternateKeywords.append(javaKeywordList)
+                            allJavaAlternateKeyswords.remove(javaKeywordList)
+                #looking through the file for optional java keywords
                 for javaKeyword in allJavaOptionalKeywords:
                     if file.read_text(encoding='ansi').find(javaKeyword) != -1:
-                        optionalKeywordFound = True
-                        break
-                    
-                if keywordFound:
-                        for line in readfile:
-                            for javaKeyword in allJavaKeywords:
-                                if line.find(javaKeyword) != -1:
-                                    allJavaFoundKeywords.append(javaKeyword)
-                                    allJavaKeywords.remove(javaKeyword)
-                                    break
-
-                if optionalKeywordFound:
-                        for line in readfile:
-                            for javaKeyword in allJavaOptionalKeywords:
-                                if line.find(javaKeyword) != -1:
-                                    allJavaFoundOptionalKeywords.append(javaKeyword)
-                                    allJavaOptionalKeywords.remove(javaKeyword)
-                                    break
+                        allJavaFoundOptionalKeywords.append(javaKeyword)
+                        allJavaOptionalKeywords.remove(javaKeyword)
+                                    
             readfile.close()
     
 
@@ -186,14 +189,22 @@ def checkDetected():
     for patternName in detectionPatterns:
         patternData = detectionPatterns[patternName]
         manifestKeywords = (patternData["manifestKeywords"])
+        alternateManifestKeywords = (patternData["alternateManifestKeywords"])
         optionalManifestKeywords = (patternData["optionalManifestKeywords"])
         javaKeywords = (patternData["javaKeywords"])
+        alternateJavaKeywords = (patternData["alternateJavaKeywords"])
         javaOptionalKeywords = (patternData["javaOptionalKeywords"])
-
+        
         manifestKeywords = list(set(manifestKeywords)-set(allManifestFoundKeywords))
         javaKeywords = list(set(javaKeywords)-set(allJavaFoundKeywords))
 
-        if (manifestKeywords == [] and javaKeywords == []):
+        for manifestList in alternateManifestKeywords:
+            if manifestList in allManifestFoundAlternateKeywords: alternateManifestKeywords.remove(manifestList)
+
+        for javaList in alternateJavaKeywords:
+            if javaList in allJavaFoundAlternateKeywords:alternateJavaKeywords.remove(javaList)
+
+        if (manifestKeywords==[] and javaKeywords==[] and alternateManifestKeywords==[] and alternateJavaKeywords==[]):
             detectedPatterns.append(patternName)
             dangerRating = dangerRating + patternData["dangerRating"]
             validManifestFoundOptionalKeywords.extend(list(set(optionalManifestKeywords).intersection(allManifestFoundOptionalKeywords)))
