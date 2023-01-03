@@ -1,0 +1,181 @@
+{
+    
+    "Call Monitoring": {
+        "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.CALL_PHONE", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS" ],
+        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE","android.permission.PROCESS_OUTGOING_CALLS"],
+        "javaKeywords":["android.intent.action.PHONE_STATE"],
+        "javaOptionalKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+  
+    "Accessibility UI Abuse": {
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "canRetrieveWindowContent=\"true\""],
+        "optionalManifestKeywords":["accessibilityEventTypes", "setServiceInfo()"],
+        "javaKeywords":["onAccessibilityEvent"],
+        "javaOptionalKeywords":["Intent(\"android.settings.ACCESSIBILITY_SETTINGS\")"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 50
+    },
+    "Ability to Call": {
+        "manifestKeywords":["android.permission.CALL_PHONE"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["Intent.ACTION_DIAL"],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 10
+    },
+    
+    "SMS Monitoring": {
+        "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.SEND_SMS", "android.permission.READ_CONTACTS", "android.permission.INTERNET", "android.permission.GET_TASKS"],
+        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
+        "javaKeywords":["android.intent.action.PHONE_STATE"],
+        "javaOptionalKeywords":["Logger.", "Log."],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "SMS Send Code": {
+        "manifestKeywords":["android.permission.SEND_SMS"],
+        "optionalManifestKeywords":["android.permission.RECEIVE_SMS"],
+        "javaKeywords":["SmsManager.getDefault()"],
+        "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "LocationTracking": {
+        "manifestKeywords":["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION", "android.permission.INTERNET"],
+        "optionalManifestKeywords":["android.permission.ACCESS_BACKGROUND_LOCATION"],
+        "javaKeywords":["Location", "LocationManager", "LocationListener", "Context.LOCATION_SERVICE"],
+        "javaOptionalKeywords":["latitude", "longitude"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Face Recognition Exploit - do if can find (can steal to trick banking apps?)": {
+        "manifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Privilege Escalation: Root Access (do if can find)": {
+        "manifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Ransomware: Force Lock Screen / Power Off Device (do if can find)": {
+        "manifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Launch Insecure HTTP Website": {
+        "manifestKeywords":["android.permission.INTERNET"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://"],
+        "javaOptionalKeywords":["startsWith('http://')", "'http://' + url"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Force Download from Insecure HTTP Website": {
+        "manifestKeywords":["android.permission.INTERNET"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://", "DownloadManager"],
+        "javaOptionalKeywords":["startsWith('http://')", "'http://' + url"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Disable Antivirus": {
+        "manifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["packageManager.setApplicationEnabledSetting('com.antivirus.package', PackageManager.COMPONENT_ENABLED_STATE_DISABLED, 0);"],
+        "javaOptionalKeywords":["getPackageManager()", "setApplicationEnabledSetting('com.antivirus.package'", "COMPONENT_ENABLED_STATE_DISABLED"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Photo Upload without Device Activity": {
+        "manifestKeywords":["android.media.action.IMAGE_CAPTURE", "android.intent.action.USER_PRESENT", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+        "optionalManifestKeywords":["android.hardware.camera"],
+        "javaKeywords":["MediaStore.ACTION_IMAGE_CAPTURE", "Intent.ACTION_SCREEN_OFF"],
+        "javaOptionalKeywords":["ACTION_USER_PRESENT", "camera.startPreview()", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture()"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Gallery Upload without Device Activity": {
+        "manifestKeywords":["android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["onActivityResult()", "Intent.ACTION_SCREEN_OFF"],
+        "javaOptionalKeywords":["Intent.ACTION_PICK", "android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI", "startActivityForResult"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Microphone Upload without Device Activity": {
+        "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+        "optionalManifestKeywords":["android.permission.STORAGE"],
+        "javaKeywords":["start()", "Intent.ACTION_SCREEN_OFF"],
+        "javaOptionalKeywords":["setAudioSource()", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "stop()", "release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Contact Exfiltration": {
+        "manifestKeywords":["android.permission.READ_CONTACTS", "android.permission.INTERNET"],
+        "optionalManifestKeywords":["android.permission.WRITE_CONTACTS"],
+        "javaKeywords":["ContactsContract.Data."],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 25
+    },
+
+    "Screenshot Hijacking": {
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["openScreenshot", "bitmap.compress"],
+        "javaOptionalKeywords":["FileOutputStream", ".flush()"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 5
+    },
+
+    "LaunchingOfOtherApps": {
+        "manifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage", "startActivity"],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 50
+    },
+
+    "Accessibility Exploit: Keylogger": {
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "optionalManifestKeywords":["accessibilityEventTypes"],
+        "javaKeywords":["getText()"],
+        "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 100
+    },
+
+    "Accessibility Exploit: Installing Apps Silently": {
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["com.google.android.packageinstaller", "performAction"],
+        "javaOptionalKeywords":[],
+        "javaFoundOptionalKeywords":[],
+        "dangerRating": 100
+    }
+}
