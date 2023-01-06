@@ -84,7 +84,7 @@
         "manifestKeywords":["android.permission.INTERNET"],
         "optionalManifestKeywords":[],
         "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://"],
-        "javaOptionalKeywords":["startsWith('http://')", "'http://' + url"],
+        "javaOptionalKeywords":["startsWith('http://')", "'http://'"],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
@@ -93,16 +93,16 @@
         "manifestKeywords":["android.permission.INTERNET"],
         "optionalManifestKeywords":[],
         "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://", "DownloadManager"],
-        "javaOptionalKeywords":["startsWith('http://')", "'http://' + url"],
+        "javaOptionalKeywords":["startsWith('http://')", "'http://'"],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
 
-    "Disable Antivirus": {
+    "Force Disable Application Package": {
         "manifestKeywords":[],
         "optionalManifestKeywords":[],
-        "javaKeywords":["packageManager.setApplicationEnabledSetting('com.antivirus.package', PackageManager.COMPONENT_ENABLED_STATE_DISABLED, 0);"],
-        "javaOptionalKeywords":["getPackageManager()", "setApplicationEnabledSetting('com.antivirus.package'", "COMPONENT_ENABLED_STATE_DISABLED"],
+        "javaKeywords":["packageManager.setApplicationEnabledSetting('", "PackageManager.COMPONENT_ENABLED_STATE_DISABLED, 0);"],
+        "javaOptionalKeywords":["getPackageManager(", "setApplicationEnabledSetting('com.antivirus.package'", "COMPONENT_ENABLED_STATE_DISABLED"],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
@@ -111,7 +111,7 @@
         "manifestKeywords":["android.media.action.IMAGE_CAPTURE", "android.intent.action.USER_PRESENT", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "optionalManifestKeywords":["android.hardware.camera"],
         "javaKeywords":["MediaStore.ACTION_IMAGE_CAPTURE", "Intent.ACTION_SCREEN_OFF"],
-        "javaOptionalKeywords":["ACTION_USER_PRESENT", "camera.startPreview()", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture()"],
+        "javaOptionalKeywords":["ACTION_USER_PRESENT", "camera.startPreview(", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture("],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
@@ -119,7 +119,7 @@
     "Gallery Upload without Device Activity": {
         "manifestKeywords":["android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "optionalManifestKeywords":[],
-        "javaKeywords":["onActivityResult()", "Intent.ACTION_SCREEN_OFF"],
+        "javaKeywords":["onActivityResult(", "Intent.ACTION_SCREEN_OFF"],
         "javaOptionalKeywords":["Intent.ACTION_PICK", "android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI", "startActivityForResult"],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
@@ -129,7 +129,7 @@
         "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "optionalManifestKeywords":["android.permission.STORAGE"],
         "javaKeywords":["start()", "Intent.ACTION_SCREEN_OFF"],
-        "javaOptionalKeywords":["setAudioSource()", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "stop()", "release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder(", "setOutputFormat(", "setOutputFile(", "stop(", "release(", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 25
     },
@@ -147,7 +147,7 @@
         "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "optionalManifestKeywords":[],
         "javaKeywords":["openScreenshot", "bitmap.compress"],
-        "javaOptionalKeywords":["FileOutputStream", ".flush()"],
+        "javaOptionalKeywords":["FileOutputStream", ".flush("],
         "javaFoundOptionalKeywords":[],
         "dangerRating": 5
     },
