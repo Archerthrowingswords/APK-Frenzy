@@ -1,4 +1,4 @@
-# FYP-Android-Bouncer
+# APK Frenzy
 
 requires:
 java
