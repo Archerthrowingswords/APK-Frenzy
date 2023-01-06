@@ -1,4 +1,4 @@
-# APK Frenzy
+# APK-Frenzy
 
 requires:
 java
