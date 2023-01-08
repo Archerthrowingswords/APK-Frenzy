@@ -75,7 +75,8 @@
         "javaOptionalKeywords":["Intent(\"android.settings.ACCESSIBILITY_SETTINGS\")"],
         "alternateJavaKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 50
+        "dangerRating": 50,
+        "c":"HN"
     },
 
     "Location Tracking": {
@@ -86,7 +87,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["latitude", "longitude"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"HN"
     },
 
     "Launching Of Other Apps": {
@@ -97,7 +99,8 @@
         "alternateJavaKeywords":[["startActivity(","startActivityForResult("]],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 50
+        "dangerRating": 50,
+        "c":"HN"
     },
 
     "Accessibility Exploit: Keylogger": {
@@ -108,7 +111,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 100
+        "dangerRating": 100,
+        "c":"HN"
     },
 
     "Accessibility Exploit: Installing Apps Silently": {
@@ -119,7 +123,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 10
+        "dangerRating": 10,
+        "c":"HN"
     },
 
 
