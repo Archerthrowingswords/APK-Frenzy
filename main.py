@@ -13,7 +13,7 @@ app = typer.Typer()
 directory = 'out'
 f = open("detectionPatterns.json")
 detectionPatterns = json.load(f)
-detectedPatterns = []
+detectedPatterns = {}
 
 #collection of all pattern keywords
 allManifestKeywords =[]
@@ -34,6 +34,17 @@ allJavaFoundAlternateKeywords = []
 validManifestFoundOptionalKeywords = []
 validJavaFoundOptionalKeywords = []
 
+def apkFrenzyIntro():
+    print("\n=============================================================")
+    print("||  ____  ____  _  __ _____ ____  _____ _      ____ ___  _ ||")
+    print("|| /  _ \/  __\/ |/ //    //  __\/  __// \  /|/_   \\\\  \// ||")
+    print("|| | / \||  \/||   / |  __\|  \/||  \  | |\ || /   / \  /  ||")
+    print("|| | |-|||  __/|   \ | |   |    /|  /_ | | \||/   /_ / /   ||")
+    print("|| \_/ \|\_/   \_|\_\\\\_/   \_/\_\\\\____\\\\_/  \|\____//_/    ||")
+    print("||                                                         ||")
+    print("=============================================================\n")
+            
+
 def checkApkInput(file):
     apkname = os.path.basename(file)
     if file is None:
@@ -48,6 +59,9 @@ def checkApkInput(file):
     elif not apkname.endswith(".apk"):
         print(f"File is not an apk")
         raise typer.Abort()
+    apkFrenzyIntro()
+    print(f"Filename: ({apkname})")
+    print("-------------------------------------------------------------")
 
 def extractManifestPerms():
     #may be updated to be more efficient
@@ -194,6 +208,7 @@ def checkDetected():
         javaKeywords = (patternData["javaKeywords"])
         alternateJavaKeywords = (patternData["alternateJavaKeywords"])
         javaOptionalKeywords = (patternData["javaOptionalKeywords"])
+        description = (patternData["description"])
         
         manifestKeywords = list(set(manifestKeywords)-set(allManifestFoundKeywords))
         javaKeywords = list(set(javaKeywords)-set(allJavaFoundKeywords))
@@ -205,7 +220,7 @@ def checkDetected():
             if javaList in allJavaFoundAlternateKeywords:alternateJavaKeywords.remove(javaList)
 
         if (manifestKeywords==[] and javaKeywords==[] and alternateManifestKeywords==[] and alternateJavaKeywords==[]):
-            detectedPatterns.append(patternName)
+            detectedPatterns[patternName] = description
             dangerRating = dangerRating + patternData["dangerRating"]
             validManifestFoundOptionalKeywords.extend(list(set(optionalManifestKeywords).intersection(allManifestFoundOptionalKeywords)))
             validJavaFoundOptionalKeywords.extend(list(set(javaOptionalKeywords).intersection(allJavaFoundOptionalKeywords)))
@@ -216,30 +231,28 @@ def checkDetected():
         
 
 def scanResult():
-    if (dangerRating <= 49):rating = "Low"
-    elif (dangerRating <= 74):rating = "Medium"
-    else :rating = "High"
-    print("Danger rating scale:\n0-49 Low risk\n50-74: Medium risk\n75-100: High risk")
-    print("------------------------------------------------------------------------------")
-    if (detectedPatterns == []):
+    global dangerRating
+    bar = '{:░<20}'.format('█'*(dangerRating//5))
+    if(dangerRating > 99): dangerRating = 99
+    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}%")
+    print("-------------------------------------------------------------")
+    if (detectedPatterns == {}):
         print("No malicous paterns detected")
-        print(f"App danger rating: {rating} risk({dangerRating})")
         return
-    print(f"App danger rating: {rating} risk({dangerRating})")
-    print(f"\nPaterns detected:")
-    for i in detectedPatterns: print(f"-{i}")
+    print(f"Paterns detected:")
+    for i in detectedPatterns: print(f"\n-{i}\n{detectedPatterns[i]}")
     if (validManifestFoundOptionalKeywords != []):
-        print(f"\nOptional manifest keywords found:")
+        print(f"\nInteresting manifest keywords found:")
         for i in validManifestFoundOptionalKeywords: print(f"-{i}")
     if (validJavaFoundOptionalKeywords != []):
-        print(f"\nOptional java keywords found:")
+        print(f"\nInteresting java keywords found:")
         for i in validJavaFoundOptionalKeywords: print(f"-{i}")
+    print("-------------------------------------------------------------")
         
 
 @app.command()
 def main(f: Path = typer.Option(default=True, resolve_path=True,)):
     checkApkInput(f)
-    print("------------------------------------------------------------------------------")
     os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
     # Remove existing out directory from previous scan
     if(os.path.exists("out")):

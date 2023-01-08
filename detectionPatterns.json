@@ -7,6 +7,7 @@
         "javaKeywords":["android.intent.action.PHONE_STATE"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -17,6 +18,7 @@
         "javaKeywords":["onAccessibilityEvent"],
         "javaOptionalKeywords":["Intent(\"android.settings.ACCESSIBILITY_SETTINGS\")"],
         "alternateJavaKeywords":[],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 50
     },
 
@@ -27,6 +29,7 @@
         "javaKeywords":["Intent.ACTION_DIAL"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 10
     },
     
@@ -37,6 +40,7 @@
         "javaKeywords":["android.intent.action.PHONE_STATE"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log."],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -47,6 +51,7 @@
         "javaKeywords":["newWakeLock"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["wakeLock.acquire()"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 10
     },
 
@@ -57,6 +62,7 @@
         "javaKeywords":["SmsMessage.createFromPdu"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -67,6 +73,7 @@
         "javaKeywords":["Location", "LocationManager", "LocationListener", "Context.LOCATION_SERVICE"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["latitude", "longitude"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -77,6 +84,7 @@
         "javaKeywords":["android.intent.action.BOOT_COMPLETED"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -87,6 +95,7 @@
         "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage" ],
         "alternateJavaKeywords":[["startActivity(","startActivityForResult("]],
         "javaOptionalKeywords":[],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 50
     },
 
@@ -97,6 +106,7 @@
         "javaKeywords":["getText()"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 100
     },
 
@@ -107,7 +117,8 @@
         "javaKeywords":["com.google.android.packageinstaller", "performAction"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "dangerRating": 100
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "dangerRating": 10
     },
 
 
@@ -120,6 +131,7 @@
         "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startsWith('http://", "'http://' +", "'http://'+"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -130,6 +142,7 @@
         "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://", "DownloadManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startsWith('http://", "'http://' +", "'http://'+"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -140,6 +153,7 @@
         "javaKeywords":["getPackageManager(",".setApplicationEnabledSetting(", "COMPONENT_ENABLED_STATE_DISABLED"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -150,6 +164,7 @@
         "javaKeywords":["MediaStore.ACTION_IMAGE_CAPTURE", "Intent.ACTION_SCREEN_OFF","startActivityForResult("],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["ACTION_USER_PRESENT", "camera.startPreview(", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture("],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -160,6 +175,7 @@
         "javaKeywords":["onActivityResult(", "Intent.ACTION_SCREEN_OFF"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Intent.ACTION_PICK", "android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI", "startActivityForResult("],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -170,6 +186,7 @@
         "javaKeywords":["MediaRecorder.start(","MediaRecorder.stop(", "Intent.ACTION_SCREEN_OFF"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "MediaRecorder.release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
     },
 
@@ -180,6 +197,7 @@
         "javaKeywords":["ContactsContract.Data."],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 10
     },
 
@@ -190,6 +208,7 @@
         "javaKeywords":["openScreenshot(", "bitmap.compress"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["FileOutputStream", ".flush("],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 10
     }
 }
