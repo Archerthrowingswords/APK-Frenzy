@@ -123,10 +123,33 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "dangerRating": 20,
+        "c":"HN"
+    },
+
+    "Android Overlay": {
+        "manifestKeywords":["android.permission.SYSTEM_ALERT_WINDOW"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Allows the app to create windows that overlay all other apps without notifying the user. Commonly used for displaying fraudulent ads, phishing scams, click-jacking etc",
         "dangerRating": 10,
         "c":"HN"
     },
 
+    "Collection of Telephony Data": {
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[["android.permission.READ_PHONE_STATE", "android.permission.READ_SMS", "android.permission.READ_PHONE_NUMBERS"]],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["TelephonyManager"],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber"],
+        "description": "Allows the app to collect telephony data from the device, which might include sensitive information",
+        "dangerRating": 20,
+        "c":"HN"
+    },
 
     
 
