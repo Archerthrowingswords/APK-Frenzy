@@ -6,10 +6,14 @@ import shutil #fairly certain this works on linux
 # importing element tree
 # under the alias of ET
 import xml.etree.ElementTree as ET
+import re
+
+
 
 # initializing global variables
 dangerRating = 0
 app = typer.Typer()
+state = {"verbose": False}
 directory = 'out'
 f = open("detectionPatterns.json")
 detectionPatterns = json.load(f)
@@ -149,8 +153,8 @@ def collectPatterns(detectionPatterns):
     allJavaOptionalKeywords=list(set(allJavaOptionalKeywords))
 
 def patternDetection():
-    out = Path(directory).rglob('*')
     # Searching through Manifest XML file
+    out = Path(directory).rglob('*')
     for file in out:
         if file.name.endswith("Manifest.xml"):
             with open(file) as manifestFile:
@@ -174,10 +178,7 @@ def patternDetection():
                             allOptionalManifestKeywords.remove(manifestKeyword)
             manifestFile.close()
         elif file.name.endswith(".java"): 
-
             # Searching through Java files
-            with open(file, encoding='ansi') as readfile:
-                #looking through the file for java keywords
                 for javaKeyword in allJavaKeywords:
                     if file.read_text(encoding='ansi').find(javaKeyword) != -1:
                         allJavaFoundKeywords.append(javaKeyword)
@@ -194,10 +195,7 @@ def patternDetection():
                     if file.read_text(encoding='ansi').find(javaKeyword) != -1:
                         allJavaFoundOptionalKeywords.append(javaKeyword)
                         allJavaOptionalKeywords.remove(javaKeyword)
-                                    
-            readfile.close()
     
-
 def checkDetected():
     global dangerRating
     for patternName in detectionPatterns:
@@ -228,7 +226,18 @@ def checkDetected():
     list(set(validManifestFoundOptionalKeywords))
     list(set(validJavaFoundOptionalKeywords))
 
-        
+def scanReq():
+    out = Path(directory).rglob('*')
+    global httpList
+    httpList = []
+    for file in out:
+        if file.name.endswith(".java"):
+            #looking through the file for java keywords
+            httpPattern = r'"https?://\S+"'
+            temphttpList = re.findall(httpPattern, file.read_text(encoding='ansi'))
+            httpList.extend(temphttpList)
+    list(set(httpList))
+    httpList.sort()
 
 def scanResult():
     global dangerRating
@@ -248,10 +257,21 @@ def scanResult():
         print(f"\nInteresting java keywords found:")
         for i in validJavaFoundOptionalKeywords: print(f"-{i}")
     print("-------------------------------------------------------------")
+    
+def reqResult():
+    global httpList
+    if (httpList == []):
+        print("No http or https requests detected")
+        return
+    print("http/https requests detected:\n")
+    for i in httpList: print(f"-{i}")
         
 
-@app.command()
-def main(f: Path = typer.Option(default=True, resolve_path=True,)):
+@app.command("scan")
+def main(f: Path = typer.Option(default=True, resolve_path=True)):
+    """
+    Scan through the apk for malicious patterns
+    """
     checkApkInput(f)
     os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
     # Remove existing out directory from previous scan
@@ -262,7 +282,38 @@ def main(f: Path = typer.Option(default=True, resolve_path=True,)):
     patternDetection()
     checkDetected()
     scanResult()
-    
+
+@app.command("req")
+def requests(f: Path = typer.Option(default=True, resolve_path=True,)):
+    """
+    Scan through the apk for any http/https requests
+    """
+    checkApkInput(f)
+    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+    # Remove existing out directory from previous scan
+    if(os.path.exists("out")):
+        shutil.rmtree("out")            
+    os.system(f'jadx -d out /"{f}"')
+    scanReq()
+    reqResult()
+
+@app.command("sr")
+def requests(f: Path = typer.Option(default=True, resolve_path=True,)):
+    """
+    Scan through the apk for both malicious patterns and http/https requests
+    """
+    checkApkInput(f)
+    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+    # Remove existing out directory from previous scan
+    if(os.path.exists("out")):
+        shutil.rmtree("out")            
+    os.system(f'jadx -d out /"{f}"')
+    collectPatterns(detectionPatterns)
+    patternDetection()
+    checkDetected()
+    scanReq()
+    scanResult()
+    reqResult()
  
 if __name__ == "__main__":
     app()
