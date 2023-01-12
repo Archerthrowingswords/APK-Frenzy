@@ -39,14 +39,15 @@ validManifestFoundOptionalKeywords = []
 validJavaFoundOptionalKeywords = []
 
 def apkFrenzyIntro():
-    print("\n=============================================================")
-    print("||  ____  ____  _  __ _____ ____  _____ _      ____ ___  _ ||")
-    print("|| /  _ \/  __\/ |/ //    //  __\/  __// \  /|/_   \\\\  \// ||")
-    print("|| | / \||  \/||   / |  __\|  \/||  \  | |\ || /   / \  /  ||")
-    print("|| | |-|||  __/|   \ | |   |    /|  /_ | | \||/   /_ / /   ||")
-    print("|| \_/ \|\_/   \_|\_\\\\_/   \_/\_\\\\____\\\\_/  \|\____//_/    ||")
-    print("||                                                         ||")
-    print("=============================================================\n")
+    print("\n=================================================================")
+    print("||   ___  ______ _   ______________ _____ _   _  ________   __ ||")
+    print("||  / _ \ | ___ \ | / /|  ___| ___ \  ___| \ | ||___  /\ \ / / ||")
+    print("|| / /_\ \| |_/ / |/ / | |_  | |_/ / |__ |  \| |   / /  \ V /  ||")
+    print("|| |  _  ||  __/|    \ |  _| |    /|  __||     |  / /    \ /   ||")
+    print("|| | | | || |   | |\  \| |   | |\ \| |___| |\  | / /___  | |   ||")
+    print("|| \_| |_/\_|   \_| \_/\_|   \_| \_\____/\_| \_/\_____/  \_/   ||")
+    print("||                                                             ||")
+    print("=================================================================\n")
             
 
 def checkApkInput(file):
@@ -239,6 +240,20 @@ def scanReq():
     list(set(httpList))
     httpList.sort()
 
+def simpleScanResult():
+    global dangerRating
+    bar = '{:░<20}'.format('█'*(dangerRating//5))
+    if(dangerRating > 99): dangerRating = 99
+    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}%")
+    print("-------------------------------------------------------------")
+    if (detectedPatterns == {}):
+        print("No malicous paterns detected")
+        return
+    print(f"Paterns detected:")
+    for i in detectedPatterns: print(f"-{i}")
+    print("-------------------------------------------------------------")
+   
+
 def scanResult():
     global dangerRating
     bar = '{:░<20}'.format('█'*(dangerRating//5))
@@ -266,6 +281,21 @@ def reqResult():
     print("http/https requests detected:\n")
     for i in httpList: print(f"-{i}")
         
+@app.command("ss")
+def main(f: Path = typer.Option(default=True, resolve_path=True)):
+    """
+    Scan through the apk for malicious patterns with a simplified output
+    """
+    checkApkInput(f)
+    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+    # Remove existing out directory from previous scan
+    if(os.path.exists("out")):
+        shutil.rmtree("out")            
+    os.system(f'jadx -d out /"{f}"')
+    collectPatterns(detectionPatterns)
+    patternDetection()
+    checkDetected()
+    simpleScanResult()
 
 @app.command("scan")
 def main(f: Path = typer.Option(default=True, resolve_path=True)):
