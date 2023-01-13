@@ -55,6 +55,9 @@ def checkApkInput(file):
     if file is None:
         print("No APK file")
         raise typer.Abort()
+    elif apkname=="null":
+        print("no file has been specified, please specify a file")
+        raise typer.Abort()
     elif file.is_dir():
         print("Config is a directory, please specify a file")
         raise typer.Abort()
@@ -280,27 +283,11 @@ def reqResult():
         return
     print("http/https requests detected:\n")
     for i in httpList: print(f"-{i}")
-        
-@app.command("ss")
-def main(f: Path = typer.Option(default=True, resolve_path=True)):
-    """
-    Scan through the apk for malicious patterns with a simplified output
-    """
-    checkApkInput(f)
-    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-    # Remove existing out directory from previous scan
-    if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{f}"')
-    collectPatterns(detectionPatterns)
-    patternDetection()
-    checkDetected()
-    simpleScanResult()
 
-@app.command("scan")
-def main(f: Path = typer.Option(default=True, resolve_path=True)):
+@app.command("s")
+def scan(f: Path = typer.Option(default="null", resolve_path=True)):
     """
-    Scan through the apk for malicious patterns
+    Scan apk for malicious patterns
     """
     checkApkInput(f)
     os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
@@ -313,10 +300,10 @@ def main(f: Path = typer.Option(default=True, resolve_path=True)):
     checkDetected()
     scanResult()
 
-@app.command("req")
-def requests(f: Path = typer.Option(default=True, resolve_path=True,)):
+@app.command("r")
+def requests(f: Path = typer.Option(default="null", resolve_path=True)):
     """
-    Scan through the apk for any http/https requests
+    Scan apk for any http/https requests
     """
     checkApkInput(f)
     os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
@@ -328,9 +315,9 @@ def requests(f: Path = typer.Option(default=True, resolve_path=True,)):
     reqResult()
 
 @app.command("sr")
-def requests(f: Path = typer.Option(default=True, resolve_path=True,)):
+def scanAndRequests(f: Path = typer.Option(default="null", resolve_path=True)):
     """
-    Scan through the apk for both malicious patterns and http/https requests
+    Scan apk for both malicious patterns and http/https requests
     """
     checkApkInput(f)
     os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
@@ -344,6 +331,23 @@ def requests(f: Path = typer.Option(default=True, resolve_path=True,)):
     scanReq()
     scanResult()
     reqResult()
- 
+
+@app.callback(invoke_without_command=True,context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
+def main(ctx: typer.Context, f: Path = typer.Option(default="null",resolve_path=True)):
+    """
+    Scan apk for malicious patterns with a simplified output
+    """
+    if ctx.invoked_subcommand is None:
+        print(f)
+        checkApkInput(f)
+        os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+        # Remove existing out directory from previous scan
+        if(os.path.exists("out")):
+            shutil.rmtree("out")            
+        os.system(f'jadx -d out /"{f}"')
+        collectPatterns(detectionPatterns)
+        patternDetection()
+        checkDetected()
+        simpleScanResult()
 if __name__ == "__main__":
     app()
