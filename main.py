@@ -71,6 +71,13 @@ def checkApkInput(file):
     print(f"Filename: ({apkname})")
     print("-------------------------------------------------------------")
 
+def decompileAPK(file):
+    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+    # Remove existing out directory from previous scan
+    if(os.path.exists("out")):
+        shutil.rmtree("out")            
+    os.system(f'jadx -d out /"{file}"')
+
 def extractManifestPerms():
     #may be updated to be more efficient
     out = Path(directory).rglob('*')
@@ -256,7 +263,6 @@ def simpleScanResult():
     for i in detectedPatterns: print(f"-{i}")
     print("-------------------------------------------------------------")
    
-
 def scanResult():
     global dangerRating
     bar = '{:░<20}'.format('█'*(dangerRating//5))
@@ -290,11 +296,7 @@ def scan(f: Path = typer.Option(default="null", resolve_path=True)):
     Scan apk for malicious patterns
     """
     checkApkInput(f)
-    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-    # Remove existing out directory from previous scan
-    if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{f}"')
+    decompileAPK(f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected()
@@ -306,11 +308,7 @@ def requests(f: Path = typer.Option(default="null", resolve_path=True)):
     Scan apk for any http/https requests
     """
     checkApkInput(f)
-    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-    # Remove existing out directory from previous scan
-    if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{f}"')
+    decompileAPK(f)
     scanReq()
     reqResult()
 
@@ -320,11 +318,7 @@ def scanAndRequests(f: Path = typer.Option(default="null", resolve_path=True)):
     Scan apk for both malicious patterns and http/https requests
     """
     checkApkInput(f)
-    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-    # Remove existing out directory from previous scan
-    if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{f}"')
+    decompileAPK(f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected()
@@ -338,16 +332,12 @@ def main(ctx: typer.Context, f: Path = typer.Option(default="null",resolve_path=
     Scan apk for malicious patterns with a simplified output
     """
     if ctx.invoked_subcommand is None:
-        print(f)
         checkApkInput(f)
-        os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-        # Remove existing out directory from previous scan
-        if(os.path.exists("out")):
-            shutil.rmtree("out")            
-        os.system(f'jadx -d out /"{f}"')
+        decompileAPK(f)
         collectPatterns(detectionPatterns)
         patternDetection()
         checkDetected()
         simpleScanResult()
+        
 if __name__ == "__main__":
     app()
