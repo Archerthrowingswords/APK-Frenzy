@@ -72,7 +72,7 @@
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["accessibilityEventTypes", "setServiceInfo()"],
         "javaKeywords":["onAccessibilityEvent"],
-        "javaOptionalKeywords":["Intent(\"android.settings.ACCESSIBILITY_SETTINGS\")"],
+        "javaOptionalKeywords":["Intent", "android.settings.ACCESSIBILITY_SETTINGS"],
         "alternateJavaKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 50,
@@ -86,7 +86,7 @@
         "javaKeywords":["Location", "LocationManager", "LocationListener", "Context.LOCATION_SERVICE"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["latitude", "longitude"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Accesses the location of the device.",
         "dangerRating": 25,
         "c":"HN"
     },
@@ -99,7 +99,7 @@
         "alternateJavaKeywords":[["startActivity(","startActivityForResult("]],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 50,
+        "dangerRating": 20,
         "c":"HN"
     },
 
@@ -151,7 +151,17 @@
         "c":"HN"
     },
 
-    
+    "Ability to Read or Write System Settings": {
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[["android.permission.WRITE_SETTINGS", "android.permission.WRITE_SECURE_SETTINGS"]],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":["android.settings.action.MANAGE_WRITE_SETTINGS", "canWrite"],
+        "description": "Allows an application to read or write the system settings.",
+        "dangerRating": 20,
+        "c":"HN"
+    },
 
     "Launch Insecure HTTP Website": {
         "manifestKeywords":["android.permission.INTERNET"],
