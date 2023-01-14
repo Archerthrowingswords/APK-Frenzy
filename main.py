@@ -71,7 +71,6 @@ def decompileAPK(file):
     # Remove existing out directory from previous scan
     if(os.path.exists("out")):
         shutil.rmtree("out")
-    
     os.mkdir("out")
     if (os.name == "nt"):       
         os.system(f'jadx -d out /"{file}"')
