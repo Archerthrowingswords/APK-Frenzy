@@ -76,8 +76,7 @@ def decompileAPK(file):
     if (os.name == "nt"):       
         os.system(f'jadx -d out /"{file}"')
     elif (os.name == "posix"):
-        print("linuxbaby")
-        command = f'jadx/bin/jadx -d out /"{file}"'
+        command = f'jadx/bin/jadx.sh -d out /"{file}"'
         output = f'-d ./out'
         subprocess.run(command,shell=True)
 
@@ -231,7 +230,7 @@ def reqResult():
 @app.command("s")
 def scan(f: Path = typer.Option(default="null", resolve_path=True)):
     """
-    Scan apk for malicious patterns
+    Scan apk for malicious patterns and provide more info
     """
     checkApkInput(f)
     decompileAPK(f)
