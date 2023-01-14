@@ -39,20 +39,24 @@ validManifestFoundOptionalKeywords = []
 validJavaFoundOptionalKeywords = []
 
 def apkFrenzyIntro():
-    print("\n=============================================================")
-    print("||  ____  ____  _  __ _____ ____  _____ _      ____ ___  _ ||")
-    print("|| /  _ \/  __\/ |/ //    //  __\/  __// \  /|/_   \\\\  \// ||")
-    print("|| | / \||  \/||   / |  __\|  \/||  \  | |\ || /   / \  /  ||")
-    print("|| | |-|||  __/|   \ | |   |    /|  /_ | | \||/   /_ / /   ||")
-    print("|| \_/ \|\_/   \_|\_\\\\_/   \_/\_\\\\____\\\\_/  \|\____//_/    ||")
-    print("||                                                         ||")
-    print("=============================================================\n")
+    print("\n=================================================================")
+    print("||   ___  ______ _   ______________ _____ _   _  ________   __ ||")
+    print("||  / _ \ | ___ \ | / /|  ___| ___ \  ___| \ | ||___  /\ \ / / ||")
+    print("|| / /_\ \| |_/ / |/ / | |_  | |_/ / |__ |  \| |   / /  \ V /  ||")
+    print("|| |  _  ||  __/|    \ |  _| |    /|  __||     |  / /    \ /   ||")
+    print("|| | | | || |   | |\  \| |   | |\ \| |___| |\  | / /___  | |   ||")
+    print("|| \_| |_/\_|   \_| \_/\_|   \_| \_\____/\_| \_/\_____/  \_/   ||")
+    print("||                                                             ||")
+    print("=================================================================\n")
             
 
 def checkApkInput(file):
     apkname = os.path.basename(file)
     if file is None:
         print("No APK file")
+        raise typer.Abort()
+    elif apkname=="null":
+        print("no file has been specified, please specify a file")
         raise typer.Abort()
     elif file.is_dir():
         print("Config is a directory, please specify a file")
@@ -66,6 +70,13 @@ def checkApkInput(file):
     apkFrenzyIntro()
     print(f"Filename: ({apkname})")
     print("-------------------------------------------------------------")
+
+def decompileAPK(file):
+    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+    # Remove existing out directory from previous scan
+    if(os.path.exists("out")):
+        shutil.rmtree("out")            
+    os.system(f'jadx -d out /"{file}"')
 
 def extractManifestPerms():
     #may be updated to be more efficient
@@ -239,6 +250,19 @@ def scanReq():
     list(set(httpList))
     httpList.sort()
 
+def simpleScanResult():
+    global dangerRating
+    bar = '{:░<20}'.format('█'*(dangerRating//5))
+    if(dangerRating > 99): dangerRating = 99
+    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}%")
+    print("-------------------------------------------------------------")
+    if (detectedPatterns == {}):
+        print("No malicous paterns detected")
+        return
+    print(f"Paterns detected:")
+    for i in detectedPatterns: print(f"-{i}")
+    print("-------------------------------------------------------------")
+   
 def scanResult():
     global dangerRating
     bar = '{:░<20}'.format('█'*(dangerRating//5))
@@ -265,55 +289,55 @@ def reqResult():
         return
     print("http/https requests detected:\n")
     for i in httpList: print(f"-{i}")
-        
 
-@app.command("scan")
-def main(f: Path = typer.Option(default=True, resolve_path=True)):
+@app.command("s")
+def scan(f: Path = typer.Option(default="null", resolve_path=True)):
     """
-    Scan through the apk for malicious patterns
+    Scan apk for malicious patterns
     """
     checkApkInput(f)
-    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-    # Remove existing out directory from previous scan
-    if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{f}"')
+    decompileAPK(f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected()
     scanResult()
 
-@app.command("req")
-def requests(f: Path = typer.Option(default=True, resolve_path=True,)):
+@app.command("r")
+def requests(f: Path = typer.Option(default="null", resolve_path=True)):
     """
-    Scan through the apk for any http/https requests
+    Scan apk for any http/https requests
     """
     checkApkInput(f)
-    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-    # Remove existing out directory from previous scan
-    if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{f}"')
+    decompileAPK(f)
     scanReq()
     reqResult()
 
 @app.command("sr")
-def requests(f: Path = typer.Option(default=True, resolve_path=True,)):
+def scanAndRequests(f: Path = typer.Option(default="null", resolve_path=True)):
     """
-    Scan through the apk for both malicious patterns and http/https requests
+    Scan apk for both malicious patterns and http/https requests
     """
     checkApkInput(f)
-    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
-    # Remove existing out directory from previous scan
-    if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{f}"')
+    decompileAPK(f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected()
     scanReq()
     scanResult()
     reqResult()
- 
+
+@app.callback(invoke_without_command=True,context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
+def main(ctx: typer.Context, f: Path = typer.Option(default="null",resolve_path=True)):
+    """
+    Scan apk for malicious patterns with a simplified output
+    """
+    if ctx.invoked_subcommand is None:
+        checkApkInput(f)
+        decompileAPK(f)
+        collectPatterns(detectionPatterns)
+        patternDetection()
+        checkDetected()
+        simpleScanResult()
+        
 if __name__ == "__main__":
     app()

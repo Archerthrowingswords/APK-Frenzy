@@ -63,7 +63,7 @@
         "javaKeywords":["android.intent.action.BOOT_COMPLETED"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Allows the app to run automatically in the background when the phone is turned on, even without user interaction",
         "dangerRating": 25
     },
 
