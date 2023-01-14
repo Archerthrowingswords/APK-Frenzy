@@ -4,6 +4,7 @@ from pathlib import Path
 import json
 import shutil #fairly certain this works on linux
 import re
+import subprocess
 
 # initializing global variables
 dangerRating = 0
@@ -76,7 +77,9 @@ def decompileAPK(file):
         os.system(f'jadx -d out /"{file}"')
     elif (os.name == "posix"):
         print("linuxbaby")
-        os.system(f'./jadx -d out /"{file}"')
+        command = f'jadx/bin/jadx -d out /"{file}"'
+        output = f'-d ./out'
+        subprocess.run(command,shell=True)
 
 
 def collectPatterns(detectionPatterns):
@@ -126,19 +129,19 @@ def patternDetection():
         elif file.name.endswith(".java"): 
             # Searching through Java files
                 for javaKeyword in allJavaKeywords:
-                    if file.read_text(encoding='ansi').find(javaKeyword) != -1:
+                    if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
                         allJavaFoundKeywords.append(javaKeyword)
                         allJavaKeywords.remove(javaKeyword)
                 #looking through the file for alternate java keywords
                 for javaKeywordList in allJavaAlternateKeyswords:
                     if javaKeywordList is not list: continue
                     for javaKeyword in javaKeywordList:
-                        if file.read_text(encoding='ansi').find(javaKeyword) != -1:
+                        if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
                             allJavaFoundAlternateKeywords.append(javaKeywordList)
                             allJavaAlternateKeyswords.remove(javaKeywordList)
                 #looking through the file for optional java keywords
                 for javaKeyword in allJavaOptionalKeywords:
-                    if file.read_text(encoding='ansi').find(javaKeyword) != -1:
+                    if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
                         allJavaFoundOptionalKeywords.append(javaKeyword)
                         allJavaOptionalKeywords.remove(javaKeyword)
     
@@ -180,7 +183,7 @@ def scanReq():
         if file.name.endswith(".java"):
             #looking through the file for java keywords
             httpPattern = r'"https?://\S+"'
-            temphttpList = re.findall(httpPattern, file.read_text(encoding='ansi'))
+            temphttpList = re.findall(httpPattern, file.read_text(encoding='utf-8'))
             httpList.extend(temphttpList)
     list(set(httpList))
     httpList.sort()
