@@ -74,10 +74,9 @@ def decompileAPK(file):
         shutil.rmtree("out")
     os.mkdir("out")
     if (os.name == "nt"):       
-        os.system(f'jadx -d out /"{file}"')
+        subprocess.run(f'jadx -d out /"{file}"',shell=True)
     elif (os.name == "posix"):
-        command = f'jadx/bin/jadx.sh -d out /"{file}"'
-        output = f'-d ./out'
+        command = f'jadx/bin/jadx -d out /"{file}"'
         subprocess.run(command,shell=True)
 
 
