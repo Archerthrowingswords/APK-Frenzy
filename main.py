@@ -75,8 +75,13 @@ def decompileAPK(file):
     os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
     # Remove existing out directory from previous scan
     if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{file}"')
+        shutil.rmtree("out")
+    os.mkdir("out")
+    if (os.name == "nt"):       
+        os.system(f'jadx -d out /"{file}"')
+    elif (os.name == "posix"):
+        print("linuxbaby")
+        os.system(f'./jadx -d out /"{file}"')
 
 def extractManifestPerms():
     #may be updated to be more efficient
