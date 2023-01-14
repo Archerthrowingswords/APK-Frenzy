@@ -3,12 +3,7 @@ import os
 from pathlib import Path
 import json
 import shutil #fairly certain this works on linux
-# importing element tree
-# under the alias of ET
-import xml.etree.ElementTree as ET
 import re
-
-
 
 # initializing global variables
 dangerRating = 0
@@ -75,74 +70,15 @@ def decompileAPK(file):
     os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
     # Remove existing out directory from previous scan
     if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{file}"')
+        shutil.rmtree("out")
+    
+    os.mkdir("out")
+    if (os.name == "nt"):       
+        os.system(f'jadx -d out /"{file}"')
+    elif (os.name == "posix"):
+        print("linuxbaby")
+        os.system(f'./jadx -d out /"{file}"')
 
-def extractManifestPerms():
-    #may be updated to be more efficient
-    out = Path(directory).rglob('*')
-    for file in out:
-        if file.name.endswith("Manifest.xml"): 
-            # Passing the path of the
-            # xml document to enable the
-            # parsing process
-            tree = ET.parse(file)
-            # getting the parent tag of
-            # the xml document
-            root = tree.getroot()
-            permissions_list = []
-            found_crit_perms = []
-            # just an example of critical permissions
-            critical_permissions_list = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.READ_EXTERNAL_STORAGE"]
-
-            for permissions in root.iter('uses-permission'):
-                # print(permissions.attrib['{http://schemas.android.com/apk/res/android}name'])
-                permissions_list.append(permissions.attrib['{http://schemas.android.com/apk/res/android}name'])
-            # Remove duplicates from permissions_list
-            permissions_list = list(dict.fromkeys(permissions_list))   
-            for i in range(len(permissions_list)):
-                if (permissions_list[i] in critical_permissions_list):
-                    found_crit_perms.append(permissions_list[i])
-            print(found_crit_perms, " <- crit perms")
-            print("-----------------------------------------")
-            return permissions_list
-
-def extractJavaPerms(): 
-
-    out = Path(directory).rglob('*')
-
-    log = ""
-
-    keywords = ["checkCallingPermission", "android.permission"]
-    for file in out:
-        if file.name.endswith(".java"): 
-            log += file.__str__() + "\n"
-            linecount = 0
-            keywordFound = False
-
-            # javafile = file.name
-            with open(file) as readfile:
-                for keyword in keywords:
-                    if file.read_text().find(keyword) != -1:
-                        keywordFound = True
-                        break
-
-                if keywordFound:
-                        for line in readfile:
-                            linecount += 1
-                            for keyword in keywords:
-                                if line.find(keyword) != -1:
-                                    print(keyword + " Found")
-                                    log += "Line " + linecount.__str__() + " - " + line.lstrip() + "\n"
-                                    break
-                else:
-                    log += "No keywords found\n"
-            
-            log += "-----------------------------------------------------------\n\n"
-
-
-    with open("javaperms.txt", "w") as javapermslog:
-        javapermslog.write(log)
 
 def collectPatterns(detectionPatterns):
     global allManifestKeywords 
