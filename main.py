@@ -11,7 +11,7 @@ import xml.etree.ElementTree as ET
 dangerRating = 0
 app = typer.Typer()
 directory = 'out'
-f = open("detectionPaterns.json")
+f = open("detectionPatterns.json")
 detectionPatterns = json.load(f)
 detectedPatterns = []
 manifestFoundOptionalKeywords = []
