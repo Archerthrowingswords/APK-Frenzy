@@ -3,12 +3,8 @@ import os
 from pathlib import Path
 import json
 import shutil #fairly certain this works on linux
-# importing element tree
-# under the alias of ET
-import xml.etree.ElementTree as ET
 import re
-
-
+import subprocess
 
 # initializing global variables
 dangerRating = 0
@@ -75,74 +71,14 @@ def decompileAPK(file):
     os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
     # Remove existing out directory from previous scan
     if(os.path.exists("out")):
-        shutil.rmtree("out")            
-    os.system(f'jadx -d out /"{file}"')
+        shutil.rmtree("out")
+    os.mkdir("out")
+    if (os.name == "nt"):       
+        subprocess.run(f'jadx -d out /"{file}"',shell=True)
+    elif (os.name == "posix"):
+        command = f'jadx/bin/jadx -d out /"{file}"'
+        subprocess.run(command,shell=True)
 
-def extractManifestPerms():
-    #may be updated to be more efficient
-    out = Path(directory).rglob('*')
-    for file in out:
-        if file.name.endswith("Manifest.xml"): 
-            # Passing the path of the
-            # xml document to enable the
-            # parsing process
-            tree = ET.parse(file)
-            # getting the parent tag of
-            # the xml document
-            root = tree.getroot()
-            permissions_list = []
-            found_crit_perms = []
-            # just an example of critical permissions
-            critical_permissions_list = ["android.permission.ACCESS_FINE_LOCATION", "android.permission.READ_EXTERNAL_STORAGE"]
-
-            for permissions in root.iter('uses-permission'):
-                # print(permissions.attrib['{http://schemas.android.com/apk/res/android}name'])
-                permissions_list.append(permissions.attrib['{http://schemas.android.com/apk/res/android}name'])
-            # Remove duplicates from permissions_list
-            permissions_list = list(dict.fromkeys(permissions_list))   
-            for i in range(len(permissions_list)):
-                if (permissions_list[i] in critical_permissions_list):
-                    found_crit_perms.append(permissions_list[i])
-            print(found_crit_perms, " <- crit perms")
-            print("-----------------------------------------")
-            return permissions_list
-
-def extractJavaPerms(): 
-
-    out = Path(directory).rglob('*')
-
-    log = ""
-
-    keywords = ["checkCallingPermission", "android.permission"]
-    for file in out:
-        if file.name.endswith(".java"): 
-            log += file.__str__() + "\n"
-            linecount = 0
-            keywordFound = False
-
-            # javafile = file.name
-            with open(file) as readfile:
-                for keyword in keywords:
-                    if file.read_text().find(keyword) != -1:
-                        keywordFound = True
-                        break
-
-                if keywordFound:
-                        for line in readfile:
-                            linecount += 1
-                            for keyword in keywords:
-                                if line.find(keyword) != -1:
-                                    print(keyword + " Found")
-                                    log += "Line " + linecount.__str__() + " - " + line.lstrip() + "\n"
-                                    break
-                else:
-                    log += "No keywords found\n"
-            
-            log += "-----------------------------------------------------------\n\n"
-
-
-    with open("javaperms.txt", "w") as javapermslog:
-        javapermslog.write(log)
 
 def collectPatterns(detectionPatterns):
     global allManifestKeywords 
@@ -191,19 +127,19 @@ def patternDetection():
         elif file.name.endswith(".java"): 
             # Searching through Java files
                 for javaKeyword in allJavaKeywords:
-                    if file.read_text(encoding='ansi').find(javaKeyword) != -1:
+                    if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
                         allJavaFoundKeywords.append(javaKeyword)
                         allJavaKeywords.remove(javaKeyword)
                 #looking through the file for alternate java keywords
                 for javaKeywordList in allJavaAlternateKeyswords:
                     if javaKeywordList is not list: continue
                     for javaKeyword in javaKeywordList:
-                        if file.read_text(encoding='ansi').find(javaKeyword) != -1:
+                        if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
                             allJavaFoundAlternateKeywords.append(javaKeywordList)
                             allJavaAlternateKeyswords.remove(javaKeywordList)
                 #looking through the file for optional java keywords
                 for javaKeyword in allJavaOptionalKeywords:
-                    if file.read_text(encoding='ansi').find(javaKeyword) != -1:
+                    if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
                         allJavaFoundOptionalKeywords.append(javaKeyword)
                         allJavaOptionalKeywords.remove(javaKeyword)
     
@@ -217,7 +153,6 @@ def checkDetected():
         javaKeywords = (patternData["javaKeywords"])
         alternateJavaKeywords = (patternData["alternateJavaKeywords"])
         javaOptionalKeywords = (patternData["javaOptionalKeywords"])
-        description = (patternData["description"])
         
         manifestKeywords = list(set(manifestKeywords)-set(allManifestFoundKeywords))
         javaKeywords = list(set(javaKeywords)-set(allJavaFoundKeywords))
@@ -229,7 +164,7 @@ def checkDetected():
             if javaList in allJavaFoundAlternateKeywords:alternateJavaKeywords.remove(javaList)
 
         if (manifestKeywords==[] and javaKeywords==[] and alternateManifestKeywords==[] and alternateJavaKeywords==[]):
-            detectedPatterns[patternName] = description
+            detectedPatterns[patternName] = [patternData["description"],patternData["dangerRating"]]
             dangerRating = dangerRating + patternData["dangerRating"]
             validManifestFoundOptionalKeywords.extend(list(set(optionalManifestKeywords).intersection(allManifestFoundOptionalKeywords)))
             validJavaFoundOptionalKeywords.extend(list(set(javaOptionalKeywords).intersection(allJavaFoundOptionalKeywords)))
@@ -245,7 +180,7 @@ def scanReq():
         if file.name.endswith(".java"):
             #looking through the file for java keywords
             httpPattern = r'"https?://\S+"'
-            temphttpList = re.findall(httpPattern, file.read_text(encoding='ansi'))
+            temphttpList = re.findall(httpPattern, file.read_text(encoding='utf-8'))
             httpList.extend(temphttpList)
     list(set(httpList))
     httpList.sort()
@@ -254,7 +189,7 @@ def simpleScanResult():
     global dangerRating
     bar = '{:░<20}'.format('█'*(dangerRating//5))
     if(dangerRating > 99): dangerRating = 99
-    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}%")
+    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (probability of APK being malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
         print("No malicous paterns detected")
@@ -267,13 +202,13 @@ def scanResult():
     global dangerRating
     bar = '{:░<20}'.format('█'*(dangerRating//5))
     if(dangerRating > 99): dangerRating = 99
-    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}%")
+    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (probability of APK being malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
         print("No malicous paterns detected")
         return
     print(f"Paterns detected:")
-    for i in detectedPatterns: print(f"\n-{i}\n{detectedPatterns[i]}")
+    for i in detectedPatterns: print(f"\n-{i} (+{detectedPatterns[i][1]}%)\n{detectedPatterns[i][0]}")
     if (validManifestFoundOptionalKeywords != []):
         print(f"\nInteresting manifest keywords found:")
         for i in validManifestFoundOptionalKeywords: print(f"-{i}")
@@ -293,7 +228,7 @@ def reqResult():
 @app.command("s")
 def scan(f: Path = typer.Option(default="null", resolve_path=True)):
     """
-    Scan apk for malicious patterns
+    Scan apk for malicious patterns and provide more info
     """
     checkApkInput(f)
     decompileAPK(f)
