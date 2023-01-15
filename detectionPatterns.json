@@ -75,7 +75,7 @@
         "javaOptionalKeywords":["Intent", "android.settings.ACCESSIBILITY_SETTINGS"],
         "alternateJavaKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 50,
+        "dangerRating": 80,
         "c":"HN"
     },
 
@@ -87,7 +87,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["latitude", "longitude"],
         "description": "Accesses the location of the device.",
-        "dangerRating": 25,
+        "dangerRating": 20,
         "c":"HN"
     },
 
@@ -99,7 +99,7 @@
         "alternateJavaKeywords":[["startActivity(","startActivityForResult("]],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 20,
+        "dangerRating": 80,
         "c":"HN"
     },
 
@@ -111,7 +111,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 100,
+        "dangerRating": 99,
         "c":"HN"
     },
 
@@ -123,7 +123,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 20,
+        "dangerRating": 80,
         "c":"HN"
     },
 
@@ -135,7 +135,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Allows the app to create windows that overlay all other apps without notifying the user. Commonly used for displaying fraudulent ads, phishing scams, click-jacking etc",
-        "dangerRating": 10,
+        "dangerRating": 30,
         "c":"HN"
     },
 
@@ -147,7 +147,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber"],
         "description": "Allows the app to collect telephony data from the device, which might include sensitive information",
-        "dangerRating": 20,
+        "dangerRating": 45,
         "c":"HN"
     },
 
@@ -159,7 +159,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["android.settings.action.MANAGE_WRITE_SETTINGS", "canWrite"],
         "description": "Allows an application to read or write the system settings.",
-        "dangerRating": 20,
+        "dangerRating": 75,
         "c":"HN"
     },
 
@@ -169,9 +169,9 @@
         "optionalManifestKeywords":[],
         "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://"],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["startsWith('http://", "'http://' +", "'http://'+"],
+        "javaOptionalKeywords":["http"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 5
     },
 
     "Force Download from Insecure HTTP Website": {
@@ -229,25 +229,27 @@
         "dangerRating": 25
     },
 
-    "Contact Exfiltration": {
-        "manifestKeywords":["android.permission.READ_CONTACTS", "android.permission.INTERNET"],
+    "Accessing Contacts": {
+        "manifestKeywords":["android.permission.READ_CONTACTS"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_CONTACTS"],
-        "javaKeywords":["ContactsContract.Data."],
+        "javaKeywords":["ContactsContract"],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":[],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 10
+        "javaOptionalKeywords":["HAS_PHONE_NUMBER", "DISPLAY_NAME_PRIMARY", "CONTENT_URI"],
+        "description": "Access the contacts of the user",
+        "dangerRating": 10,
+        "c": "TY, HN"
     },
 
-    "Screenshot Hijacking": {
-        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+    "Ability to Take Screenshots": {
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"],
         "alternateManifestKeywords":[],
-        "optionalManifestKeywords":[],
-        "javaKeywords":["openScreenshot(", "bitmap.compress"],
+        "optionalManifestKeywords":["android.permission.MANAGE_EXTERNAL_STORAGE"],
+        "javaKeywords":["getWindow", "getDecorView", "getRootView"],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["FileOutputStream", ".flush("],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 10
+        "javaOptionalKeywords":["bitmap"],
+        "description": "Takes a screenshot.",
+        "dangerRating": 30,
+        "c": "TY, HN"
     }
 }
