@@ -1,5 +1,5 @@
 {
-    
+
     "Call Monitoring": {
         "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.CALL_PHONE", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS" ],
         "alternateManifestKeywords":[],
@@ -12,7 +12,7 @@
         "c":"G"
     },
 
-    "Ability to Call": {
+    "Ability to Call (see can improve, e.g., add spoofing)": {
         "manifestKeywords":["android.permission.CALL_PHONE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
