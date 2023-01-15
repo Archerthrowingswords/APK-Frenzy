@@ -153,7 +153,6 @@ def checkDetected():
         javaKeywords = (patternData["javaKeywords"])
         alternateJavaKeywords = (patternData["alternateJavaKeywords"])
         javaOptionalKeywords = (patternData["javaOptionalKeywords"])
-        description = (patternData["description"])
         
         manifestKeywords = list(set(manifestKeywords)-set(allManifestFoundKeywords))
         javaKeywords = list(set(javaKeywords)-set(allJavaFoundKeywords))
@@ -165,7 +164,7 @@ def checkDetected():
             if javaList in allJavaFoundAlternateKeywords:alternateJavaKeywords.remove(javaList)
 
         if (manifestKeywords==[] and javaKeywords==[] and alternateManifestKeywords==[] and alternateJavaKeywords==[]):
-            detectedPatterns[patternName] = description
+            detectedPatterns[patternName] = [patternData["description"],patternData["dangerRating"]]
             dangerRating = dangerRating + patternData["dangerRating"]
             validManifestFoundOptionalKeywords.extend(list(set(optionalManifestKeywords).intersection(allManifestFoundOptionalKeywords)))
             validJavaFoundOptionalKeywords.extend(list(set(javaOptionalKeywords).intersection(allJavaFoundOptionalKeywords)))
@@ -209,7 +208,7 @@ def scanResult():
         print("No malicous paterns detected")
         return
     print(f"Paterns detected:")
-    for i in detectedPatterns: print(f"\n-{i}\n{detectedPatterns[i]}")
+    for i in detectedPatterns: print(f"\n-{i} (+{detectedPatterns[i][1]}%)\n{detectedPatterns[i][0]}")
     if (validManifestFoundOptionalKeywords != []):
         print(f"\nInteresting manifest keywords found:")
         for i in validManifestFoundOptionalKeywords: print(f"-{i}")
