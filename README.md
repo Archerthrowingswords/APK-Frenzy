@@ -35,19 +35,19 @@ python main.py
 # "s" will run the malware scan and provide more information in the output
 
 python main.py s --f .\malware\BadNews.A.apk
-or
+#or
 python main.py s
 
 # "r" will extract all the http/https requests and return the result
 
 python main.py r --f .\malware\BadNews.A.apk
-or
+#or
 python main.py r
 
 # "sr" will both run the malware scan and extract all the http/https requests
 
 python main.py sr --f .\malware\BadNews.A.apk
-or
+#or
 python main.py sr
 ```
 
