@@ -238,32 +238,32 @@
         "c":"TY"
     }, 
 
-    "Screen Off: Microphone Recording Upload": {
+    "Microphone Access while Screen Off": {
         "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.STORAGE"],
-        "javaKeywords":["MediaRecorder.start(","MediaRecorder.stop(", "Intent.ACTION_SCREEN_OFF"],
+        "javaKeywords":["MediaRecorder","start", "Intent.ACTION_SCREEN_OFF"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "MediaRecorder.release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Accesses the microphone while the screen is off.",
         "dangerRating": 25,
-        "c":"TY"
+        "c":"TY, HN"
     },
 
-    "Accessing Contacts": {
-        "manifestKeywords":["android.permission.READ_CONTACTS"],
+    "Accessing Contacts, with Internet access": {
+        "manifestKeywords":["android.permission.READ_CONTACTS", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_CONTACTS"],
         "javaKeywords":["ContactsContract"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["HAS_PHONE_NUMBER", "DISPLAY_NAME_PRIMARY", "CONTENT_URI"],
-        "description": "Access the contacts of the user",
+        "description": "Accesses the contacts of the user",
         "dangerRating": 10,
         "c": "TY, HN"
     },
 
-    "Ability to Take Screenshots": {
-        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"],
+    "Ability to Take Screenshots, with Internet access": {
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.MANAGE_EXTERNAL_STORAGE"],
         "javaKeywords":["getWindow", "getDecorView", "getRootView"],
