@@ -12,7 +12,7 @@
         "c":"G"
     },
 
-    "Ability to Call": {
+    "Ability to Call - try to make this malicious": {
         "manifestKeywords":["android.permission.CALL_PHONE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -42,7 +42,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["wakeLock.acquire()"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 10
+        "dangerRating": 10,
+        "c":"L"
     },
 
     "Steal SMS": { 
@@ -53,7 +54,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"L"
     },
 
     "Start on Boot": { 
@@ -64,7 +66,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
         "description": "Allows the app to run automatically in the background when the phone is turned on, even without user interaction",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"L"
     },
 
     "Accessibility UI Abuse": {
@@ -127,6 +130,30 @@
         "c":"HN"
     },
 
+    "Accessibility Request: Deleting Package Silently": {
+        "manifestKeywords":["android.permission.REQUEST_DELETE_PACKAGE", "android.permission.INTERNET"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
+        "javaKeywords":[],
+        "alternateJavaKeywords":["android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "dangerRating": 10,
+        "c":"TY"
+    },
+
+    "Accessibility Request: Installing Package Silently": {
+        "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.INTERNET"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
+        "javaKeywords":[],
+        "alternateJavaKeywords":["android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "DownloadService"],
+        "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "dangerRating": 10,
+        "c":"TY"
+    },
+
     "Android Overlay": {
         "manifestKeywords":["android.permission.SYSTEM_ALERT_WINDOW"],
         "alternateManifestKeywords":[],
@@ -140,15 +167,15 @@
     },
 
     "Collection of Telephony Data": {
-        "manifestKeywords":[],
+        "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[["android.permission.READ_PHONE_STATE", "android.permission.READ_SMS", "android.permission.READ_PHONE_NUMBERS"]],
         "optionalManifestKeywords":[],
         "javaKeywords":["TelephonyManager"],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber"],
+        "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber", "getSubscriberId", "getSimSerialNumber", "getSimCountryIso", "getCallState", "isNetworkRoaming", "getSimOperator"],
         "description": "Allows the app to collect telephony data from the device, which might include sensitive information",
         "dangerRating": 45,
-        "c":"HN"
+        "c":"HN, TY"
     },
 
     "Ability to Read or Write System Settings": {
@@ -183,10 +210,11 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     },
 
-    "Photo Upload with off screen": {
+    "Screen Off: Photo Taken Upload": {
         "manifestKeywords":["android.media.action.IMAGE_CAPTURE", "android.intent.action.USER_PRESENT", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.hardware.camera"],
@@ -194,10 +222,11 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["ACTION_USER_PRESENT", "camera.startPreview(", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture("],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     },
 
-    "Gallery Upload with off screen": {
+    "Screen Off: Gallery Access Upload": {
         "manifestKeywords":["android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -205,10 +234,11 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Intent.ACTION_PICK", "android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI", "startActivityForResult("],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     }, 
 
-    "Microphone Upload with off screen": {
+    "Screen Off: Microphone Recording Upload": {
         "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.STORAGE"],
@@ -216,7 +246,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "MediaRecorder.release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     },
 
     "Accessing Contacts": {
@@ -241,5 +272,17 @@
         "description": "Takes a screenshot.",
         "dangerRating": 30,
         "c": "TY, HN"
+    },
+
+    "Notficiation Listener": {
+        "manifestKeywords":["android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":["android.service.notification.NotificationListenerService"],
+        "javaKeywords":[],
+        "alternateJavaKeywords":["extends NotificationListenerService", "import android.service.notification.NotificationListenerService"],
+        "javaOptionalKeywords":[],
+        "description": "Access to Notification Listener",
+        "dangerRating": 10,
+        "c": "L"
     }
 }
