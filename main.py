@@ -78,6 +78,9 @@ def decompileAPK(file):
     elif (os.name == "posix"):
         command = f'jadx/bin/jadx -d out /"{file}"'
         subprocess.run(command,shell=True)
+    if(len(os.listdir("out"))==0):
+        print("\nThis specific APK file is not able to be decompiled")
+        raise typer.Abort()
 
 def checkIfDecompile(f):
     if f == None: 
@@ -201,9 +204,8 @@ def scanReq():
 
 def simpleScanResult():
     global dangerRating
-    if(dangerRating > 99): dangerRating = 100
-    bar = '{:░<20}'.format('█'*(dangerRating//5))
     if(dangerRating > 99): dangerRating = 99
+    bar = '{:░<20}'.format('█'*(dangerRating//5))
     print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (probability of APK being malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
@@ -215,9 +217,8 @@ def simpleScanResult():
    
 def scanResult():
     global dangerRating
-    if(dangerRating > 99): dangerRating = 100
-    bar = '{:░<20}'.format('█'*(dangerRating//5))
     if(dangerRating > 99): dangerRating = 99
+    bar = '{:░<20}'.format('█'*(dangerRating//5))
     print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (probability of APK being malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
