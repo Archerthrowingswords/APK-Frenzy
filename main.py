@@ -273,14 +273,25 @@ def scanAndRequests(nd:Optional[str] = typer.Argument(None), f: Path = typer.Opt
     scanResult()
     reqResult()
 
+@app.command("nd")
+def scanAndRequests():
+    """
+    Scan apk for both malicious patterns and http/https requests
+    """
+    nd="nd"
+    f = None
+    checkIfDecompile(nd,f)
+    collectPatterns(detectionPatterns)
+    patternDetection()
+    checkDetected()
+    simpleScanResult()
+
 @app.callback(invoke_without_command=True,context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
 def main(ctx: typer.Context, f: Path = typer.Option(default="null",resolve_path=True)):
     """
     Scan apk for malicious patterns with a simplified output
     """
     if ctx.invoked_subcommand is None:
-        checkApkInput(f)
-        decompileAPK(f)
         checkApkInput(f)
         decompileAPK(f)
         collectPatterns(detectionPatterns)
