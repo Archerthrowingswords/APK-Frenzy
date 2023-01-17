@@ -79,14 +79,14 @@ def decompileAPK(file):
         command = f'jadx/bin/jadx -d out /"{file}"'
         subprocess.run(command,shell=True)
 
-def checkIfDecompile(nd,f):
-    if nd == "nd": 
+def checkIfDecompile(f):
+    if f == None: 
         if(os.path.exists("out") and len(os.listdir("out"))!=0):
             apkFrenzyIntro()
             print("Scanning extracted files in ./out folder")
             print("-------------------------------------------------------------")
         else: 
-            print("Please do not use nd argument as no pre decompiled APK code exists")
+            print("Please use --f to specify a APK as no pre decompiled APK code exists\nFor more information use --help")
             raise typer.Abort()
     else:
         checkApkInput(f)
@@ -241,31 +241,31 @@ def reqResult():
     print("")
 
 @app.command("s")
-def scan(nd:Optional[str] = typer.Argument(None), f: Path = typer.Option(default="null", resolve_path=True)):
+def scan( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan apk for malicious patterns and provide more info
     """
-    checkIfDecompile(nd,f)
+    checkIfDecompile(f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected()
     scanResult()
 
 @app.command("r")
-def requests(nd:Optional[str] = typer.Argument(None), f: Path = typer.Option(default="null", resolve_path=True)):
+def requests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan apk for any http/https requests
     """
-    checkIfDecompile(nd,f)
+    checkIfDecompile(f)
     scanReq()
     reqResult()
 
 @app.command("sr")
-def scanAndRequests(nd:Optional[str] = typer.Argument(None), f: Path = typer.Option(default="null", resolve_path=True)):
+def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan apk for both malicious patterns and http/https requests
     """
-    checkIfDecompile(nd,f)
+    checkIfDecompile(f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected()
@@ -273,27 +273,13 @@ def scanAndRequests(nd:Optional[str] = typer.Argument(None), f: Path = typer.Opt
     scanResult()
     reqResult()
 
-@app.command("nd")
-def scanAndRequests():
-    """
-    Scan apk for both malicious patterns and http/https requests
-    """
-    nd="nd"
-    f = None
-    checkIfDecompile(nd,f)
-    collectPatterns(detectionPatterns)
-    patternDetection()
-    checkDetected()
-    simpleScanResult()
-
 @app.callback(invoke_without_command=True,context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
-def main(ctx: typer.Context, f: Path = typer.Option(default="null",resolve_path=True)):
+def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=True)):
     """
     Scan apk for malicious patterns with a simplified output
     """
     if ctx.invoked_subcommand is None:
-        checkApkInput(f)
-        decompileAPK(f)
+        checkIfDecompile(f)
         collectPatterns(detectionPatterns)
         patternDetection()
         checkDetected()
