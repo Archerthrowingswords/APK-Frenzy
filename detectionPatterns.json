@@ -77,8 +77,8 @@
         "javaKeywords":["onAccessibilityEvent"],
         "javaOptionalKeywords":["Intent", "android.settings.ACCESSIBILITY_SETTINGS"],
         "alternateJavaKeywords":[],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 80,
+        "description": "Uses Accessibility to gain access to the UI elements.",
+        "dangerRating": 60,
         "c":"HN"
     },
 
@@ -90,7 +90,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["latitude", "longitude"],
         "description": "Accesses the location of the device.",
-        "dangerRating": 20,
+        "dangerRating": 35,
         "c":"HN"
     },
 
@@ -99,10 +99,10 @@
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage" ],
-        "alternateJavaKeywords":[["startActivity(","startActivityForResult("]],
+        "alternateJavaKeywords":[["startActivity","startActivityForResult"]],
         "javaOptionalKeywords":[],
         "description": "Allows the app to launch other apps and potentially receive information from them",
-        "dangerRating": 80,
+        "dangerRating": 25,
         "c":"HN"
     },
 
@@ -113,7 +113,7 @@
         "javaKeywords":["getText()"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Exploits Accessibility Settings to log what the user types.",
         "dangerRating": 99,
         "c":"HN"
     },
@@ -125,7 +125,7 @@
         "javaKeywords":["com.google.android.packageinstaller", "performAction"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Uses Accessibility to install an application without the user's knowledge.",
         "dangerRating": 80,
         "c":"HN"
     },
@@ -186,7 +186,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["android.settings.action.MANAGE_WRITE_SETTINGS", "canWrite"],
         "description": "Allows an application to read or write the system settings.",
-        "dangerRating": 75,
+        "dangerRating": 85,
         "c":"HN"
     },
 
@@ -196,9 +196,9 @@
         "optionalManifestKeywords":[],
         "javaKeywords":["application/vnd.android.package-archive"],
         "alternateJavaKeywords":[["http", "https"]],
-        "javaOptionalKeywords":[],
+        "javaOptionalKeywords":["apk", "APK"],
         "description": "An APK file was downloaded from the Internet.",
-        "dangerRating": 55,
+        "dangerRating": 75,
         "c":"TY, HN"
     },
 
@@ -246,7 +246,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "MediaRecorder.release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
         "description": "Accesses the microphone while the screen is off.",
-        "dangerRating": 25,
+        "dangerRating": 50,
         "c":"TY, HN"
     },
 
@@ -258,7 +258,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["HAS_PHONE_NUMBER", "DISPLAY_NAME_PRIMARY", "CONTENT_URI"],
         "description": "Accesses the contacts of the user",
-        "dangerRating": 10,
+        "dangerRating": 30,
         "c": "TY, HN"
     },
 
@@ -270,7 +270,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["bitmap"],
         "description": "Takes a screenshot.",
-        "dangerRating": 30,
+        "dangerRating": 60,
         "c": "TY, HN"
     },
 
@@ -294,7 +294,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["addPrimaryClipChangedListener", "hasPrimaryClip", "getPrimaryClip"],
         "description": "Accesses the clipboard and retrieves the primary copied text.",
-        "dangerRating": 30,
+        "dangerRating": 70,
         "c": "HN"
     },
 
