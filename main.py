@@ -1,5 +1,4 @@
 import typer
-from typing import Optional
 import os
 from pathlib import Path
 import json
@@ -8,11 +7,12 @@ import re
 import subprocess
 
 # initializing global variables
+abPath = Path(__file__).parent.resolve()
 dangerRating = 0
 app = typer.Typer()
 state = {"verbose": False}
 directory = 'out'
-f = open("detectionPatterns.json")
+f = open(f"{abPath}/detectionPatterns.json")
 detectionPatterns = json.load(f)
 detectedPatterns = {}
 
@@ -68,7 +68,7 @@ def checkApkInput(file):
     print("-------------------------------------------------------------")
 
 def decompileAPK(file):
-    os.environ["PATH"] = f"{os.environ['PATH']};.\jadx\\bin\\"
+    os.environ["PATH"] = f"{os.environ['PATH']};{abPath}\jadx\\bin\\"
     # Remove existing out directory from previous scan
     if(os.path.exists("out")):
         shutil.rmtree("out")
@@ -278,6 +278,7 @@ def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=Tr
     """
     Scan apk for malicious patterns with a simplified output
     """
+    print(f)
     if ctx.invoked_subcommand is None:
         checkIfDecompile(f)
         collectPatterns(detectionPatterns)
