@@ -163,26 +163,16 @@
         "c":"HN"
     },
 
-    "Launch Insecure HTTP Website": {
+    "Downloading APKs from Website": {
         "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
-        "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://"],
-        "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["http"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 5
-    },
-
-    "Force Download from Insecure HTTP Website": {
-        "manifestKeywords":["android.permission.INTERNET"],
-        "alternateManifestKeywords":[],
-        "optionalManifestKeywords":[],
-        "javaKeywords":["Intent.ACTION_VIEW", "startActivity(", "http://", "DownloadManager"],
-        "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["startsWith('http://", "'http://' +", "'http://'+"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "javaKeywords":["application/vnd.android.package-archive"],
+        "alternateJavaKeywords":[["http", "https"]],
+        "javaOptionalKeywords":[],
+        "description": "An APK file was downloaded from the Internet.",
+        "dangerRating": 55,
+        "c":"TY, HN"
     },
 
     "System Privledge Disable Apps": {
@@ -216,7 +206,7 @@
         "javaOptionalKeywords":["Intent.ACTION_PICK", "android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI", "startActivityForResult("],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 25
-    },
+    }, 
 
     "Microphone Upload with off screen": {
         "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
