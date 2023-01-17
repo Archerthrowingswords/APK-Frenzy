@@ -15,17 +15,17 @@ pip install "typer[all]"
 
 Before running the script, ensure that you are in the APK-Frenzy directory.
 
-To run the script, all you need to run is
+To run the script, all you need to run is:
 ```bash
 python main.py --f {apk name}
 ```
 
-If your filename has a space, then ensure that the filepath is wrapped in a " "
+If your filename has a space, then ensure that the filepath is wrapped in a " ":
 ```bash
 python main.py --f "mal ware.apk"
 ```
 
-If you have already decompiled the APK file then you can run the script without the --f option scan through the ./out directory
+If you have already decompiled the APK file, then you can run the script without the --f option scan through the ./out directory:
 ```bash
 python main.py
 ```
@@ -35,19 +35,19 @@ python main.py
 # "s" will run the malware scan and provide more information in the output
 
 python main.py s --f .\malware\BadNews.A.apk
-#or
+# or
 python main.py s
 
 # "r" will extract all the http/https requests and return the result
 
 python main.py r --f .\malware\BadNews.A.apk
-#or
+# or
 python main.py r
 
 # "sr" will both run the malware scan and extract all the http/https requests
 
 python main.py sr --f .\malware\BadNews.A.apk
-#or
+# or
 python main.py sr
 ```
 
