@@ -101,7 +101,7 @@
         "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage" ],
         "alternateJavaKeywords":[["startActivity(","startActivityForResult("]],
         "javaOptionalKeywords":[],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Allows the app to launch other apps and potentially receive information from them",
         "dangerRating": 80,
         "c":"HN"
     },
