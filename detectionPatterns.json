@@ -12,7 +12,7 @@
         "c":"G"
     },
 
-    "Ability to Call": {
+    "Ability to Call - try to make this malicious": {
         "manifestKeywords":["android.permission.CALL_PHONE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -164,7 +164,7 @@
     },
 
     "Collection of Telephony Data": {
-        "manifestKeywords":[],
+        "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[["android.permission.READ_PHONE_STATE", "android.permission.READ_SMS", "android.permission.READ_PHONE_NUMBERS"]],
         "optionalManifestKeywords":[],
         "javaKeywords":["TelephonyManager"],
@@ -172,7 +172,7 @@
         "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber", "getSubscriberId", "getSimSerialNumber", "getSimCountryIso", "getCallState", "isNetworkRoaming", "getSimOperator"],
         "description": "Allows the app to collect telephony data from the device, which might include sensitive information",
         "dangerRating": 45,
-        "c":"HN"
+        "c":"HN, TY"
     },
 
     "Ability to Read or Write System Settings": {
