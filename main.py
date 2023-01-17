@@ -1,4 +1,5 @@
 import typer
+from typing import Optional
 import os
 from pathlib import Path
 import json
@@ -45,7 +46,6 @@ def apkFrenzyIntro():
     print("||                                                             ||")
     print("=================================================================\n")
             
-
 def checkApkInput(file):
     apkname = os.path.basename(file)
     if file is None:
@@ -79,6 +79,18 @@ def decompileAPK(file):
         command = f'jadx/bin/jadx -d out /"{file}"'
         subprocess.run(command,shell=True)
 
+def checkIfDecompile(nd,f):
+    if nd == "nd": 
+        if(os.path.exists("out") and len(os.listdir("out"))!=0):
+            apkFrenzyIntro()
+            print("Scanning extracted files in ./out folder")
+            print("-------------------------------------------------------------")
+        else: 
+            print("Please do not use nd argument as no pre decompiled APK code exists")
+            raise typer.Abort()
+    else:
+        checkApkInput(f)
+        decompileAPK(f)
 
 def collectPatterns(detectionPatterns):
     global allManifestKeywords 
@@ -118,6 +130,7 @@ def patternDetection():
                             if line.find(alternateKeyword) != -1:
                                 allManifestFoundAlternateKeywords.append(manifestKeywordList)
                                 allManifestAlternateKeywords.remove(manifestKeywordList)
+                                break
                     #looking through the line for optional manifest keywords
                     for manifestKeyword in allOptionalManifestKeywords:
                         if line.find(manifestKeyword) != -1:
@@ -132,11 +145,12 @@ def patternDetection():
                         allJavaKeywords.remove(javaKeyword)
                 #looking through the file for alternate java keywords
                 for javaKeywordList in allJavaAlternateKeyswords:
-                    if javaKeywordList is not list: continue
-                    for javaKeyword in javaKeywordList:
-                        if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
+                    if type(javaKeywordList) is not list: continue
+                    for alternateKeyword in javaKeywordList:
+                        if file.read_text(encoding='utf-8').find(alternateKeyword) != -1:
                             allJavaFoundAlternateKeywords.append(javaKeywordList)
                             allJavaAlternateKeyswords.remove(javaKeywordList)
+                            break
                 #looking through the file for optional java keywords
                 for javaKeyword in allJavaOptionalKeywords:
                     if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
@@ -224,36 +238,34 @@ def reqResult():
         return
     print("http/https requests detected:\n")
     for i in httpList: print(f"-{i}")
+    print("")
 
 @app.command("s")
-def scan(f: Path = typer.Option(default="null", resolve_path=True)):
+def scan(nd:Optional[str] = typer.Argument(None), f: Path = typer.Option(default="null", resolve_path=True)):
     """
     Scan apk for malicious patterns and provide more info
     """
-    checkApkInput(f)
-    decompileAPK(f)
+    checkIfDecompile(nd,f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected()
     scanResult()
 
 @app.command("r")
-def requests(f: Path = typer.Option(default="null", resolve_path=True)):
+def requests(nd:Optional[str] = typer.Argument(None), f: Path = typer.Option(default="null", resolve_path=True)):
     """
     Scan apk for any http/https requests
     """
-    checkApkInput(f)
-    decompileAPK(f)
+    checkIfDecompile(nd,f)
     scanReq()
     reqResult()
 
 @app.command("sr")
-def scanAndRequests(f: Path = typer.Option(default="null", resolve_path=True)):
+def scanAndRequests(nd:Optional[str] = typer.Argument(None), f: Path = typer.Option(default="null", resolve_path=True)):
     """
     Scan apk for both malicious patterns and http/https requests
     """
-    checkApkInput(f)
-    decompileAPK(f)
+    checkIfDecompile(nd,f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected()
@@ -267,6 +279,8 @@ def main(ctx: typer.Context, f: Path = typer.Option(default="null",resolve_path=
     Scan apk for malicious patterns with a simplified output
     """
     if ctx.invoked_subcommand is None:
+        checkApkInput(f)
+        decompileAPK(f)
         checkApkInput(f)
         decompileAPK(f)
         collectPatterns(detectionPatterns)
