@@ -42,7 +42,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["wakeLock.acquire()"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 10
+        "dangerRating": 10,
+        "c":"L"
     },
 
     "Steal SMS": { 
@@ -53,7 +54,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"L"
     },
 
     "Start on Boot": { 
@@ -64,7 +66,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
         "description": "Allows the app to run automatically in the background when the phone is turned on, even without user interaction",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"L"
     },
 
     "Accessibility UI Abuse": {
@@ -281,5 +284,17 @@
         "description": "Takes a screenshot.",
         "dangerRating": 30,
         "c": "TY, HN"
+    },
+
+    "Notficiation Listener": {
+        "manifestKeywords":["android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":["android.service.notification.NotificationListenerService"],
+        "javaKeywords":[],
+        "alternateJavaKeywords":["extends NotificationListenerService", "import android.service.notification.NotificationListenerService"],
+        "javaOptionalKeywords":[],
+        "description": "Access to Notification Listener",
+        "dangerRating": 10,
+        "c": "L"
     }
 }
