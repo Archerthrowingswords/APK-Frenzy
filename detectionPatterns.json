@@ -127,6 +127,30 @@
         "c":"HN"
     },
 
+    "Accessibility Request: Deleting Package Silently": {
+        "manifestKeywords":["android.permission.REQUEST_DELETE_PACKAGE", "android.permission.INTERNET"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
+        "javaKeywords":[],
+        "alternateJavaKeywords":["android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "dangerRating": 10,
+        "c":"TY"
+    },
+
+    "Accessibility Request: Installing Package Silently": {
+        "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.INTERNET"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
+        "javaKeywords":[],
+        "alternateJavaKeywords":["android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "DownloadService"],
+        "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "dangerRating": 10,
+        "c":"TY"
+    },
+
     "Android Overlay": {
         "manifestKeywords":["android.permission.SYSTEM_ALERT_WINDOW"],
         "alternateManifestKeywords":[],
@@ -145,7 +169,7 @@
         "optionalManifestKeywords":[],
         "javaKeywords":["TelephonyManager"],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber"],
+        "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber", "getSubscriberId", "getSimSerialNumber", "getSimCountryIso", "getCallState", "isNetworkRoaming", "getSimOperator"],
         "description": "Allows the app to collect telephony data from the device, which might include sensitive information",
         "dangerRating": 45,
         "c":"HN"
@@ -171,7 +195,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["http"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 5
+        "dangerRating": 5,
+        "c":"TY"
     },
 
     "Force Download from Insecure HTTP Website": {
@@ -182,7 +207,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startsWith('http://", "'http://' +", "'http://'+"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     },
 
     "System Privledge Disable Apps": {
@@ -193,10 +219,11 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     },
 
-    "Photo Upload with off screen": {
+    "Screen Off: Photo Taken Upload": {
         "manifestKeywords":["android.media.action.IMAGE_CAPTURE", "android.intent.action.USER_PRESENT", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.hardware.camera"],
@@ -204,10 +231,11 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["ACTION_USER_PRESENT", "camera.startPreview(", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture("],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     },
 
-    "Gallery Upload with off screen": {
+    "Screen Off: Gallery Access Upload": {
         "manifestKeywords":["android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -215,10 +243,11 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Intent.ACTION_PICK", "android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI", "startActivityForResult("],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     },
 
-    "Microphone Upload with off screen": {
+    "Screen Off: Microphone Recording Upload": {
         "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.STORAGE"],
@@ -226,7 +255,8 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "MediaRecorder.release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25
+        "dangerRating": 25,
+        "c":"TY"
     },
 
     "Accessing Contacts": {
