@@ -201,6 +201,7 @@ def scanReq():
 
 def simpleScanResult():
     global dangerRating
+    if(dangerRating > 99): dangerRating = 100
     bar = '{:░<20}'.format('█'*(dangerRating//5))
     if(dangerRating > 99): dangerRating = 99
     print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (probability of APK being malicious)")
@@ -214,6 +215,7 @@ def simpleScanResult():
    
 def scanResult():
     global dangerRating
+    if(dangerRating > 99): dangerRating = 100
     bar = '{:░<20}'.format('█'*(dangerRating//5))
     if(dangerRating > 99): dangerRating = 99
     print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (probability of APK being malicious)")
