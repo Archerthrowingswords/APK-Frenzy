@@ -284,5 +284,29 @@
         "description": "Access to Notification Listener",
         "dangerRating": 10,
         "c": "L"
+    },
+
+    "Clipboard Access": {
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["CLIPBOARD_SERVICE", "ClipboardManager"],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":["addPrimaryClipChangedListener", "hasPrimaryClip", "getPrimaryClip"],
+        "description": "Accesses the clipboard and retrieves the primary copied text.",
+        "dangerRating": 30,
+        "c": "HN"
+    },
+
+    "Log Installed Applications": {
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["PackageManager", "getInstalledApplications"],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":["Log", "log"],
+        "description": "Retrieves the names of installed applications",
+        "dangerRating": 5,
+        "c": "HN"
     }
 }
