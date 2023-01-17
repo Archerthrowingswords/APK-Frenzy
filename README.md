@@ -1,29 +1,49 @@
 # APK-Frenzy
 
-requires:
+APK-Frenzy is a tool that can scan Android APKs for malicious activities.
+
+## Prerequsites
 java
 python
 
-instalations needed:
+## Instalations needed:
+```bash
 pip install "typer[all]"
+```
 
-Before running the script ensure that you are in the APK-Frenzy directory
-To run the script all you need to run is "python main.py --f {apk name}"
+## Usage
 
-If your filename has a space then ensuure that the path in placed in a " " for example: python main.py --f "mal ware.apk"
+Before running the script, ensure that you are in the APK-Frenzy directory.
 
-The options are:
-"s" this will run the malware scan and provide more information in the output
-"r" This will extract all the http/https requests and return the result
-"sr" This will both run the malware scan and extract all the http/https requests
+To run the script, all you need to run is
+```bash
+python main.py --f {apk name}
+```
 
-Example: python main.py sr --f .\malware\BadNews.A.apk
+If your filename has a space, then ensure that the filepath is wrapped in a " "
+```bash
+python main.py --f "mal ware.apk"
+```
 
+## Options
+```bash
+# "s" will run the malware scan and provide more information in the output
 
-For Linux
-instead of python you will need python3, and to run the script you should use python3 in place of python
+python main.py s --f .\malware\BadNews.A.apk
 
-you will need to go to the "/jadx/bin" directory and give the file "jadx" execute permissions:
-"chmod +x jadx"
+# "r" will extract all the http/https requests and return the result
 
-if you receive the error saying "/bin/sh: 1: jadx/bin/jadx: not found" then you should either redownload the git repo or download jadx and replace the jadx file
+python main.py r --f .\malware\BadNews.A.apk
+
+# "sr" will both run the malware scan and extract all the http/https requests
+
+python main.py sr --f .\malware\BadNews.A.apk
+```
+
+## For Linux
+Instead of python, you will need python3, and to run the script you should use python3 in place of python.
+
+You will need to go to the "/jadx/bin" directory and give the file "jadx" execute permissions:
+"chmod +x jadx".
+
+If you receive the error saying "/bin/sh: 1: jadx/bin/jadx: not found" then you should either redownload the git repo or download jadx and replace the jadx file.
