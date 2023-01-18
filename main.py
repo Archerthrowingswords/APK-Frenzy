@@ -281,7 +281,6 @@ def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=Tr
     """
     Scan apk for malicious patterns with a simplified output
     """
-    print(f)
     if ctx.invoked_subcommand is None:
         checkIfDecompile(f)
         collectPatterns(detectionPatterns)
