@@ -149,7 +149,7 @@
         "javaKeywords":[],
         "alternateJavaKeywords":["android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "DownloadService"],
         "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
         "dangerRating": 10,
         "c":"TY"
     },
@@ -238,7 +238,7 @@
         "c":"TY"
     }, 
 
-    "Microphone Access while Screen Off": {
+    "Screen Off: Microphone Access": {
         "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.STORAGE"],
