@@ -162,19 +162,31 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Allows the app to create windows that overlay all other apps without notifying the user. Commonly used for displaying fraudulent ads, phishing scams, click-jacking etc",
-        "dangerRating": 30,
+        "dangerRating": 20,
+        "c":"HN"
+    },
+
+    "Foreground App Tracking": {
+        "manifestKeywords":["android.permission.GET_TASKS"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[["getRunningAppProcesses", "getRunningTasks"]],
+        "javaOptionalKeywords":[],
+        "description": "Allows the app to determine the current foreground application.",
+        "dangerRating": 10,
         "c":"HN"
     },
 
     "Collection of Telephony Data": {
-        "manifestKeywords":["android.permission.INTERNET"],
+        "manifestKeywords":[],
         "alternateManifestKeywords":[["android.permission.READ_PHONE_STATE", "android.permission.READ_SMS", "android.permission.READ_PHONE_NUMBERS"]],
-        "optionalManifestKeywords":[],
+        "optionalManifestKeywords":["android.permission.INTERNET"],
         "javaKeywords":["TelephonyManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber", "getSubscriberId", "getSimSerialNumber", "getSimCountryIso", "getCallState", "isNetworkRoaming", "getSimOperator"],
         "description": "Allows the app to collect telephony data from the device, which might include sensitive information",
-        "dangerRating": 45,
+        "dangerRating": 20,
         "c":"HN, TY"
     },
 
@@ -195,10 +207,10 @@
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["application/vnd.android.package-archive"],
-        "alternateJavaKeywords":[["http", "https"]],
+        "alternateJavaKeywords":[["http://", "https://"]],
         "javaOptionalKeywords":["apk", "APK"],
         "description": "An APK file was downloaded from the Internet.",
-        "dangerRating": 75,
+        "dangerRating": 60,
         "c":"TY, HN"
     },
 
@@ -239,9 +251,9 @@
     }, 
 
     "Microphone Access while Screen Off": {
-        "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+        "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE"],
         "alternateManifestKeywords":[],
-        "optionalManifestKeywords":["android.permission.STORAGE"],
+        "optionalManifestKeywords":["android.permission.STORAGE", "android.permission.INTERNET"],
         "javaKeywords":["MediaRecorder","start", "Intent.ACTION_SCREEN_OFF"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "MediaRecorder.release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
@@ -258,19 +270,19 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["HAS_PHONE_NUMBER", "DISPLAY_NAME_PRIMARY", "CONTENT_URI"],
         "description": "Accesses the contacts of the user",
-        "dangerRating": 30,
+        "dangerRating": 15,
         "c": "TY, HN"
     },
 
-    "Ability to Take Screenshots, with Internet access": {
-        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+    "Ability to Take and Detect Screenshots": {
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.MANAGE_EXTERNAL_STORAGE"],
         "javaKeywords":["getWindow", "getDecorView", "getRootView"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["bitmap"],
         "description": "Takes a screenshot.",
-        "dangerRating": 60,
+        "dangerRating": 10,
         "c": "TY, HN"
     },
 
@@ -294,7 +306,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["addPrimaryClipChangedListener", "hasPrimaryClip", "getPrimaryClip"],
         "description": "Accesses the clipboard and retrieves the primary copied text.",
-        "dangerRating": 70,
+        "dangerRating": 35,
         "c": "HN"
     },
 
