@@ -1,47 +1,47 @@
 {
     
-    "Call Monitoring": {
+    "Monitor Calls (tbc)": {
         "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.CALL_PHONE", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS" ],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE","android.permission.PROCESS_OUTGOING_CALLS"],
         "javaKeywords":["android.intent.action.PHONE_STATE"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Application can monitor incoming or outcoming calls from the device.",
         "dangerRating": 25,
         "c":"G"
     },
 
-    "Ability to Call - try to make this malicious": {
+    "Make Calls Without User Confirmation": {
         "manifestKeywords":["android.permission.CALL_PHONE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
-        "javaKeywords":["Intent.ACTION_DIAL"],
-        "alternateJavaKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[["Intent.ACTION_DIAL", "Intent.ACTION_CALL"]],
         "javaOptionalKeywords":[],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Application can make calls without going through the Dialer UI for user to confirm the call.",
         "dangerRating": 10
     },
     
-    "SMS Monitoring": {
+    "Monitor SMS (tbc)": {
         "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.SEND_SMS", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
         "javaKeywords":["android.intent.action.PHONE_STATE"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log."],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Application can monitor SMS messages.",
         "dangerRating": 25
     },
 
-    "Wake Lock": {
+    "Keep Device Awake": {
         "manifestKeywords":["android.permission.WAKE_LOCK"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["newWakeLock"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["wakeLock.acquire()"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Application can keep a device awake using Wake Lock.",
         "dangerRating": 10,
         "c":"L"
     },
@@ -53,7 +53,7 @@
         "javaKeywords":["SmsMessage.createFromPdu"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "description": "Application can receive SMS messages.",
         "dangerRating": 25,
         "c":"L"
     },
@@ -65,43 +65,43 @@
         "javaKeywords":["android.intent.action.BOOT_COMPLETED"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
-        "description": "Allows the app to run automatically in the background when the phone is turned on, even without user interaction",
+        "description": "Application can run automatically in the background when the phone is rebooted, even without user interaction",
         "dangerRating": 25,
         "c":"L"
     },
 
-    "Accessibility UI Abuse": {
+    "Accessibility Exploit: Access UI Elements": {
         "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "canRetrieveWindowContent=\"true\""],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["accessibilityEventTypes", "setServiceInfo()"],
         "javaKeywords":["onAccessibilityEvent"],
         "javaOptionalKeywords":["Intent", "android.settings.ACCESSIBILITY_SETTINGS"],
         "alternateJavaKeywords":[],
-        "description": "Uses Accessibility to gain access to the UI elements.",
+        "description": "Application exploits Accessibility to gain access to the UI elements.",
         "dangerRating": 60,
         "c":"HN"
     },
 
-    "Location Tracking": {
+    "Access Location": {
         "manifestKeywords":["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.ACCESS_BACKGROUND_LOCATION"],
         "javaKeywords":["Location", "LocationManager", "LocationListener", "Context.LOCATION_SERVICE"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["latitude", "longitude"],
-        "description": "Accesses the location of the device.",
+        "description": "Application can access the location of the device.",
         "dangerRating": 35,
         "c":"HN"
     },
 
-    "Launching Of Other Apps": {
+    "Launch Other Applications": {
         "manifestKeywords":[],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage" ],
         "alternateJavaKeywords":[["startActivity","startActivityForResult"]],
         "javaOptionalKeywords":[],
-        "description": "Allows the app to launch other apps and potentially receive information from them",
+        "description": "Application can launch other apps and potentially receive information from them",
         "dangerRating": 25,
         "c":"HN"
     },
@@ -113,7 +113,7 @@
         "javaKeywords":["getText()"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
-        "description": "Exploits Accessibility Settings to log what the user types.",
+        "description": "Application exploits Accessibility Settings to log what the user types.",
         "dangerRating": 99,
         "c":"HN"
     },
@@ -125,7 +125,7 @@
         "javaKeywords":["com.google.android.packageinstaller", "performAction"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "description": "Uses Accessibility to install an application without the user's knowledge.",
+        "description": "Application exploits Accessibility to install an application without the user's knowledge.",
         "dangerRating": 80,
         "c":"HN"
     },
