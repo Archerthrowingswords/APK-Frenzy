@@ -161,7 +161,7 @@ def patternDetection():
                     allJavaFoundOptionalKeywords.append(javaKeyword)
                     allJavaOptionalKeywords.remove(javaKeyword)
     
-def checkDetected():
+def checkDetected(detectionPatterns):
     global dangerRating
     for patternName in detectionPatterns:
         patternData = detectionPatterns[patternName]
@@ -252,7 +252,7 @@ def scan( f: Path = typer.Option(default=None, resolve_path=True)):
     checkIfDecompile(f)
     collectPatterns(detectionPatterns)
     patternDetection()
-    checkDetected()
+    checkDetected(detectionPatterns)
     scanResult()
 
 @app.command("r")
@@ -272,7 +272,7 @@ def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
     checkIfDecompile(f)
     collectPatterns(detectionPatterns)
     patternDetection()
-    checkDetected()
+    checkDetected(detectionPatterns)
     scanReq()
     scanResult()
     reqResult()
@@ -286,7 +286,7 @@ def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=Tr
         checkIfDecompile(f)
         collectPatterns(detectionPatterns)
         patternDetection()
-        checkDetected()
+        checkDetected(detectionPatterns)
         simpleScanResult()
         
 if __name__ == "__main__":
