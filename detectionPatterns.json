@@ -101,7 +101,7 @@
         "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage" ],
         "alternateJavaKeywords":[["startActivity","startActivityForResult"]],
         "javaOptionalKeywords":[],
-        "description": "Application can launch other apps and potentially receive information from them",
+        "description": "Application can launch other apps and potentially receive information from them.",
         "dangerRating": 25,
         "c":"HN"
     },
@@ -118,7 +118,7 @@
         "c":"HN"
     },
 
-    "Accessibility Exploit: Installing Apps Silently": {
+    "Accessibility Exploit: Install Apps Without User Knowledge": {
         "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -130,7 +130,7 @@
         "c":"HN"
     },
 
-    "Accessibility Request: Deleting Package Silently": {
+    "Accessibility Request: Deleting Package Silently (tbc)": {
         "manifestKeywords":["android.permission.REQUEST_DELETE_PACKAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
@@ -142,7 +142,7 @@
         "c":"TY"
     },
 
-    "Accessibility Request: Installing Package Silently": {
+    "Accessibility Request: Installing Package Silently (tbc)": {
         "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
@@ -161,60 +161,60 @@
         "javaKeywords":[],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "description": "Allows the app to create windows that overlay all other apps without notifying the user. Commonly used for displaying fraudulent ads, phishing scams, click-jacking etc",
+        "description": "Application can create windows that overlay all other apps without notifying the user. Commonly used for displaying fraudulent ads, phishing scams, click-jacking etc.",
         "dangerRating": 20,
         "c":"HN"
     },
 
-    "Foreground App Tracking": {
+    "Track Foreground Applications": {
         "manifestKeywords":["android.permission.GET_TASKS"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":[],
         "alternateJavaKeywords":[["getRunningAppProcesses", "getRunningTasks"]],
         "javaOptionalKeywords":[],
-        "description": "Allows the app to determine the current foreground application.",
+        "description": "Application will be able to determine the current foreground application.",
         "dangerRating": 10,
         "c":"HN"
     },
 
-    "Collection of Telephony Data": {
+    "Collect Telephony Data": {
         "manifestKeywords":[],
         "alternateManifestKeywords":[["android.permission.READ_PHONE_STATE", "android.permission.READ_SMS", "android.permission.READ_PHONE_NUMBERS"]],
         "optionalManifestKeywords":["android.permission.INTERNET"],
         "javaKeywords":["TelephonyManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber", "getSubscriberId", "getSimSerialNumber", "getSimCountryIso", "getCallState", "isNetworkRoaming", "getSimOperator"],
-        "description": "Allows the app to collect telephony data from the device, which might include sensitive information",
+        "description": "Application can collect telephony data from the device, which might include sensitive information.",
         "dangerRating": 20,
         "c":"HN, TY"
     },
 
-    "Ability to Read or Write System Settings": {
+    "Read or Write System Settings": {
         "manifestKeywords":[],
         "alternateManifestKeywords":[["android.permission.WRITE_SETTINGS", "android.permission.WRITE_SECURE_SETTINGS"]],
         "optionalManifestKeywords":[],
         "javaKeywords":[],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["android.settings.action.MANAGE_WRITE_SETTINGS", "canWrite"],
-        "description": "Allows an application to read or write the system settings.",
+        "description": "Application can read or write the system settings.",
         "dangerRating": 85,
         "c":"HN"
     },
 
-    "Downloading APKs from Website": {
+    "Download APKs from Internet": {
         "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["application/vnd.android.package-archive"],
         "alternateJavaKeywords":[["http://", "https://"]],
         "javaOptionalKeywords":["apk", "APK"],
-        "description": "An APK file was downloaded from the Internet.",
+        "description": "Application can download an APK file from the Internet.",
         "dangerRating": 60,
         "c":"TY, HN"
     },
 
-    "System Privledge Disable Apps": {
+    "System Privledge Disable Apps (tbc)": {
         "manifestKeywords":["android.permission.CHANGE_COMPONENT_ENABLED_STATE","android:sharedUserId=\"android.uid.system"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -226,7 +226,7 @@
         "c":"TY"
     },
 
-    "Screen Off: Photo Taken Upload": {
+    "Screen Off: Photo Taken Upload (tbc)": {
         "manifestKeywords":["android.media.action.IMAGE_CAPTURE", "android.intent.action.USER_PRESENT", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.hardware.camera"],
@@ -238,7 +238,7 @@
         "c":"TY"
     },
 
-    "Screen Off: Gallery Access Upload": {
+    "Screen Off: Gallery Access Upload (tbc)": {
         "manifestKeywords":["android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -250,7 +250,7 @@
         "c":"TY"
     }, 
 
-    "Microphone Access while Screen Off": {
+    "Microphone Access while Screen Off (tbc)": {
         "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.STORAGE", "android.permission.INTERNET"],
@@ -262,50 +262,50 @@
         "c":"TY, HN"
     },
 
-    "Accessing Contacts, with Internet access": {
+    "Access Contacts": {
         "manifestKeywords":["android.permission.READ_CONTACTS", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_CONTACTS"],
         "javaKeywords":["ContactsContract"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["HAS_PHONE_NUMBER", "DISPLAY_NAME_PRIMARY", "CONTENT_URI"],
-        "description": "Accesses the contacts of the user",
+        "description": "Application can access the contacts stored on the device.",
         "dangerRating": 15,
         "c": "TY, HN"
     },
 
-    "Ability to Take and Detect Screenshots": {
+    "Take and Detect Screenshots": {
         "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.MANAGE_EXTERNAL_STORAGE"],
         "javaKeywords":["getWindow", "getDecorView", "getRootView"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["bitmap"],
-        "description": "Takes a screenshot.",
+        "description": "Application can take screenshots and determine if a screenshot is being taken.",
         "dangerRating": 10,
         "c": "TY, HN"
     },
 
-    "Notficiation Listener": {
+    "Listen to Notifications": {
         "manifestKeywords":["android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.service.notification.NotificationListenerService"],
         "javaKeywords":[],
         "alternateJavaKeywords":["extends NotificationListenerService", "import android.service.notification.NotificationListenerService"],
         "javaOptionalKeywords":[],
-        "description": "Access to Notification Listener",
+        "description": "Application can access the Notification Listener.",
         "dangerRating": 10,
         "c": "L"
     },
 
-    "Clipboard Access": {
+    "Access to Clipboard": {
         "manifestKeywords":[],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["CLIPBOARD_SERVICE", "ClipboardManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["addPrimaryClipChangedListener", "hasPrimaryClip", "getPrimaryClip"],
-        "description": "Accesses the clipboard and retrieves the primary copied text.",
+        "description": "Application can access the clipboard and retrieves the primary copied text.",
         "dangerRating": 35,
         "c": "HN"
     },
@@ -317,7 +317,7 @@
         "javaKeywords":["PackageManager", "getInstalledApplications"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Log", "log"],
-        "description": "Retrieves the names of installed applications",
+        "description": "Application can retrieve the names of installed applications.",
         "dangerRating": 5,
         "c": "HN"
     }
