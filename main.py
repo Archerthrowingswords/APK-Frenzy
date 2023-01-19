@@ -142,23 +142,24 @@ def patternDetection():
             manifestFile.close()
         elif file.name.endswith(".java"): 
             # Searching through Java files
-                for javaKeyword in allJavaKeywords:
-                    if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
-                        allJavaFoundKeywords.append(javaKeyword)
-                        allJavaKeywords.remove(javaKeyword)
-                #looking through the file for alternate java keywords
-                for javaKeywordList in allJavaAlternateKeyswords:
-                    if type(javaKeywordList) is not list: continue
-                    for alternateKeyword in javaKeywordList:
-                        if file.read_text(encoding='utf-8').find(alternateKeyword) != -1:
-                            allJavaFoundAlternateKeywords.append(javaKeywordList)
-                            allJavaAlternateKeyswords.remove(javaKeywordList)
-                            break
-                #looking through the file for optional java keywords
-                for javaKeyword in allJavaOptionalKeywords:
-                    if file.read_text(encoding='utf-8').find(javaKeyword) != -1:
-                        allJavaFoundOptionalKeywords.append(javaKeyword)
-                        allJavaOptionalKeywords.remove(javaKeyword)
+            fileText = file.read_text(encoding='utf-8')
+            for javaKeyword in allJavaKeywords:
+                if fileText.find(javaKeyword) != -1:
+                    allJavaFoundKeywords.append(javaKeyword)
+                    allJavaKeywords.remove(javaKeyword)
+            #looking through the file for alternate java keywords
+            for javaKeywordList in allJavaAlternateKeyswords:
+                if type(javaKeywordList) is not list: continue
+                for alternateKeyword in javaKeywordList:
+                    if fileText.find(alternateKeyword) != -1:
+                        allJavaFoundAlternateKeywords.append(javaKeywordList)
+                        allJavaAlternateKeyswords.remove(javaKeywordList)
+                        break
+            #looking through the file for optional java keywords
+            for javaKeyword in allJavaOptionalKeywords:
+                if fileText.find(javaKeyword) != -1:
+                    allJavaFoundOptionalKeywords.append(javaKeyword)
+                    allJavaOptionalKeywords.remove(javaKeyword)
     
 def checkDetected():
     global dangerRating
