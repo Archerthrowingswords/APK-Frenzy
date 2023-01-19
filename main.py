@@ -11,7 +11,7 @@ abPath = Path(__file__).parent.resolve()
 dangerRating = 0
 app = typer.Typer()
 state = {"verbose": False}
-directory = 'out'
+directory = f"{abPath}/out"
 f = open(f"{abPath}/detectionPatterns.json")
 detectionPatterns = json.load(f)
 detectedPatterns = {}
@@ -70,23 +70,23 @@ def checkApkInput(file):
 def decompileAPK(file):
     os.environ["PATH"] = f"{os.environ['PATH']};{abPath}\jadx\\bin\\"
     # Remove existing out directory from previous scan
-    if(os.path.exists("out")):
-        shutil.rmtree("out")
-    os.mkdir("out")
+    if(os.path.exists(directory)):
+        shutil.rmtree(directory)
+    os.mkdir(directory)
     if (os.name == "nt"):       
-        subprocess.run(f'jadx -d out /"{file}"',shell=True)
+        subprocess.run(f'jadx -d {abPath}/out /"{file}"',shell=True)
     elif (os.name == "posix"):
         command = f'jadx/bin/jadx -d out /"{file}"'
         subprocess.run(command,shell=True)
-    if(len(os.listdir("out"))==0):
+    if(len(os.listdir(directory))==0):
         print("\nThis specific APK file is not able to be decompiled")
         raise typer.Abort()
 
 def checkIfDecompile(f):
     if f == None: 
-        if(os.path.exists("out") and len(os.listdir("out"))!=0):
+        if(os.path.exists(directory) and len(os.listdir(directory))!=0):
             apkFrenzyIntro()
-            print("Scanning extracted files in ./out folder")
+            print(f"Scanning extracted files in {abPath}\out folder")
             print("-------------------------------------------------------------")
         else: 
             print("Please use --f to specify a APK as no pre decompiled APK code exists\nFor more information use --help")
