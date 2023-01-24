@@ -47,14 +47,14 @@
     },
 
     "Steal SMS": { 
-        "manifestKeywords":["android.permission.RECEIVE_SMS"],
-        "alternateManifestKeywords":[],
-        "optionalManifestKeywords":["android.permission.READ_SMS"],
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[["android.permission.RECEIVE_SMS","android.permission.READ_SMS"]],
+        "optionalManifestKeywords":[],
         "javaKeywords":["SmsMessage.createFromPdu"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can receive SMS messages.",
-        "dangerRating": 25,
+        "dangerRating": 15,
         "c":"L"
     },
 
@@ -66,7 +66,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
         "description": "Application can run automatically in the background when the phone is rebooted, even without user interaction",
-        "dangerRating": 25,
+        "dangerRating": 5,
         "c":"L"
     },
 
