@@ -352,7 +352,7 @@
         "optionalManifestKeywords":[],
         "javaKeywords":[],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":[],
+        "javaOptionalKeywords":["CALENDAR_DISPLAY_NAME", "CALENDAR_ID", "EVENT_LOCATION", "EVENT_TIMEZONE", "ALL_DAY", "ATTENDEE_NAME", "ATTENDEE_EMAIL", "ATTENDEE_RELATIONSHIP", "ATTENDEE_TYPE", "ATTENDEE_STATUS"],
         "description": "Application has calendar access. Most applications do not need calendar access, thus application may be malicious.",
         "dangerRating": 25,
         "c": "L"
