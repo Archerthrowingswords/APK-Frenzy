@@ -233,7 +233,7 @@
         "javaKeywords":["takePicture(", "onPictureTaken(", "startForeground("],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["camera.startPreview(", "MediaStore.ACTION_IMAGE_CAPTURE"],
-        "description": "Application can access camera without it being in focus.",
+        "description": "Application can access camera without it being in focus. Most applications do not need persistent access to the camera, unless its used for communication applications.",
         "dangerRating": 25,
         "c":"TY"
     },
