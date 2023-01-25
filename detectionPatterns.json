@@ -226,14 +226,14 @@
         "c":"TY"
     },
 
-    "Persistent Access to Camera (wip)": {
-        "manifestKeywords":["android.media.action.IMAGE_CAPTURE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET", "android.permission.CAMERA"],
+    "Persistent Access to Camera": {
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET", "android.permission.CAMERA", "android.hardware.camera"],
         "alternateManifestKeywords":[],
-        "optionalManifestKeywords":["android.hardware.camera"],
-        "javaKeywords":["MediaStore.ACTION_IMAGE_CAPTURE", "Intent.ACTION_SCREEN_OFF", "startActivityForResult("],
+        "optionalManifestKeywords":["android.media.action.IMAGE_CAPTURE"],
+        "javaKeywords":["takePicture(", "onPictureTaken(", "startForeground("],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["ACTION_USER_PRESENT", "camera.startPreview(", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture("],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "javaOptionalKeywords":["camera.startPreview(", "MediaStore.ACTION_IMAGE_CAPTURE"],
+        "description": "Application can access camera without it being in focus.",
         "dangerRating": 25,
         "c":"TY"
     },
