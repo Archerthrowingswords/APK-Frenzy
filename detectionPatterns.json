@@ -308,5 +308,65 @@
         "description": "Application can retrieve the names of installed applications.",
         "dangerRating": 5,
         "c": "HN"
+    },
+
+    "Request for Administrator Permissions": {
+        "manifestKeywords":["android.permission.BIND_DEVICE_ADMIN"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":["android.app.action.DEVICE_ADMIN_ENABLED"],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application can prompt user for device administrator permissions.",
+        "dangerRating": 30,
+        "c": "L"
+    },
+
+    "Detect Installed Apps": {
+        "manifestKeywords":["android.permission.QUERY_ALL_PACKAGES", "<queries>"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application can query device for all installed applications. May be malicious especially if your application does not fall under the following categories: device search, antivirus apps, file managers, and browsers.",
+        "dangerRating": 50,
+        "c": "L"
+    },
+
+    "Viewing Device/System Information": {
+        "manifestKeywords":["android.permission.READ_PRIVILEGED_PHONE_STATE"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application can view sensitive device information such as IMEI, IMSI and phone number. If application is not a system application, high possibility it is malicious.",
+        "dangerRating": 50,
+        "c": "L"
+    },
+
+    "Calendar Access": {
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[["android.permission.READ_CALENDAR", "android.permission.WRITE_CALENDAR"]],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":["CALENDAR_DISPLAY_NAME", "CALENDAR_ID", "EVENT_LOCATION", "EVENT_TIMEZONE", "ALL_DAY", "ATTENDEE_NAME", "ATTENDEE_EMAIL", "ATTENDEE_RELATIONSHIP", "ATTENDEE_TYPE", "ATTENDEE_STATUS"],
+        "description": "Application has calendar access. Most applications do not need calendar access, thus application may be malicious.",
+        "dangerRating": 25,
+        "c": "L"
+    },
+
+    "Call Log Access": {
+        "manifestKeywords":["android.permission.READ_CALL_LOG"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application has call log access. Most applications do not need call log access, thus application may be malicious.",
+        "dangerRating": 15,
+        "c": "L"
     }
 }
