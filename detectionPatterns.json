@@ -226,11 +226,11 @@
         "c":"TY"
     },
 
-    "Screen Off: Photo Taken Upload (tbc)": {
-        "manifestKeywords":["android.media.action.IMAGE_CAPTURE", "android.intent.action.USER_PRESENT", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+    "Persistent Access to Camera (wip)": {
+        "manifestKeywords":["android.media.action.IMAGE_CAPTURE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET", "android.permission.CAMERA"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.hardware.camera"],
-        "javaKeywords":["MediaStore.ACTION_IMAGE_CAPTURE", "Intent.ACTION_SCREEN_OFF","startActivityForResult("],
+        "javaKeywords":["MediaStore.ACTION_IMAGE_CAPTURE", "Intent.ACTION_SCREEN_OFF", "startActivityForResult("],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["ACTION_USER_PRESENT", "camera.startPreview(", "MediaStore.EXTRA_OUTPUT", "CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE", "Camera.takePicture("],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
@@ -238,26 +238,14 @@
         "c":"TY"
     },
 
-    "Screen Off: Gallery Access Upload (tbc)": {
-        "manifestKeywords":["android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
+    "Persistent Access to Microphone": {
+        "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
-        "optionalManifestKeywords":[],
-        "javaKeywords":["onActivityResult(", "Intent.ACTION_SCREEN_OFF"],
+        "optionalManifestKeywords":["android.permission.STORAGE"],
+        "javaKeywords":["MediaRecorder","start", "startForeground("],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["Intent.ACTION_PICK", "android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI", "startActivityForResult("],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25,
-        "c":"TY"
-    }, 
-
-    "Microphone Access while Screen Off (tbc)": {
-        "manifestKeywords":["android.permission.RECORD_AUDIO", "android.permission.WRITE_EXTERNAL_STORAGE"],
-        "alternateManifestKeywords":[],
-        "optionalManifestKeywords":["android.permission.STORAGE", "android.permission.INTERNET"],
-        "javaKeywords":["MediaRecorder","start", "Intent.ACTION_SCREEN_OFF"],
-        "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder()", "setOutputFormat()", "setOutputFile()", "MediaRecorder.release()", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
-        "description": "Accesses the microphone while the screen is off.",
+        "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder(", "setOutputFormat(", "setOutputFile(", "MediaRecorder.release(", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "description": "Application can access microphone without it being in focus.",
         "dangerRating": 50,
         "c":"TY, HN"
     },
