@@ -76,7 +76,7 @@ def decompileAPK(file):
     if (os.name == "nt"):       
         subprocess.run(f'jadx -d "{outDirectory}" /"{file}"',shell=True)
     elif (os.name == "posix"):
-        command = f'jadx/bin/jadx -d out /"{file}"'
+        command = f'jadx/bin/jadx -d "{outDirectory}" /"{file}"'
         subprocess.run(command,shell=True)
     if(len(os.listdir(outDirectory))==0):
         print("\nThis specific APK file is not able to be decompiled")
