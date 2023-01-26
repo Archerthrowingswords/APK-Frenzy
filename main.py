@@ -2,7 +2,7 @@ import typer
 import os
 from pathlib import Path
 import json
-import shutil #fairly certain this works on linux
+import shutil
 import re
 import subprocess
 
@@ -11,7 +11,7 @@ abPath = Path(__file__).parent.resolve()
 dangerRating = 0
 app = typer.Typer()
 state = {"verbose": False}
-directory = f"{abPath}/out"
+outDirectory = f"{abPath}/out"
 f = open(f"{abPath}/detectionPatterns.json")
 detectionPatterns = json.load(f)
 detectedPatterns = {}
@@ -69,22 +69,22 @@ def checkApkInput(file):
 
 def decompileAPK(file):
     os.environ["PATH"] = f"{os.environ['PATH']};{abPath}\jadx\\bin\\"
-    # Remove existing out directory from previous scan
-    if(os.path.exists(directory)):
-        shutil.rmtree(directory)
-    os.mkdir(directory)
+    # Remove existing output directory from previous scan
+    if(os.path.exists(outDirectory)):
+        shutil.rmtree(outDirectory)
+    os.mkdir(outDirectory)
     if (os.name == "nt"):       
-        subprocess.run(f'jadx -d {abPath}/out /"{file}"',shell=True)
+        subprocess.run(f'jadx -d "{outDirectory}" /"{file}"',shell=True)
     elif (os.name == "posix"):
-        command = f'jadx/bin/jadx -d out /"{file}"'
+        command = f'jadx/bin/jadx -d "{outDirectory}" /"{file}"'
         subprocess.run(command,shell=True)
-    if(len(os.listdir(directory))==0):
+    if(len(os.listdir(outDirectory))==0):
         print("\nThis specific APK file is not able to be decompiled")
         raise typer.Abort()
 
 def checkIfDecompile(f):
     if f == None: 
-        if(os.path.exists(directory) and len(os.listdir(directory))!=0):
+        if(os.path.exists(outDirectory) and len(os.listdir(outDirectory))!=0):
             apkFrenzyIntro()
             print(f"Scanning extracted files in {abPath}\out folder")
             print("-------------------------------------------------------------")
@@ -116,7 +116,7 @@ def collectPatterns(detectionPatterns):
 
 def patternDetection():
     # Searching through Manifest XML file
-    out = Path(directory).rglob('*')
+    out = Path(outDirectory).rglob('*')
     for file in out:
         if file.name.endswith("Manifest.xml"):
             with open(file) as manifestFile:
@@ -191,12 +191,12 @@ def checkDetected(detectionPatterns):
     list(set(validJavaFoundOptionalKeywords))
 
 def scanReq():
-    out = Path(directory).rglob('*')
+    out = Path(outDirectory).rglob('*')
     global httpList
     httpList = []
     for file in out:
         if file.name.endswith(".java"):
-            #looking through the file for java keywords
+            #looking through the file for http or https requests
             httpPattern = r'"https?://\S+"'
             temphttpList = re.findall(httpPattern, file.read_text(encoding='utf-8'))
             httpList.extend(temphttpList)
