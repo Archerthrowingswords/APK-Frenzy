@@ -1,10 +1,10 @@
 {
     
-    "Monitor Calls (tbc)": {
-        "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.CALL_PHONE", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS" ],
+    "Monitor Calls": {
+        "manifestKeywords":["android.permission.READ_PHONE_STATE", "android.permission.INTERNET" ],
         "alternateManifestKeywords":[],
-        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE","android.permission.PROCESS_OUTGOING_CALLS"],
-        "javaKeywords":["android.intent.action.PHONE_STATE"],
+        "optionalManifestKeywords":["android.permission.PROCESS_OUTGOING_CALLS"],
+        "javaKeywords":[],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
         "description": "Application can monitor incoming or outcoming calls from the device.",
@@ -22,17 +22,6 @@
         "description": "Application can make calls without going through the Dialer UI for user to confirm the call.",
         "dangerRating": 10
     },
-    
-    "Monitor SMS (tbc)": {
-        "manifestKeywords":["android.permission.READ_PHONE_STATE","android.permission.SEND_SMS", "android.permission.READ_CONTACTS", "android.permission.INTERNET","android.permission.GET_TASKS"],
-        "alternateManifestKeywords":[],
-        "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
-        "javaKeywords":["android.intent.action.PHONE_STATE"],
-        "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["Logger.", "Log."],
-        "description": "Application can monitor SMS messages.",
-        "dangerRating": 25
-    },
 
     "Keep Device Awake": {
         "manifestKeywords":["android.permission.WAKE_LOCK"],
@@ -46,14 +35,14 @@
         "c":"L"
     },
 
-    "Steal SMS": { 
+    "Control SMS": { 
         "manifestKeywords":[],
         "alternateManifestKeywords":[["android.permission.RECEIVE_SMS","android.permission.READ_SMS"]],
-        "optionalManifestKeywords":[],
-        "javaKeywords":["SmsMessage.createFromPdu"],
+        "optionalManifestKeywords":["android.permission.SEND_SMS", "android.permission.WRITE_SMS"],
+        "javaKeywords":["SmsManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "description": "Application can receive SMS messages.",
+        "description": "Application can delete, receive, or send SMS messages without user authorisation",
         "dangerRating": 15,
         "c":"L"
     },
@@ -86,7 +75,7 @@
         "manifestKeywords":["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.ACCESS_BACKGROUND_LOCATION"],
-        "javaKeywords":["Location", "LocationManager", "LocationListener", "Context.LOCATION_SERVICE"],
+        "javaKeywords":["Location", "LocationManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["latitude", "longitude"],
         "description": "Application can access the location of the device.",
@@ -130,26 +119,26 @@
         "c":"HN"
     },
 
-    "Accessibility Request: Deleting Package Silently (tbc)": {
-        "manifestKeywords":["android.permission.REQUEST_DELETE_PACKAGE", "android.permission.INTERNET"],
+    "Accessibility Exploit: Delete Packages Without User Knowledge": {
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "android.permission.REQUEST_DELETE_PACKAGES"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
         "javaKeywords":[],
-        "alternateJavaKeywords":["android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
-        "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application exploits Accessibility to delete packages without the user's knowledge.",
         "dangerRating": 10,
         "c":"TY"
     },
 
-    "Accessibility Request: Installing Package Silently (tbc)": {
-        "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.INTERNET"],
+    "Accessibility Exploit: Install Package Without User Knowledge": {
+        "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
         "javaKeywords":[],
-        "alternateJavaKeywords":["android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "DownloadService"],
-        "javaOptionalKeywords":["android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
-        "description": "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
+        "alternateJavaKeywords":["DownloadService"],
+        "javaOptionalKeywords":[],
+        "description": "Application exploits Accessibility to install packages without the user's knowledge.",
         "dangerRating": 10,
         "c":"TY"
     },
@@ -214,18 +203,6 @@
         "c":"TY, HN"
     },
 
-    "System Privledge Disable Apps (tbc)": {
-        "manifestKeywords":["android.permission.CHANGE_COMPONENT_ENABLED_STATE","android:sharedUserId=\"android.uid.system"],
-        "alternateManifestKeywords":[],
-        "optionalManifestKeywords":[],
-        "javaKeywords":["getPackageManager(",".setApplicationEnabledSetting(", "COMPONENT_ENABLED_STATE_DISABLED"],
-        "alternateJavaKeywords":[],
-        "javaOptionalKeywords":[],
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex",
-        "dangerRating": 25,
-        "c":"TY"
-    },
-
     "Persistent Access to Camera": {
         "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET", "android.permission.CAMERA", "android.hardware.camera"],
         "alternateManifestKeywords":[],
@@ -244,9 +221,9 @@
         "optionalManifestKeywords":["android.permission.STORAGE"],
         "javaKeywords":["MediaRecorder","start", "startForeground("],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder(", "setOutputFormat(", "setOutputFile(", "MediaRecorder.release(", "android.intent.action.MAIN", "android.intent.category.LAUNCHER"],
+        "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder(", "setOutputFormat(", "setOutputFile(", "MediaRecorder.release("],
         "description": "Application can access microphone without it being in focus.",
-        "dangerRating": 50,
+        "dangerRating": 20,
         "c":"TY, HN"
     },
 
