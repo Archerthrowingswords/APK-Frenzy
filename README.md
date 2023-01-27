@@ -36,25 +36,25 @@ python apkfrenzy.py
 
 python apkfrenzy.py s --f .\malware\BadNews.A.apk
 # or
-python apkfrenzy.py s
-# or
 python apkfrenzy.py --f .\malware\BadNews.A.apk s
+# or
+python apkfrenzy.py s
 
 # "r" will extract all the http/https requests and return the result
 
 python apkfrenzy.py r --f .\malware\BadNews.A.apk
 # or
-python apkfrenzy.py r
-# or
 python apkfrenzy.py --f .\malware\BadNews.A.apk r
+# or
+python apkfrenzy.py r
 
 # "sr" will both run the malware scan and extract all the http/https requests
 
 python apkfrenzy.py sr --f .\malware\BadNews.A.apk
 # or
-python apkfrenzy.py sr
-# or
 python apkfrenzy.py --f .\malware\BadNews.A.apk sr
+# or
+python apkfrenzy.py sr
 ```
 
 ## For Linux
