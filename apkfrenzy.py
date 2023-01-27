@@ -214,7 +214,7 @@ def simpleScanResult():
     print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
-        print("No Malicous Paterns Detected")
+        print("No Malicous Patterns Detected")
         return
     print(f"Pattern(s) Detected:")
     for i in detectedPatterns: print(f"-{i}")
@@ -227,7 +227,7 @@ def scanResult():
     print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
-        print("No Malicous Paterns Detected")
+        print("No Malicous Patterns Detected")
         return
     print(f"Patterns Detected:")
     for i in detectedPatterns: print(f"\n-{i} (+{detectedPatterns[i][1]}%)\n{detectedPatterns[i][0]}")
@@ -251,7 +251,7 @@ def reqResult():
 @app.command("s")
 def scan( f: Path = typer.Option(default=None, resolve_path=True)):
     """
-    Scan APK for malicious patterns and provide more info
+    Scan APK for Malicious Patterns and Provide More Information
     """
     checkIfDecompile(f)
     collectPatterns(detectionPatterns)
@@ -262,7 +262,7 @@ def scan( f: Path = typer.Option(default=None, resolve_path=True)):
 @app.command("r")
 def requests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
-    Scan APK for any http/https requests
+    Scan APK for any HTTP/HTTPS Requests
     """
     checkIfDecompile(f)
     scanReq()
@@ -271,7 +271,7 @@ def requests( f: Path = typer.Option(default=None, resolve_path=True)):
 @app.command("sr")
 def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
-    Scan APK for both malicious patterns and http/https requests
+    Scan APK for both Malicious Patterns and HTTP/HTTPS Requests
     """
     checkIfDecompile(f)
     collectPatterns(detectionPatterns)
@@ -284,7 +284,7 @@ def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
 @app.callback(invoke_without_command=True,context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
 def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=True)):
     """
-    Scan APK for malicious patterns with a simplified output
+    Scan APK for Malicious Patterns with a Simplified Output
     """
     global callbackFilePath
     # only run if there is no command
