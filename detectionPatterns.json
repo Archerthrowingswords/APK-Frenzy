@@ -345,5 +345,17 @@
         "description": "Application has call log access. Most applications do not need call log access, thus application may be malicious.",
         "dangerRating": 15,
         "c": "L"
+    },
+    
+    "Call Log Access": {
+        "manifestKeywords":["android.permission.READ_CALL_LOG"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application has call log access. Most applications do not need call log access, thus application may be malicious.",
+        "dangerRating": 15,
+        "c": "L"
     }
 }

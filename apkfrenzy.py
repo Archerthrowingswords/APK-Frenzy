@@ -53,16 +53,16 @@ def checkApkInput(file):
         print("No APK file")
         raise typer.Abort()
     elif apkname=="null":
-        print("no file has been specified, please specify a file")
+        print("No File has been specified, please specify a File")
         raise typer.Abort()
     elif file.is_dir():
-        print("Config is a directory, please specify a file")
+        print("Config is a directory, please specify a File")
         raise typer.Abort()
     elif not file.exists():
-        print("The apk doesn't exist")
+        print("The APK doesn't Exist")
         raise typer.Abort()
     elif not apkname.endswith(".apk"):
-        print(f"File is not an apk")
+        print(f"File is not an APK")
         raise typer.Abort()
     apkFrenzyIntro()
     print(f"Filename: ({apkname})")
@@ -80,7 +80,7 @@ def decompileAPK(file):
         command = f'jadx/bin/jadx -d "{outDirectory}" /"{file}"'
         subprocess.run(command,shell=True)
     if(len(os.listdir(outDirectory))==0):
-        print("\nThis specific APK file is not able to be decompiled")
+        print("\nThis specific APK File is not able to be decompiled")
         raise typer.Abort()
 
 def checkIfDecompile(f):
@@ -91,9 +91,10 @@ def checkIfDecompile(f):
         if(os.path.exists(outDirectory) and len(os.listdir(outDirectory))!=0):
             apkFrenzyIntro()
             print(f"Scanning extracted files in {abPath}\out folder")
+            print(f"Scanning Extracted Files in {abPath}\out folder")
             print("-------------------------------------------------------------")
         else: 
-            print("Please use --f to specify a APK as no pre decompiled APK code exists\nFor more information use --help")
+            print("Please use --f to specify an APK as no pre-decompiled APK code exists\nFor more information use --help")
             raise typer.Abort()
     else:
         checkApkInput(f)
@@ -211,12 +212,12 @@ def simpleScanResult():
     global dangerRating
     if(dangerRating > 99): dangerRating = 99
     bar = '{:░<20}'.format('█'*(dangerRating//5))
-    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (probability of APK being malicious)")
+    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
-        print("No malicous paterns detected")
+        print("No Malicous Paterns Detected")
         return
-    print(f"Paterns detected:")
+    print(f"Pattern(s) Detected:")
     for i in detectedPatterns: print(f"-{i}")
     print("-------------------------------------------------------------")
    
@@ -224,34 +225,34 @@ def scanResult():
     global dangerRating
     if(dangerRating > 99): dangerRating = 99
     bar = '{:░<20}'.format('█'*(dangerRating//5))
-    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (probability of APK being malicious)")
+    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
-        print("No malicous paterns detected")
+        print("No Malicous Paterns Detected")
         return
-    print(f"Paterns detected:")
+    print(f"Patterns Detected:")
     for i in detectedPatterns: print(f"\n-{i} (+{detectedPatterns[i][1]}%)\n{detectedPatterns[i][0]}")
     if (validManifestFoundOptionalKeywords != []):
-        print(f"\nInteresting manifest keywords found:")
+        print(f"\nInteresting Manifest Keywords Found:")
         for i in validManifestFoundOptionalKeywords: print(f"-{i}")
     if (validJavaFoundOptionalKeywords != []):
-        print(f"\nInteresting java keywords found:")
+        print(f"\nInteresting Java Keywords Found:")
         for i in validJavaFoundOptionalKeywords: print(f"-{i}")
     print("-------------------------------------------------------------")
     
 def reqResult():
     global httpList
     if (httpList == []):
-        print("No http or https requests detected")
+        print("No HTTP/HTTPS Requests Detected")
         return
-    print("http/https requests detected:\n")
+    print("HTTP/HTTPS Requests Detected:\n")
     for i in httpList: print(f"-{i}")
     print("")
 
 @app.command("s")
 def scan( f: Path = typer.Option(default=None, resolve_path=True)):
     """
-    Scan apk for malicious patterns and provide more info
+    Scan APK for malicious patterns and provide more info
     """
     checkIfDecompile(f)
     collectPatterns(detectionPatterns)
@@ -262,7 +263,7 @@ def scan( f: Path = typer.Option(default=None, resolve_path=True)):
 @app.command("r")
 def requests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
-    Scan apk for any http/https requests
+    Scan APK for any http/https requests
     """
     checkIfDecompile(f)
     scanReq()
@@ -271,7 +272,7 @@ def requests( f: Path = typer.Option(default=None, resolve_path=True)):
 @app.command("sr")
 def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
-    Scan apk for both malicious patterns and http/https requests
+    Scan APK for both malicious patterns and http/https requests
     """
     checkIfDecompile(f)
     collectPatterns(detectionPatterns)
@@ -284,7 +285,7 @@ def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
 @app.callback(invoke_without_command=True,context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
 def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=True)):
     """
-    Scan apk for malicious patterns with a simplified output
+    Scan APK for malicious patterns with a simplified output
     """
     global callbackFilePath
     # only run if there is no command
