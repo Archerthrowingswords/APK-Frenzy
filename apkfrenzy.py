@@ -90,7 +90,6 @@ def checkIfDecompile(f):
     if f == None: 
         if(os.path.exists(outDirectory) and len(os.listdir(outDirectory))!=0):
             apkFrenzyIntro()
-            print(f"Scanning extracted files in {abPath}\out folder")
             print(f"Scanning Extracted Files in {abPath}\out folder")
             print("-------------------------------------------------------------")
         else: 
