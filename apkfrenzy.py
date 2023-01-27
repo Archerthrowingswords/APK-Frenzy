@@ -15,6 +15,7 @@ outDirectory = f"{abPath}/out"
 f = open(f"{abPath}/detectionPatterns.json")
 detectionPatterns = json.load(f)
 detectedPatterns = {}
+callbackFilePath = None
 
 #collection of all pattern keywords
 allManifestKeywords =[]
@@ -83,6 +84,9 @@ def decompileAPK(file):
         raise typer.Abort()
 
 def checkIfDecompile(f):
+    global callbackFilePath
+    if (f == None) and (callbackFilePath != None):
+        f = callbackFilePath
     if f == None: 
         if(os.path.exists(outDirectory) and len(os.listdir(outDirectory))!=0):
             apkFrenzyIntro()
@@ -164,7 +168,6 @@ def patternDetection():
 def checkDetected(detectionPatterns):
     global dangerRating
     for patternName in detectionPatterns:
-        print(patternName)
         patternData = detectionPatterns[patternName]
         manifestKeywords = (patternData["manifestKeywords"])
         alternateManifestKeywords = (patternData["alternateManifestKeywords"])
@@ -283,12 +286,19 @@ def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=Tr
     """
     Scan apk for malicious patterns with a simplified output
     """
+    global callbackFilePath
+    # only run if there is no command
     if ctx.invoked_subcommand is None:
         checkIfDecompile(f)
         collectPatterns(detectionPatterns)
         patternDetection()
         checkDetected(detectionPatterns)
         simpleScanResult()
+    else:
+        print("test")
+        # if user passed path into callback pass it into global var
+        if f != None: 
+            callbackFilePath = f
         
 if __name__ == "__main__":
     app()
