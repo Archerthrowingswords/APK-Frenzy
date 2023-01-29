@@ -75,8 +75,8 @@
         "manifestKeywords":["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.ACCESS_BACKGROUND_LOCATION"],
-        "javaKeywords":["Location", "LocationManager"],
-        "alternateJavaKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[["Location", "LocationManager"]],
         "javaOptionalKeywords":["latitude", "longitude"],
         "description": "Application can access the location of the device.",
         "dangerRating": 35,
@@ -345,5 +345,41 @@
         "description": "Application has call log access. Most applications do not need call log access, thus application may be malicious.",
         "dangerRating": 15,
         "c": "L"
+    },
+
+    "Hijack Tasks / StrandHogg": {
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[["android:taskAffinity", "allowTaskReparenting=\"true\""]],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[["moveTaskToBack(true)", "Intent.FLAG_ACTIVITY_NEW_TASK"]],
+        "javaOptionalKeywords":["android:excludeFromRecents=\"true\""],
+        "description": "Application exploits Task Affinity to hijack other apps, allowing for the malicious app to ask for permissions while pretending to be the legitimate app. This vulnerability also enables phishing attacks by launching a fake login page when a legitimate app is opened.",
+        "dangerRating": 15,
+        "c": "HN"
+    },
+
+    "Android Overlay w/ Fake Login Screen": {
+        "manifestKeywords":["android.permission.SYSTEM_ALERT_WINDOW"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[["Username", "username", "User", "user", "ID", "id"], ["Password", "password", "pass word"]],
+        "javaOptionalKeywords":[],
+        "description": "Application can create windows that overlay all other apps without notifying the user. In this case, it is used for overlaying a fake login screen.",
+        "dangerRating": 10,
+        "c":"HN"
+    },
+
+    "Ransomware": {
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["crypto", "SecretKeySpec", "Cipher"],
+        "alternateJavaKeywords":[["FileInputStream", "FileOutputStream"]],
+        "javaOptionalKeywords":["AES", "AESWrap", "RSA", "DES", "DESede"],
+        "description": "Application uses the crypto Package to encrypt files. Possibibly a ransomware.",
+        "dangerRating": 20,
+        "c":"HN"
     }
 }
