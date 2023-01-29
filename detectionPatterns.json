@@ -1,13 +1,13 @@
 {
     
     "Track Calls": {
-        "manifestKeywords":["android.permission.READ_PHONE_STATE", "android.permission.INTERNET" ],
+        "manifestKeywords":["android.permission.READ_PHONE_STATE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.PROCESS_OUTGOING_CALLS"],
         "javaKeywords":[],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
-        "description": "Application can track incoming or outcoming calls from the device. Can transfer information over the Internet.",
+        "description": "Application can track incoming or outcoming calls from the device.",
         "dangerRating": 5,
         "c":"G"
     },
@@ -36,7 +36,7 @@
     },
 
     "Control SMS": { 
-        "manifestKeywords":[],
+        "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[["android.permission.RECEIVE_SMS","android.permission.READ_SMS", "android.permission.SEND_SMS"]],
         "optionalManifestKeywords":["android.permission.WRITE_SMS"],
         "javaKeywords":["SmsManager"],
@@ -108,7 +108,7 @@
     },
 
     "Accessibility Exploit: Install Apps Without User Knowledge": {
-        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["com.google.android.packageinstaller", "performAction"],
@@ -132,7 +132,7 @@
     },
 
     "Accessibility Exploit: Install Packages Without User Knowledge": {
-        "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
         "javaKeywords":[],
@@ -168,7 +168,7 @@
     },
 
     "Collect Telephony Data": {
-        "manifestKeywords":[],
+        "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[["android.permission.READ_PHONE_STATE", "android.permission.READ_SMS", "android.permission.READ_PHONE_NUMBERS"]],
         "optionalManifestKeywords":["android.permission.INTERNET"],
         "javaKeywords":["TelephonyManager"],
@@ -204,7 +204,7 @@
     },
 
     "Persistent Access to Camera": {
-        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET", "android.permission.CAMERA", "android.hardware.camera"],
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET", "android.permission.CAMERA", "android.hardware.camera", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.media.action.IMAGE_CAPTURE"],
         "javaKeywords":["takePicture(", "onPictureTaken(", "startForeground("],
@@ -240,7 +240,7 @@
     },
 
     "Take and Detect Screenshots": {
-        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"],
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.MANAGE_EXTERNAL_STORAGE"],
         "javaKeywords":["getWindow", "getDecorView", "getRootView"],
@@ -255,7 +255,7 @@
         "manifestKeywords":["android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.service.notification.NotificationListenerService"],
-        "javaKeywords":[],
+        "javaKeywords":["onListenerConnected("],
         "alternateJavaKeywords":[["extends NotificationListenerService", "import android.service.notification.NotificationListenerService"]],
         "javaOptionalKeywords":[],
         "description": "Application can access the Notification Listener.",
@@ -264,7 +264,7 @@
     },
 
     "Access to Clipboard": {
-        "manifestKeywords":[],
+        "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["CLIPBOARD_SERVICE", "ClipboardManager"],
