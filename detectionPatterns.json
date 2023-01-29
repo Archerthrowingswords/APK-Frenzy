@@ -27,10 +27,10 @@
         "manifestKeywords":["android.permission.WAKE_LOCK"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
-        "javaKeywords":["newWakeLock"],
+        "javaKeywords":[],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["wakeLock.acquire()"],
-        "description": "Application can keep a device awake using Wake Lock.",
+        "javaOptionalKeywords":["newWakeLock(", "wakeLock.acquire("],
+        "description": "Application has permission to keep a device awake using Wake Lock. Especially harmful if the optional keywords are detected.",
         "dangerRating": 10,
         "c":"L"
     },
@@ -48,10 +48,10 @@
     },
 
     "Start on Boot": { 
-        "manifestKeywords":["android.permission.RECEIVE_BOOT_COMPLETED"],
+        "manifestKeywords":["android.permission.RECEIVE_BOOT_COMPLETED", "android.intent.action.BOOT_COMPLETED"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["BootReceiver", "android.permission.QUICKBOOT_POWERON"],
-        "javaKeywords":["android.intent.action.BOOT_COMPLETED"],
+        "javaKeywords":[],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
         "description": "Application can run automatically in the background when the phone is rebooted, even without user interaction",
@@ -87,7 +87,7 @@
         "manifestKeywords":[],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
-        "javaKeywords":["Intent", "getPackageManager().getLaunchIntentForPackage" ],
+        "javaKeywords":["Intent", "getPackageManager.getLaunchIntentForPackage" ],
         "alternateJavaKeywords":[["startActivity","startActivityForResult"]],
         "javaOptionalKeywords":[],
         "description": "Application can launch other apps and potentially receive information from them.",
@@ -293,7 +293,7 @@
         "optionalManifestKeywords":["android.app.action.DEVICE_ADMIN_ENABLED"],
         "javaKeywords":[],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":[],
+        "javaOptionalKeywords":["ACTION_ADD_DEVICE_ADMIN"],
         "description": "Application can prompt user for device administrator permissions.",
         "dangerRating": 30,
         "c": "L"
@@ -381,5 +381,41 @@
         "description": "Application uses the crypto Package to encrypt files. Possibibly a ransomware.",
         "dangerRating": 20,
         "c":"HN"
+    },
+
+    "Permission to Power Off": {
+        "manifestKeywords":["android.permission.DEVICE_POWER"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application can power off the device. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
+        "dangerRating": 99,
+        "c": "L"
+    },
+
+    "Delete other Packages/Applications": {
+        "manifestKeywords":["android.permission.DELETE_PACKAGES"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application can delete other packages/applications without authorisation. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
+        "dangerRating": 50,
+        "c": "L"
+    },
+
+    "Install other Packages/Applications": {
+        "manifestKeywords":["android.permission.INSTALL_PACKAGES"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application can install other packages/applications without authorisation. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
+        "dangerRating": 50,
+        "c": "L"
     }
 }
