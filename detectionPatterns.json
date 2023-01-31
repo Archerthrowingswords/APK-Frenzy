@@ -1,14 +1,14 @@
 {
     
-    "Monitor Calls": {
-        "manifestKeywords":["android.permission.READ_PHONE_STATE", "android.permission.INTERNET" ],
+    "Track Calls": {
+        "manifestKeywords":["android.permission.READ_PHONE_STATE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.PROCESS_OUTGOING_CALLS"],
         "javaKeywords":[],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
-        "description": "Application can monitor incoming or outcoming calls from the device.",
-        "dangerRating": 25,
+        "description": "Application can track incoming or outcoming calls from the device.",
+        "dangerRating": 5,
         "c":"G"
     },
 
@@ -16,46 +16,46 @@
         "manifestKeywords":["android.permission.CALL_PHONE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
-        "javaKeywords":[],
-        "alternateJavaKeywords":[["Intent.ACTION_DIAL", "Intent.ACTION_CALL"]],
+        "javaKeywords":["Intent.ACTION_CALL"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can make calls without going through the Dialer UI for user to confirm the call.",
-        "dangerRating": 10
+        "dangerRating": 15
     },
 
     "Keep Device Awake": {
         "manifestKeywords":["android.permission.WAKE_LOCK"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
-        "javaKeywords":[],
+        "javaKeywords":["newWakeLock("],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":["newWakeLock(", "wakeLock.acquire("],
+        "javaOptionalKeywords":["wakeLock.acquire("],
         "description": "Application has permission to keep a device awake using Wake Lock. Especially harmful if the optional keywords are detected.",
         "dangerRating": 10,
         "c":"L"
     },
 
     "Control SMS": { 
-        "manifestKeywords":[],
-        "alternateManifestKeywords":[["android.permission.RECEIVE_SMS","android.permission.READ_SMS"]],
-        "optionalManifestKeywords":["android.permission.SEND_SMS", "android.permission.WRITE_SMS"],
+        "manifestKeywords":["android.permission.INTERNET"],
+        "alternateManifestKeywords":[["android.permission.RECEIVE_SMS","android.permission.READ_SMS", "android.permission.SEND_SMS"]],
+        "optionalManifestKeywords":["android.permission.WRITE_SMS"],
         "javaKeywords":["SmsManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "description": "Application can delete, receive, or send SMS messages without user authorisation",
-        "dangerRating": 15,
+        "description": "Application can delete, receive, or send SMS messages without user authorisation.",
+        "dangerRating": 25,
         "c":"L"
     },
 
     "Start on Boot": { 
-        "manifestKeywords":["android.permission.RECEIVE_BOOT_COMPLETED", "android.intent.action.BOOT_COMPLETED"],
-        "alternateManifestKeywords":[],
-        "optionalManifestKeywords":["BootReceiver", "android.permission.QUICKBOOT_POWERON"],
+        "manifestKeywords":["android.permission.RECEIVE_BOOT_COMPLETED"],
+        "alternateManifestKeywords":[["android.intent.action.QUICKBOOT_POWERON", "android.intent.action.BOOT_COMPLETED"]],
+        "optionalManifestKeywords":["BootReceiver"],
         "javaKeywords":[],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
-        "description": "Application can run automatically in the background when the phone is rebooted, even without user interaction",
-        "dangerRating": 5,
+        "description": "Application can run automatically in the background when the phone is rebooted, even without user interaction.",
+        "dangerRating": 10,
         "c":"L"
     },
 
@@ -67,7 +67,7 @@
         "javaOptionalKeywords":["Intent", "android.settings.ACCESSIBILITY_SETTINGS"],
         "alternateJavaKeywords":[],
         "description": "Application exploits Accessibility to gain access to the UI elements.",
-        "dangerRating": 60,
+        "dangerRating": 15,
         "c":"HN"
     },
 
@@ -79,7 +79,7 @@
         "alternateJavaKeywords":[["Location", "LocationManager"]],
         "javaOptionalKeywords":["latitude", "longitude"],
         "description": "Application can access the location of the device.",
-        "dangerRating": 35,
+        "dangerRating": 10,
         "c":"HN"
     },
 
@@ -91,7 +91,7 @@
         "alternateJavaKeywords":[["startActivity","startActivityForResult"]],
         "javaOptionalKeywords":[],
         "description": "Application can launch other apps and potentially receive information from them.",
-        "dangerRating": 25,
+        "dangerRating": 10,
         "c":"HN"
     },
 
@@ -103,19 +103,19 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED", "AccessibilityEvent.TYPE_VIEW_FOCUSED", "AccessibilityEvent.TYPE_VIEW_CLICKED"],
         "description": "Application exploits Accessibility Settings to log what the user types.",
-        "dangerRating": 99,
+        "dangerRating": 30,
         "c":"HN"
     },
 
     "Accessibility Exploit: Install Apps Without User Knowledge": {
-        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+        "manifestKeywords":["android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["com.google.android.packageinstaller", "performAction"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application exploits Accessibility to install an application without the user's knowledge.",
-        "dangerRating": 80,
+        "dangerRating": 30,
         "c":"HN"
     },
 
@@ -125,21 +125,21 @@
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
         "javaKeywords":[],
         "alternateJavaKeywords":[],
-        "javaOptionalKeywords":[],
+        "javaOptionalKeywords":["Intent.ACTION_INSTALL_PACKAGE"],
         "description": "Application exploits Accessibility to delete packages without the user's knowledge.",
-        "dangerRating": 10,
+        "dangerRating": 30,
         "c":"TY"
     },
 
-    "Accessibility Exploit: Install Package Without User Knowledge": {
-        "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice"],
+    "Accessibility Exploit: Install Packages Without User Knowledge": {
+        "manifestKeywords":["android.permission.REQUEST_INSTALL_PACKAGES", "android.permission.BIND_ACCESSIBILITY_SERVICE", "android.accessibilityservice.AccessibilityService", "android.accessibilityservice", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE"],
         "javaKeywords":[],
-        "alternateJavaKeywords":["DownloadService"],
-        "javaOptionalKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":["Intent.ACTION_INSTALL_PACKAGE"],
         "description": "Application exploits Accessibility to install packages without the user's knowledge.",
-        "dangerRating": 10,
+        "dangerRating": 30,
         "c":"TY"
     },
 
@@ -151,7 +151,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can create windows that overlay all other apps without notifying the user. Commonly used for displaying fraudulent ads, phishing scams, click-jacking etc.",
-        "dangerRating": 20,
+        "dangerRating": 15,
         "c":"HN"
     },
 
@@ -168,14 +168,14 @@
     },
 
     "Collect Telephony Data": {
-        "manifestKeywords":[],
+        "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[["android.permission.READ_PHONE_STATE", "android.permission.READ_SMS", "android.permission.READ_PHONE_NUMBERS"]],
         "optionalManifestKeywords":["android.permission.INTERNET"],
         "javaKeywords":["TelephonyManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["getDeviceId", "getImei", "getNetworkOperator", "getLine1Number", "getPhoneNumber", "getSubscriberId", "getSimSerialNumber", "getSimCountryIso", "getCallState", "isNetworkRoaming", "getSimOperator"],
         "description": "Application can collect telephony data from the device, which might include sensitive information.",
-        "dangerRating": 20,
+        "dangerRating": 10,
         "c":"HN, TY"
     },
 
@@ -187,7 +187,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["android.settings.action.MANAGE_WRITE_SETTINGS", "canWrite"],
         "description": "Application can read or write the system settings.",
-        "dangerRating": 85,
+        "dangerRating": 30,
         "c":"HN"
     },
 
@@ -198,13 +198,13 @@
         "javaKeywords":["application/vnd.android.package-archive"],
         "alternateJavaKeywords":[["http://", "https://"]],
         "javaOptionalKeywords":["apk", "APK"],
-        "description": "Application can download an APK file from the Internet.",
-        "dangerRating": 60,
+        "description": "Application can download an APK file from untrusted sources on the Internet. Possibly an App Dropper.",
+        "dangerRating": 20,
         "c":"TY, HN"
     },
 
     "Persistent Access to Camera": {
-        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET", "android.permission.CAMERA", "android.hardware.camera"],
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.INTERNET", "android.permission.CAMERA", "android.hardware.camera", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.media.action.IMAGE_CAPTURE"],
         "javaKeywords":["takePicture(", "onPictureTaken(", "startForeground("],
@@ -240,7 +240,7 @@
     },
 
     "Take and Detect Screenshots": {
-        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"],
+        "manifestKeywords":["android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.MANAGE_EXTERNAL_STORAGE"],
         "javaKeywords":["getWindow", "getDecorView", "getRootView"],
@@ -255,8 +255,8 @@
         "manifestKeywords":["android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.service.notification.NotificationListenerService"],
-        "javaKeywords":[],
-        "alternateJavaKeywords":["extends NotificationListenerService", "import android.service.notification.NotificationListenerService"],
+        "javaKeywords":["onListenerConnected("],
+        "alternateJavaKeywords":[["extends NotificationListenerService", "import android.service.notification.NotificationListenerService"]],
         "javaOptionalKeywords":[],
         "description": "Application can access the Notification Listener.",
         "dangerRating": 10,
@@ -264,7 +264,7 @@
     },
 
     "Access to Clipboard": {
-        "manifestKeywords":[],
+        "manifestKeywords":["android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["CLIPBOARD_SERVICE", "ClipboardManager"],
@@ -367,18 +367,18 @@
         "alternateJavaKeywords":[["Username", "username", "User", "user", "ID", "id"], ["Password", "password", "pass word"]],
         "javaOptionalKeywords":[],
         "description": "Application can create windows that overlay all other apps without notifying the user. In this case, it is used for overlaying a fake login screen.",
-        "dangerRating": 10,
+        "dangerRating": 5,
         "c":"HN"
     },
 
-    "Ransomware": {
+    "Encryption of Files": {
         "manifestKeywords":[],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["crypto", "SecretKeySpec", "Cipher"],
         "alternateJavaKeywords":[["FileInputStream", "FileOutputStream"]],
         "javaOptionalKeywords":["AES", "AESWrap", "RSA", "DES", "DESede"],
-        "description": "Application uses the crypto Package to encrypt files. Possibibly a ransomware.",
+        "description": "Application has encryption capabilities. Possibly a ransomware.",
         "dangerRating": 20,
         "c":"HN"
     },

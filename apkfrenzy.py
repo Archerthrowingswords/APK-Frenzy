@@ -232,7 +232,7 @@ def scanResult():
         print("No Malicous Patterns Detected")
         print("-------------------------------------------------------------")
         return
-    print(f"Patterns Detected:")
+    print(f"Pattern(s) Detected:")
     for i in detectedPatterns: print(f"\n-{i} (+{detectedPatterns[i][1]}%)\n{detectedPatterns[i][0]}")
     if (validManifestFoundOptionalKeywords != []):
         print(f"\nInteresting Manifest Keywords Found:")
@@ -283,7 +283,7 @@ def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
     scanReq()
     scanResult()
     reqResult()
-
+    
 @app.callback(invoke_without_command=True,context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
 def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=True)):
     """
@@ -298,7 +298,6 @@ def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=Tr
         checkDetected(detectionPatterns)
         simpleScanResult()
     else:
-        print("test")
         # if user passed path into callback pass it into global var
         if f != None: 
             callbackFilePath = f
