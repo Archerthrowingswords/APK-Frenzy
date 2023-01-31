@@ -24,12 +24,12 @@ To run the script, all you need to run is:
 python apkfrenzy.py --f {apk name}
 ```
 
-If your filename has a space, then ensure that the filepath is wrapped in a " ":
+If your filename has a space, then ensure that the filepath is wrapped using " ":
 ```bash
 python apkfrenzy.py --f "mal ware.apk"
 ```
 
-If you have already decompiled the APK file, then you can run the script without the --f option scan through the ./out directory:
+If you have already decompiled the APK file, then you can run the script without the --f option and the file path, which will scan the decompiled file in the ./out directory:
 ```bash
 python apkfrenzy.py
 ```
@@ -39,26 +39,18 @@ python apkfrenzy.py
 # "s" will run the malware scan and provide more information in the output
 
 python apkfrenzy.py s --f .\malware\BadNews.A.apk
-# or
-python apkfrenzy.py --f .\malware\BadNews.A.apk s
-# or
-python apkfrenzy.py s
 
 # "r" will extract all the http/https requests and return the result
 
 python apkfrenzy.py r --f .\malware\BadNews.A.apk
-# or
-python apkfrenzy.py --f .\malware\BadNews.A.apk r
-# or
-python apkfrenzy.py r
 
-# "sr" will both run the malware scan and extract all the http/https requests
+# "l" will run the malware scan and log the results to a file
 
-python apkfrenzy.py sr --f .\malware\BadNews.A.apk
-# or
-python apkfrenzy.py --f .\malware\BadNews.A.apk sr
-# or
-python apkfrenzy.py sr
+python apkfrenzy.py l --f .\malware\BadNews.A.apk
+
+# "srl" will run the malware scan, extract all the http/https requests, and log the results to a file
+
+python apkfrenzy.py srl --f .\malware\BadNews.A.apk
 ```
 
 ## For Linux
