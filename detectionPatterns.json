@@ -371,14 +371,14 @@
         "c":"HN"
     },
 
-    "Encryption of Files": {
+    "Ransomware: Password": {
         "manifestKeywords":[],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["crypto", "SecretKeySpec", "Cipher"],
-        "alternateJavaKeywords":[["FileInputStream", "FileOutputStream"]],
+        "alternateJavaKeywords":[["FileInputStream", "FileOutputStream"], ["pass", "password", "pword", "key"], ["NotificationManager"]],
         "javaOptionalKeywords":["AES", "AESWrap", "RSA", "DES", "DESede"],
-        "description": "Application has encryption capabilities. Possibly a ransomware.",
+        "description": "Application is able to encrypt files, and possibly notify the user and ask for a password to decrypt, making it a ransomware.",
         "dangerRating": 20,
         "c":"HN"
     },
@@ -415,6 +415,18 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can install other packages/applications without authorisation. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
+        "dangerRating": 50,
+        "c": "L"
+    },
+
+    "Permission to Brick": {
+        "manifestKeywords":["android.permission.BRICK"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":[],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application can wipe the device remotely. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
         "dangerRating": 50,
         "c": "L"
     }
