@@ -31,7 +31,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["wakeLock.acquire("],
         "description": "Application has permission to keep a device awake using Wake Lock. Especially harmful if the optional keywords are detected.",
-        "dangerRating": 10,
+        "dangerRating": 5,
         "c":"L"
     },
 
@@ -43,7 +43,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can delete, receive, or send SMS messages without user authorisation.",
-        "dangerRating": 25,
+        "dangerRating": 30,
         "c":"L"
     },
 
@@ -55,7 +55,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["startService"],
         "description": "Application can run automatically in the background when the phone is rebooted, even without user interaction.",
-        "dangerRating": 10,
+        "dangerRating": 5,
         "c":"L"
     },
 
@@ -67,7 +67,7 @@
         "javaOptionalKeywords":["Intent", "android.settings.ACCESSIBILITY_SETTINGS"],
         "alternateJavaKeywords":[],
         "description": "Application exploits Accessibility to gain access to the UI elements.",
-        "dangerRating": 15,
+        "dangerRating": 30,
         "c":"HN"
     },
 
@@ -196,8 +196,8 @@
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["application/vnd.android.package-archive"],
-        "alternateJavaKeywords":[["http://", "https://"]],
-        "javaOptionalKeywords":["apk", "APK"],
+        "alternateJavaKeywords":[["http://", "https://"], ["apk", "APK"]],
+        "javaOptionalKeywords":[],
         "description": "Application can download an APK file from untrusted sources on the Internet. Possibly an App Dropper.",
         "dangerRating": 20,
         "c":"TY, HN"
@@ -211,7 +211,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["camera.startPreview(", "MediaStore.ACTION_IMAGE_CAPTURE"],
         "description": "Application can access camera without it being in focus. Most applications do not need persistent access to the camera, unless its used for communication applications.",
-        "dangerRating": 25,
+        "dangerRating": 30,
         "c":"TY"
     },
 
@@ -222,7 +222,7 @@
         "javaKeywords":["MediaRecorder","start", "startForeground("],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["setAudioSource(", "setAudioEncoder(", "setOutputFormat(", "setOutputFile(", "MediaRecorder.release("],
-        "description": "Application can access microphone without it being in focus.",
+        "description": "Application can access the microphone without it being in focus.",
         "dangerRating": 20,
         "c":"TY, HN"
     },
@@ -235,7 +235,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["HAS_PHONE_NUMBER", "DISPLAY_NAME_PRIMARY", "CONTENT_URI"],
         "description": "Application can access the contacts stored on the device.",
-        "dangerRating": 15,
+        "dangerRating": 10,
         "c": "TY, HN"
     },
 
@@ -247,19 +247,19 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["bitmap"],
         "description": "Application can take screenshots and determine if a screenshot is being taken.",
-        "dangerRating": 10,
+        "dangerRating": 15,
         "c": "TY, HN"
     },
 
-    "Listen to Notifications": {
+    "Access Notification Listener Service": {
         "manifestKeywords":["android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.service.notification.NotificationListenerService"],
         "javaKeywords":["onListenerConnected("],
         "alternateJavaKeywords":[["extends NotificationListenerService", "import android.service.notification.NotificationListenerService"]],
         "javaOptionalKeywords":[],
-        "description": "Application can access the Notification Listener.",
-        "dangerRating": 10,
+        "description": "Application can access the Notification Listener, which allows applications to listen and reply to notifications.",
+        "dangerRating": 30,
         "c": "L"
     },
 
@@ -270,8 +270,8 @@
         "javaKeywords":["CLIPBOARD_SERVICE", "ClipboardManager"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["addPrimaryClipChangedListener", "hasPrimaryClip", "getPrimaryClip"],
-        "description": "Application can access the clipboard and retrieves the primary copied text.",
-        "dangerRating": 35,
+        "description": "Application can access the clipboard and retrieve the primary copied text.",
+        "dangerRating": 25,
         "c": "HN"
     },
 
@@ -282,8 +282,8 @@
         "javaKeywords":["PackageManager", "getInstalledApplications"],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["Log", "log"],
-        "description": "Application can retrieve the names of installed applications.",
-        "dangerRating": 5,
+        "description": "Application can retrieve a filtered list of installed applications that Google has deemed appropriate.",
+        "dangerRating": 10,
         "c": "HN"
     },
 
@@ -294,8 +294,8 @@
         "javaKeywords":[],
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["ACTION_ADD_DEVICE_ADMIN"],
-        "description": "Application can prompt user for device administrator permissions.",
-        "dangerRating": 30,
+        "description": "Application can prompt users for device administrator permissions.",
+        "dangerRating": 50,
         "c": "L"
     },
 
@@ -307,7 +307,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can query device for all installed applications. May be malicious especially if your application does not fall under the following categories: device search, antivirus apps, file managers, and browsers.",
-        "dangerRating": 50,
+        "dangerRating": 20,
         "c": "L"
     },
 
@@ -319,7 +319,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can view sensitive device information such as IMEI, IMSI and phone number. If application is not a system application, high possibility it is malicious.",
-        "dangerRating": 50,
+        "dangerRating": 20,
         "c": "L"
     },
 
@@ -331,7 +331,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":["CALENDAR_DISPLAY_NAME", "CALENDAR_ID", "EVENT_LOCATION", "EVENT_TIMEZONE", "ALL_DAY", "ATTENDEE_NAME", "ATTENDEE_EMAIL", "ATTENDEE_RELATIONSHIP", "ATTENDEE_TYPE", "ATTENDEE_STATUS"],
         "description": "Application has calendar access. Most applications do not need calendar access, thus application may be malicious.",
-        "dangerRating": 25,
+        "dangerRating": 10,
         "c": "L"
     },
 
@@ -343,31 +343,43 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application has call log access. Most applications do not need call log access, thus application may be malicious.",
-        "dangerRating": 15,
+        "dangerRating": 10,
         "c": "L"
     },
 
-    "Hijack Tasks / StrandHogg": {
+    "Hijack Tasks / StrandHogg Method 1": {
         "manifestKeywords":[],
         "alternateManifestKeywords":[["android:taskAffinity", "allowTaskReparenting=\"true\""]],
         "optionalManifestKeywords":[],
-        "javaKeywords":[],
-        "alternateJavaKeywords":[["moveTaskToBack(true)", "Intent.FLAG_ACTIVITY_NEW_TASK"]],
+        "javaKeywords":["Intent.FLAG_ACTIVITY_NEW_TASK"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":["android:excludeFromRecents=\"true\""],
         "description": "Application exploits Task Affinity to hijack other apps, allowing for the malicious app to ask for permissions while pretending to be the legitimate app. This vulnerability also enables phishing attacks by launching a fake login page when a legitimate app is opened.",
-        "dangerRating": 15,
+        "dangerRating": 50,
         "c": "HN"
     },
 
-    "Android Overlay w/ Fake Login Screen": {
-        "manifestKeywords":["android.permission.SYSTEM_ALERT_WINDOW"],
+    "Hijack Tasks / StrandHogg Method 2": {
+        "manifestKeywords":["android:taskAffinity"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
-        "javaKeywords":[],
-        "alternateJavaKeywords":[["Username", "username", "User", "user", "ID", "id"], ["Password", "password", "pass word"]],
+        "javaKeywords":["moveTaskToBack(true)"],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":["android:excludeFromRecents=\"true\""],
+        "description": "Application exploits Task Affinity to hijack other apps, allowing for the malicious app to ask for permissions while pretending to be the legitimate app. This vulnerability also enables phishing attacks by launching a fake login page when a legitimate app is opened.",
+        "dangerRating": 50,
+        "c": "HN"
+    },
+
+    "Hide Application Icons": {
+        "manifestKeywords":[],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["setComponentEnabledSetting(", "COMPONENT_ENABLED_STATE_DISABLED", "DONT_KILL_APP"],
+        "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
-        "description": "Application can create windows that overlay all other apps without notifying the user. In this case, it is used for overlaying a fake login screen.",
-        "dangerRating": 5,
+        "description": "Application can hide its icon from the user.",
+        "dangerRating": 10,
         "c":"HN"
     },
 
@@ -378,12 +390,12 @@
         "javaKeywords":["crypto", "SecretKeySpec", "Cipher"],
         "alternateJavaKeywords":[["FileInputStream", "FileOutputStream"]],
         "javaOptionalKeywords":["AES", "AESWrap", "RSA", "DES", "DESede"],
-        "description": "Application has encryption capabilities. Possibly a ransomware.",
+        "description": "Application has encryption capabilities. Possibly ransomware.",
         "dangerRating": 20,
         "c":"HN"
     },
 
-    "Permission to Power Off": {
+    "Ability to Power Off Device": {
         "manifestKeywords":["android.permission.DEVICE_POWER"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -391,7 +403,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can power off the device. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
-        "dangerRating": 99,
+        "dangerRating": 30,
         "c": "L"
     },
 
@@ -403,7 +415,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can delete other packages/applications without authorisation. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
-        "dangerRating": 50,
+        "dangerRating": 30,
         "c": "L"
     },
 
@@ -415,7 +427,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can install other packages/applications without authorisation. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
-        "dangerRating": 50,
+        "dangerRating": 30,
         "c": "L"
     }
 }
