@@ -5,6 +5,7 @@ import json
 import shutil
 import re
 import subprocess
+from datetime import datetime
 
 # initializing global variables
 abPath = Path(__file__).parent.resolve()
@@ -37,18 +38,19 @@ validManifestFoundOptionalKeywords = []
 validJavaFoundOptionalKeywords = []
 
 def apkFrenzyIntro():
-    print("\n=================================================================")
-    print("||   ___  ______ _   ______________ _____ _   _  ________   __ ||")
-    print("||  / _ \ | ___ \ | / /|  ___| ___ \  ___| \ | ||___  /\ \ / / ||")
-    print("|| / /_\ \| |_/ / |/ / | |_  | |_/ / |__ |  \| |   / /  \ V /  ||")
-    print("|| |  _  ||  __/|    \ |  _| |    /|  __||     |  / /    \ /   ||")
-    print("|| | | | || |   | |\  \| |   | |\ \| |___| |\  | / /___  | |   ||")
-    print("|| \_| |_/\_|   \_| \_/\_|   \_| \_\____/\_| \_/\_____/  \_/   ||")
-    print("||                                                             ||")
-    print("=================================================================\n")
+    output = ""
+    output +="\n=================================================================\n"
+    output +="||   ___  ______ _   ______________ _____ _   _  ________   __ ||\n"
+    output +="||  / _ \ | ___ \ | / /|  ___| ___ \  ___| \ | ||___  /\ \ / / ||\n"
+    output +="|| / /_\ \| |_/ / |/ / | |_  | |_/ / |__ |  \| |   / /  \ V /  ||\n"
+    output +="|| |  _  ||  __/|    \ |  _| |    /|  __||     |  / /    \ /   ||\n"
+    output +="|| | | | || |   | |\  \| |   | |\ \| |___| |\  | / /___  | |   ||\n"
+    output +="|| \_| |_/\_|   \_| \_/\_|   \_| \_\____/\_| \_/\_____/  \_/   ||\n"
+    output +="||                                                             ||\n"
+    output +="=================================================================\n"
+    return output
             
-def checkApkInput(file):
-    apkname = os.path.basename(file)
+def checkApkInput(file, apkname):
     if file is None:
         print("No APK file")
         raise typer.Abort()
@@ -64,7 +66,7 @@ def checkApkInput(file):
     elif not apkname.endswith(".apk"):
         print(f"File is not an APK")
         raise typer.Abort()
-    apkFrenzyIntro()
+    print(apkFrenzyIntro())
     print(f"Filename: ({apkname})")
     print("-------------------------------------------------------------")
 
@@ -89,15 +91,18 @@ def checkIfDecompile(f):
         f = callbackFilePath
     if f == None: 
         if(os.path.exists(outDirectory) and len(os.listdir(outDirectory))!=0):
-            apkFrenzyIntro()
+            print(apkFrenzyIntro())
             print(f"Scanning Extracted Files in {abPath}\out folder")
             print("-------------------------------------------------------------")
+            return "out-folder"
         else: 
             print("Please use --f to specify an APK as no pre-decompiled APK code exists\nFor more information use --help")
             raise typer.Abort()
     else:
-        checkApkInput(f)
+        apkname = os.path.basename(f)
+        checkApkInput(f,apkname)
         decompileAPK(f)
+        return apkname
 
 def collectPatterns(detectionPatterns):
     global allManifestKeywords 
@@ -209,47 +214,78 @@ def scanReq():
 
 def simpleScanResult():
     global dangerRating
-    if(dangerRating > 99): dangerRating = 99
+    output = ""
+    if(dangerRating > 99): 
+        dangerRating = 99
+        output += "We have capped the malicious confidence rating at 99% as we can never be completely sure that the APK is malicious\n"
     bar = '{:░<20}'.format('█'*(dangerRating//5))
-    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)")
-    print("-------------------------------------------------------------")
+    output += f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)\n"
+    output +="-------------------------------------------------------------\n"
     if (detectedPatterns == {}):
-        print("No Malicous Patterns Detected")
-        return
-    print(f"Pattern(s) Detected:")
-    for i in detectedPatterns: print(f"-{i}")
-    print("-------------------------------------------------------------")
+        output +="No Malicous Patterns Detected\n"
+        return output
+    output +="Pattern(s) Detected:\n"
+    for i in detectedPatterns: output += f"-{i}\n"
+    output +="-------------------------------------------------------------"
+    return output
+
    
 def scanResult():
     global dangerRating
-    if(dangerRating > 99): dangerRating = 99
+    output = ""
+    if(dangerRating > 99): 
+        dangerRating = 99
+        output +="We have capped the malicious confidence rating at 99% as we can never be completely sure that the APK is malicious\n"
     bar = '{:░<20}'.format('█'*(dangerRating//5))
-    print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)")
-    print("-------------------------------------------------------------")
+    output +=f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)\n"
+    output +="-------------------------------------------------------------\n"
     if (detectedPatterns == {}):
-        print("No Malicous Patterns Detected")
-        return
-    print(f"Patterns Detected:")
-    for i in detectedPatterns: print(f"\n-{i} (+{detectedPatterns[i][1]}%)\n{detectedPatterns[i][0]}")
+        output +="No Malicous Patterns Detected\n"
+        output +="-------------------------------------------------------------\n"
+        return output
+    output +="Pattern(s) Detected:\n"
+    for i in detectedPatterns: output +=f"\n-{i} (+{detectedPatterns[i][1]}%)\n{detectedPatterns[i][0]}\n"
     if (validManifestFoundOptionalKeywords != []):
-        print(f"\nInteresting Manifest Keywords Found:")
-        for i in validManifestFoundOptionalKeywords: print(f"-{i}")
+        output +="\nInteresting Manifest Keywords Found:\n"
+        for i in validManifestFoundOptionalKeywords: output +=f"-{i}\n"
     if (validJavaFoundOptionalKeywords != []):
-        print(f"\nInteresting Java Keywords Found:")
-        for i in validJavaFoundOptionalKeywords: print(f"-{i}")
-    print("-------------------------------------------------------------")
+        output +="\nInteresting Java Keywords Found:\n"
+        for i in validJavaFoundOptionalKeywords: output +=f"-{i}\n"
+    output +="-------------------------------------------------------------\n"
+    return output
     
 def reqResult():
     global httpList
+    output = ""
     if (httpList == []):
-        print("No HTTP/HTTPS Requests Detected")
-        return
-    print("HTTP/HTTPS Requests Detected:\n")
-    for i in httpList: print(f"-{i}")
-    print("")
+        output +="No HTTP/HTTPS Requests Detected\n"
+        return output
+    output +="HTTP/HTTPS Requests Detected:\n"
+    for i in httpList: output +=f"-{i}\n"
+    return output
+
+@app.command("l")
+def scanLog( f: Path = typer.Option(default=None, resolve_path=True)):
+    """
+    Scan APK for Malicious Patterns with a simple scan then log them in a file
+    """
+    log = apkFrenzyIntro()
+    apkname = checkIfDecompile(f)
+    collectPatterns(detectionPatterns)
+    patternDetection()
+    checkDetected(detectionPatterns)
+    result = simpleScanResult()
+    print(result)
+    #saving results to a file
+    log += result
+    now = datetime.now()
+    ts = f"{now.year}-{now.month}-{now.day}_{now.hour}-{now.minute}-{now.second}"
+    f = open(f"{apkname}-scan-{ts}.txt", "w", encoding="utf-8")
+    f.write(log)
+    f.close()
 
 @app.command("s")
-def scan( f: Path = typer.Option(default=None, resolve_path=True)):
+def verboseScan( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan APK for Malicious Patterns and Provide More Information
     """
@@ -257,7 +293,27 @@ def scan( f: Path = typer.Option(default=None, resolve_path=True)):
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected(detectionPatterns)
-    scanResult()
+    print(scanResult())
+
+@app.command("sl")
+def verboseScanLog( f: Path = typer.Option(default=None, resolve_path=True)):
+    """
+    Scan APK for Malicious Patterns and Provide More Information then log them in a file
+    """
+    log = apkFrenzyIntro()
+    apkname = checkIfDecompile(f)
+    collectPatterns(detectionPatterns)
+    patternDetection()
+    checkDetected(detectionPatterns)
+    result = scanResult()
+    print(result)
+    #saving results to a file
+    log += result
+    now = datetime.now()
+    ts = f"{now.year}-{now.month}-{now.day}_{now.hour}-{now.minute}-{now.second}"
+    f = open(f"{apkname}-scan-{ts}.txt", "w", encoding="utf-8")
+    f.write(log)
+    f.close()
 
 @app.command("r")
 def requests( f: Path = typer.Option(default=None, resolve_path=True)):
@@ -266,21 +322,65 @@ def requests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     checkIfDecompile(f)
     scanReq()
-    reqResult()
+    print(reqResult())
+
+@app.command("rl")
+def requestsLog( f: Path = typer.Option(default=None, resolve_path=True)):
+    """
+    Scan APK for any HTTP/HTTPS Requests then log them in a file
+    """
+    log = apkFrenzyIntro()
+    apkname = checkIfDecompile(f)
+    scanReq()
+    result = reqResult()
+    print(result)
+    #saving results to a file
+    log += result
+    now = datetime.now()
+    ts = f"{now.year}-{now.month}-{now.day}_{now.hour}-{now.minute}-{now.second}"
+    f = open(f"{apkname}-scan-{ts}.txt", "w", encoding="utf-8")
+    f.write(log)
+    f.close()
 
 @app.command("sr")
 def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan APK for both Malicious Patterns and HTTP/HTTPS Requests
     """
+    result = ""
     checkIfDecompile(f)
     collectPatterns(detectionPatterns)
     patternDetection()
     checkDetected(detectionPatterns)
     scanReq()
-    scanResult()
-    reqResult()
+    result += scanResult()
+    result += reqResult()
+    print(result)
 
+@app.command("srl")
+def scanAndRequestsLog( f: Path = typer.Option(default=None, resolve_path=True)):
+    """
+    Scan APK for both Malicious Patterns and HTTP/HTTPS Requests then log them in a file
+    """
+    result = ""
+    log = apkFrenzyIntro()
+    apkname = checkIfDecompile(f)
+    collectPatterns(detectionPatterns)
+    patternDetection()
+    checkDetected(detectionPatterns)
+    scanReq()
+    result += scanResult()
+    result += reqResult()
+
+    print(result)
+    #saving results to a file
+    log += result
+    now = datetime.now()
+    ts = f"{now.year}-{now.month}-{now.day}_{now.hour}-{now.minute}-{now.second}"
+    f = open(f"{apkname}-scan-{ts}.txt", "w", encoding="utf-8")
+    f.write(log)
+    f.close()
+    
 @app.callback(invoke_without_command=True,context_settings={"allow_extra_args": True, "ignore_unknown_options": True})
 def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=True)):
     """
@@ -293,9 +393,9 @@ def main(ctx: typer.Context, f: Path = typer.Option(default=None,resolve_path=Tr
         collectPatterns(detectionPatterns)
         patternDetection()
         checkDetected(detectionPatterns)
-        simpleScanResult()
+        result = simpleScanResult()
+        print(result)
     else:
-        print("test")
         # if user passed path into callback pass it into global var
         if f != None: 
             callbackFilePath = f
