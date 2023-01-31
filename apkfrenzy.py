@@ -222,12 +222,15 @@ def simpleScanResult():
    
 def scanResult():
     global dangerRating
-    if(dangerRating > 99): dangerRating = 99
+    if(dangerRating > 99): 
+        dangerRating = 99
+        print("We have capped the malicious confidence rating at 99% as we can never be completely sure that the APK is malicious")
     bar = '{:░<20}'.format('█'*(dangerRating//5))
     print(f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)")
     print("-------------------------------------------------------------")
     if (detectedPatterns == {}):
         print("No Malicous Patterns Detected")
+        print("-------------------------------------------------------------")
         return
     print(f"Patterns Detected:")
     for i in detectedPatterns: print(f"\n-{i} (+{detectedPatterns[i][1]}%)\n{detectedPatterns[i][0]}")
