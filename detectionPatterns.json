@@ -383,14 +383,14 @@
         "c":"HN"
     },
 
-    "Ransomware: Password": {
+    "Encrypt Files On Device with Mentions of Ransom": {
         "manifestKeywords":[],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["crypto", "SecretKeySpec", "Cipher"],
-        "alternateJavaKeywords":[["FileInputStream", "FileOutputStream"], ["pass", "password", "pword", "key"], ["NotificationManager"]],
+        "alternateJavaKeywords":[["FileInputStream", "FileOutputStream"], ["payment", "unlock", "restore", "victim", "ransom", "hack", "cryptocurrency", "lock", "malware", "virus", "security", "cyber", "breach", "blackmail", "threat", "cryptolocker"]],
         "javaOptionalKeywords":["AES", "AESWrap", "RSA", "DES", "DESede"],
-        "description": "Application is able to encrypt files, and possibly notify the user and ask for a password to decrypt, making it a ransomware.",
+        "description": "Application is able to encrypt files, and possibly notify the user and ask for a ransom to decrypt, making it a ransomware.",
         "dangerRating": 20,
         "c":"HN"
     },
@@ -431,7 +431,7 @@
         "c": "L"
     },
 
-    "Permission to Brick": {
+    "Brick Device": {
         "manifestKeywords":["android.permission.BRICK"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
@@ -441,5 +441,17 @@
         "description": "Application can wipe the device remotely. Only system applications should have this permission, and this application may be especially harmful if your device is rooted.",
         "dangerRating": 50,
         "c": "L"
+    },
+
+    "Change Lockscreen Password": {
+        "manifestKeywords":["android.permission.BIND_DEVICE_ADMIN"],
+        "alternateManifestKeywords":[],
+        "optionalManifestKeywords":[],
+        "javaKeywords":["ACTION_SET_NEW_PASSWORD"],
+        "alternateJavaKeywords":[],
+        "javaOptionalKeywords":[],
+        "description": "Application can set new lock screen password. Highly likely to be ransomware.",
+        "dangerRating": 50,
+        "c": "HN"
     }
 }
