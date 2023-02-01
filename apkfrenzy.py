@@ -215,11 +215,13 @@ def scanReq():
 def simpleScanResult():
     global dangerRating
     output = ""
+    over100 = False
     if(dangerRating > 99): 
+        over100=True
         dangerRating = 99
-        output += "We have capped the malicious confidence rating at 99% as we can never be completely sure that the APK is malicious\n"
     bar = '{:░<20}'.format('█'*(dangerRating//5))
     output += f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)\n"
+    if(over100): output += "\nWe have capped the malicious confidence rating at 99% as we can never be completely sure that the APK is malicious\n"
     output +="-------------------------------------------------------------\n"
     if (detectedPatterns == {}):
         output +="No Malicous Patterns Detected\n"
@@ -233,11 +235,13 @@ def simpleScanResult():
 def scanResult():
     global dangerRating
     output = ""
+    over100 = False
     if(dangerRating > 99): 
+        over100=True
         dangerRating = 99
-        output +="We have capped the malicious confidence rating at 99% as we can never be completely sure that the APK is malicious\n"
     bar = '{:░<20}'.format('█'*(dangerRating//5))
-    output +=f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)\n"
+    output += f"\nMalicious Confidence Rating: {bar} {dangerRating}% (Probability of APK being Malicious)\n"
+    if(over100): output += "\nWe have capped the malicious confidence rating at 99% as we can never be completely sure that the APK is malicious\n"
     output +="-------------------------------------------------------------\n"
     if (detectedPatterns == {}):
         output +="No Malicous Patterns Detected\n"
@@ -284,7 +288,7 @@ def scanLog( f: Path = typer.Option(default=None, resolve_path=True)):
     f.write(log)
     f.close()
 
-@app.command("s")
+@app.command("v")
 def verboseScan( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan APK for Malicious Patterns and Provide More Information
@@ -295,7 +299,7 @@ def verboseScan( f: Path = typer.Option(default=None, resolve_path=True)):
     checkDetected(detectionPatterns)
     print(scanResult())
 
-@app.command("sl")
+@app.command("vl")
 def verboseScanLog( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan APK for Malicious Patterns and Provide More Information then log them in a file
@@ -342,7 +346,7 @@ def requestsLog( f: Path = typer.Option(default=None, resolve_path=True)):
     f.write(log)
     f.close()
 
-@app.command("sr")
+@app.command("vr")
 def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan APK for both Malicious Patterns and HTTP/HTTPS Requests
@@ -357,7 +361,7 @@ def scanAndRequests( f: Path = typer.Option(default=None, resolve_path=True)):
     result += reqResult()
     print(result)
 
-@app.command("srl")
+@app.command("vrl")
 def scanAndRequestsLog( f: Path = typer.Option(default=None, resolve_path=True)):
     """
     Scan APK for both Malicious Patterns and HTTP/HTTPS Requests then log them in a file

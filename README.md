@@ -35,22 +35,38 @@ python apkfrenzy.py
 ```
 
 ## Options
+
+There are 8 options to choose from:
+
 ```bash
-# "s" will run the malware scan and provide more information in the output
+# You can put the option in front or behind the malware path.
+python apkfrenzy.py --f {malware path} v
+# or
+python apkfrenzy.py v --f {malware path}
 
-python apkfrenzy.py s --f .\malware\BadNews.A.apk
+# No option will run the malware scan and return a simplified output.
+python apkfrenzy.py --f {malware path}
 
-# "r" will extract all the http/https requests and return the result
+# "l" will run the malware scan, return the results and log the results to a file.
+python apkfrenzy.py l --f {malware path}
 
-python apkfrenzy.py r --f .\malware\BadNews.A.apk
+# "r" will extract all the http/https requests and return the results.
+python apkfrenzy.py r --f {malware path}
 
-# "l" will run the malware scan and log the results to a file
+# "v" will run the malware scan and return a verbose output.
+python apkfrenzy.py v --f {malware path}
 
-python apkfrenzy.py l --f .\malware\BadNews.A.apk
+# "rl" will extract all the http/https requests, return the results, and log the results to a file.
+python apkfrenzy.py rl --f {malware path}
 
-# "srl" will run the malware scan, extract all the http/https requests, and log the results to a file
+# "vl" will run the malware scan, return a verbose output, and log the results to a file.
+python apkfrenzy.py vl --f {malware path}
 
-python apkfrenzy.py srl --f .\malware\BadNews.A.apk
+# "vr" will run the malware scan, extract all the http/https requests and return a verbose output.
+python apkfrenzy.py vr --f {malware path}
+
+# "vrl" will run the malware scan, extract all the http/https requests, return a verbose output, and log the results to a file.
+python apkfrenzy.py vrl --f {malware path}
 ```
 
 ## For Linux
