@@ -181,8 +181,8 @@
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["application/vnd.android.package-archive"],
-        "alternateJavaKeywords":[["http://", "https://"], ["apk", "APK"]],
-        "optionalJavaKeywords":[],
+        "alternateJavaKeywords":[["http://", "https://"]],
+        "optionalJavaKeywords":["apk", "APK"],
         "description": "Application can download an APK file from untrusted sources on the Internet. Possibly an App Dropper.",
         "dangerRating": 20
     },
