@@ -22,7 +22,7 @@ callbackFilePath = None
 allManifestKeywords =[]
 allOptionalManifestKeywords = []
 allJavaKeywords = []
-allJavaOptionalKeywords = []
+allOptionalJavaKeywords = []
 allManifestAlternateKeywords = [] 
 allJavaAlternateKeyswords = []
 
@@ -108,20 +108,20 @@ def collectPatterns(detectionPatterns):
     global allManifestKeywords 
     global allOptionalManifestKeywords 
     global allJavaKeywords 
-    global allJavaOptionalKeywords 
+    global allOptionalJavaKeywords 
     for patternName in detectionPatterns:
         patternData = detectionPatterns[patternName]
         allManifestKeywords.extend(patternData["manifestKeywords"])
         allOptionalManifestKeywords.extend(patternData["optionalManifestKeywords"])
         allJavaKeywords.extend(patternData["javaKeywords"])
-        allJavaOptionalKeywords.extend(patternData["javaOptionalKeywords"])
+        allOptionalJavaKeywords.extend(patternData["optionalJavaKeywords"])
         allManifestAlternateKeywords.extend(patternData["alternateManifestKeywords"])
         allJavaAlternateKeyswords.extend(patternData["alternateJavaKeywords"])
     #remove duplicates
     allManifestKeywords= list(set(allManifestKeywords)) 
     allOptionalManifestKeywords = list(set(allOptionalManifestKeywords))
     allJavaKeywords= list(set(allJavaKeywords))
-    allJavaOptionalKeywords=list(set(allJavaOptionalKeywords))
+    allOptionalJavaKeywords=list(set(allOptionalJavaKeywords))
 
 def patternDetection():
     # Searching through Manifest XML file
@@ -165,10 +165,10 @@ def patternDetection():
                         allJavaAlternateKeyswords.remove(javaKeywordList)
                         break
             #looking through the file for optional java keywords
-            for javaKeyword in allJavaOptionalKeywords:
+            for javaKeyword in allOptionalJavaKeywords:
                 if fileText.find(javaKeyword) != -1:
                     allJavaFoundOptionalKeywords.append(javaKeyword)
-                    allJavaOptionalKeywords.remove(javaKeyword)
+                    allOptionalJavaKeywords.remove(javaKeyword)
     
 def checkDetected(detectionPatterns):
     global dangerRating
@@ -179,7 +179,7 @@ def checkDetected(detectionPatterns):
         optionalManifestKeywords = (patternData["optionalManifestKeywords"])
         javaKeywords = (patternData["javaKeywords"])
         alternateJavaKeywords = (patternData["alternateJavaKeywords"])
-        javaOptionalKeywords = (patternData["javaOptionalKeywords"])
+        optionalJavaKeywords = (patternData["optionalJavaKeywords"])
         
         manifestKeywords = list(set(manifestKeywords)-set(allManifestFoundKeywords))
         javaKeywords = list(set(javaKeywords)-set(allJavaFoundKeywords))
@@ -194,7 +194,7 @@ def checkDetected(detectionPatterns):
             detectedPatterns[patternName] = [patternData["description"],patternData["dangerRating"]]
             dangerRating = dangerRating + patternData["dangerRating"]
             validManifestFoundOptionalKeywords.extend(list(set(optionalManifestKeywords).intersection(allManifestFoundOptionalKeywords)))
-            validJavaFoundOptionalKeywords.extend(list(set(javaOptionalKeywords).intersection(allJavaFoundOptionalKeywords)))
+            validJavaFoundOptionalKeywords.extend(list(set(optionalJavaKeywords).intersection(allJavaFoundOptionalKeywords)))
 
     list(set(validManifestFoundOptionalKeywords))
     list(set(validJavaFoundOptionalKeywords))
