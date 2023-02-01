@@ -451,7 +451,7 @@
         "alternateJavaKeywords":[],
         "javaOptionalKeywords":[],
         "description": "Application can set a new lock screen password. Highly likely to be ransomware.",
-        "dangerRating": 50,
+        "dangerRating": 20,
         "c": "HN"
     }
 }
