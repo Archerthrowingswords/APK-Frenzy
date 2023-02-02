@@ -1,6 +1,7 @@
 # APK-Frenzy
 
 APK-Frenzy is a tool that scans Android APKs for malicious activities using static analysis.
+[NOTICE] APKFrenzy detects APK file with potential malicious patterns, and the purpose or intent behind its use is uncertain whether the application is used for good or malicious reasons.
 
 ## Prerequisites
 [Java](https://www.java.com/download/ie_manual.jsp)
