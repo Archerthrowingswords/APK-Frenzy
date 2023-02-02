@@ -7,6 +7,8 @@ APK-Frenzy is a tool that scans Android APKs for malicious activities using stat
 
 [Python3](https://www.python.org/downloads/)
 
+Python3-pip
+
 ## Installations needed:
 
 Use the package installer [pip](https://pip.pypa.io/en/stable/) to install [typer](https://typer.tiangolo.com/). Typer is a library for building CLI applications.
