@@ -70,11 +70,11 @@
         "manifestKeywords":["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION", "android.permission.INTERNET"],
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":["android.permission.ACCESS_BACKGROUND_LOCATION"],
-        "javaKeywords":[],
-        "alternateJavaKeywords":[["Location", "LocationManager"]],
+        "javaKeywords":["LocationManager"],
+        "alternateJavaKeywords":[],
         "optionalJavaKeywords":["latitude", "longitude"],
         "description": "Application can access the location of the device.",
-        "dangerRating": 10
+        "dangerRating": 5
     },
 
     "Launch Other Applications": {
@@ -181,8 +181,8 @@
         "alternateManifestKeywords":[],
         "optionalManifestKeywords":[],
         "javaKeywords":["application/vnd.android.package-archive"],
-        "alternateJavaKeywords":[["http://", "https://"], ["apk", "APK"]],
-        "optionalJavaKeywords":[],
+        "alternateJavaKeywords":[["http://", "https://"]],
+        "optionalJavaKeywords":["apk", "APK"],
         "description": "Application can download an APK file from untrusted sources on the Internet. Possibly an App Dropper.",
         "dangerRating": 20
     },
