@@ -124,9 +124,9 @@ def collectPatterns(detectionPatterns):
     allOptionalJavaKeywords=list(set(allOptionalJavaKeywords))
 
 def patternDetection():
-    # Searching through Manifest XML file
     out = Path(outDirectory).rglob('*')
     for file in out:
+        # Searching through Manifest XML file
         if file.name.endswith("Manifest.xml"):
             with open(file) as manifestFile:
                 for line in manifestFile:
