@@ -7,7 +7,7 @@
         "javaKeywords":[],
         "alternateJavaKeywords":[],
         "optionalJavaKeywords":["Logger.", "Log.","android.intent.action.NEW_OUTGOING_CALL"],
-        "description": "Application can track incoming or outcoming calls from the device.",
+        "description": "Application can track incoming or outgoing calls from the device.",
         "dangerRating": 5
     },
 
